@@ -1,0 +1,3 @@
+Slobodan|Jović|slobo|slobo123|1305001124092|Jug Bogdana 12|m|064992334|korisnik
+Milan|Milaković|milan|milan123|1205002098865|Ćirpanova 12|m|065777654|korisnik
+Sladjana|Petrić|saldja|sladja123|0406000987345|Karađorđeva 19|z|032456123|korinsik
