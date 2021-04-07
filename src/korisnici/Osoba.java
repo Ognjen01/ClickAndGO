@@ -1,4 +1,4 @@
-package osnovneKlase;
+package korisnici;
 
 public class Osoba {
      String ime;

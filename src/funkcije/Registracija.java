@@ -1,9 +1,14 @@
-package com.infinty;
-import java.io.*;
+package funkcije;
 
-public interface OsnovneFunkcije{
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
-    public static String[] prijavaNaSistem(String korisnickoIme, String lozinka){
+public class Registracija {
+
+    // Šta ova funkcija radi?
+
+    public String[] prijavaNaSistem(String korisnickoIme, String lozinka){
         String[] korisnik = null;
         try{
             File fajl = new File("src/fajlovi/korisnici.txt");
@@ -27,5 +32,10 @@ public interface OsnovneFunkcije{
             return null;
         }
         return korisnik;
+    }
+
+    // IMplementovati funkciju regostracija!!!
+    public void registracija(){
+
     }
 }
