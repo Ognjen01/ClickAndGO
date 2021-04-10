@@ -1,6 +1,6 @@
 package korisnici;
 
-public class Osoba {
+public abstract class Osoba {
      String ime;
      String prezime;
      String korisnickoIme;
