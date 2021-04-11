@@ -7,16 +7,24 @@ public class Vozac extends Osoba {
 	private int plata;
 	private int brClanskeKarte;
 	private Automobil automobil;
+
 	
-	
-	
-	
-	public Vozac(String ime, String prezime, String korisnickoIme, String lozinka, long jmbg, String adresa, char pol,
-			int brojTelefona, String uloga, int plata, int brClanskeKarte, Automobil automobil) {
-		super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+	public Vozac(String ime,
+				 String prezime,
+				 String korisnickoIme,
+				 String lozinka,
+				 long jmbg,
+				 String adresa,
+				 char pol,
+				 int brojTelefona,
+				 String uloga,
+				 int plata,
+				 int brClanskeKarte,
+				 Automobil automobil) {
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;
+		this.ime = ime;
 	}
 
 
@@ -60,6 +68,7 @@ public class Vozac extends Osoba {
 	public void setAutomobil(Automobil automobil) {
 		this.automobil = automobil;
 	}
+
 
 
 

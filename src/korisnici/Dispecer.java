@@ -16,7 +16,6 @@ public class Dispecer extends Osoba{
              int brojTelefona,
              String uloga) {
 
-        super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
 
     }
 

@@ -5,15 +5,15 @@ import java.util.Date;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
-public class Voznja {
+public abstract class Voznja {
 
 	private String adresaPolaska;
 	private String adresaDestinacije;
 	private String status;
 	private int duzina;
 	private int trajanje;
-	private int cenaPoKilometru;
-	private int cenaStarta;
+	private int cenaPoKilometru = 60;
+	private int cenaStarta = 100;
 	private Date vremeNarudzbine;
 	private Musterija musterija;
 	private Vozac vozac;
@@ -21,10 +21,9 @@ public class Voznja {
 	
 	
 	
-	
+	/*
 	public Voznja(String adresaPolaska, String adresaDestinacije, String status, int duzina, int trajanje,
 			int cenaPoKilometru, int cenaStarta, Date vremeNarudzbine, Musterija musterija, Vozac vozac) {
-		super();
 		this.adresaPolaska = adresaPolaska;
 		this.adresaDestinacije = adresaDestinacije;
 		this.status = status;
@@ -35,7 +34,11 @@ public class Voznja {
 		this.vremeNarudzbine = vremeNarudzbine;
 		this.musterija = musterija;
 		this.vozac = vozac;
+
+
 	}
+
+	 */
 
 
 

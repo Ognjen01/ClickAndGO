@@ -11,6 +11,10 @@ public abstract class Osoba {
      int brojTelefona;
      String uloga;
 
+     // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
+
+     /*
+
     Osoba(String ime,
           String prezime,
           String korisnickoIme,
@@ -30,7 +34,15 @@ public abstract class Osoba {
         this.pol = pol;
         this.brojTelefona = brojTelefona;
         this.uloga = uloga;
+
+
     }
 
+      */
 
+
+
+     public String getIme() {
+          return ime;
+     }
 }
