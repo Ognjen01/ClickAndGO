@@ -2,7 +2,9 @@ package com.infinty;
 
 import entiteti.Automobil;
 import entiteti.VoznjaNarucenaAplikacijom;
+import funkcije.Registracija;
 import korisnici.*;
+import ui.KorisnickiEkran;
 import ui.Prijava;
 
 
@@ -21,6 +23,14 @@ public class Main {
         v.getBrClanskeKarte();
          v.setAutomobil(auto);
         System.out.println(v.getIme());
+
+        Registracija funkcije = new Registracija();
+
+        funkcije.prijavaNaSistem("slobo", "slobo123");
+
+        KorisnickiEkran k = new KorisnickiEkran();
+
+        k.setVisible(true);
 
 
     }
