@@ -1,10 +1,7 @@
 package com.infinty;
 
 import entiteti.Automobil;
-import entiteti.VoznjaNarucenaAplikacijom;
-import funkcije.Registracija;
 import korisnici.*;
-import ui.KorisnickiEkran;
 import ui.Prijava;
 
 
@@ -18,15 +15,19 @@ public class Main {
 
         // Ovaj dio je samo proba instanciranja klase Vozac
 
+/*
         Vozac v = new Vozac("Markec", null, null, null, 99999999, null, 'm', 9999, null, 999, 9999, null);
         v.getAutomobil();
         v.getBrClanskeKarte();
          v.setAutomobil(auto);
         System.out.println(v.getIme());
 
-        Registracija funkcije = new Registracija();
+ */
 
-        funkcije.prijavaNaSistem("slobo", "slobo123");
+        // Sta ako nam se nakon KT1 pojavi potreba za još nekom klasom da li možemo mijenjati uml dijagram??
+
+        Prijava p = new Prijava();
+        p.setVisible(true);
 
 
 

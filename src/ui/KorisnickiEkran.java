@@ -2,7 +2,7 @@ package ui;
 import java.awt.*;
 import javax.swing.*;
 
-public class KorisnickiEkran extends JFrame{
+public class KorisnickiEkran extends JPanel{
 
     private JPanel panel1;
     private JPanel panel2;
@@ -19,7 +19,6 @@ public class KorisnickiEkran extends JFrame{
         panel.add(panel2);
         add(panel);
         setSize(400, 200);
-        setTitle("Click&GO");
 
     }
 

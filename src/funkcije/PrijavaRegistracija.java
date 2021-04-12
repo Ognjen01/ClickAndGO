@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class Registracija {
+public class PrijavaRegistracija {
 
     //Funkcija za dobavljanje korisnika iz fajla
     // Nakon ovoga ovakav niz korisnika se uzima i pretvara u objekat u nekoj drugoj funkciji
     // TODO: Učitati sve fajlove u određene tipove lista i zatim prijavu i pretragu vršiti po tim tipovima podataka
+
+    // Pronalaženje traženog korisnika u fajlu:
 
     public String[] prijavaNaSistem(String korisnickoIme, String lozinka){
         String[] korisnik = null;
