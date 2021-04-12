@@ -17,6 +17,7 @@ public class Musterija extends Osoba {
 					 char pol,
 					 int brojTelefona,
 					 String uloga) {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

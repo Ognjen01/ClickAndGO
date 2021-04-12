@@ -28,9 +28,6 @@ public class Main {
 
         funkcije.prijavaNaSistem("slobo", "slobo123");
 
-        KorisnickiEkran k = new KorisnickiEkran();
-
-        k.setVisible(true);
 
 
     }

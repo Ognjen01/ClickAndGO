@@ -7,6 +7,7 @@ import korisnici.Vozac;
 
 public abstract class Voznja {
 
+	private int idVoznje;
 	private String adresaPolaska;
 	private String adresaDestinacije;
 	private String status;
@@ -17,6 +18,7 @@ public abstract class Voznja {
 	private Date vremeNarudzbine;
 	private Musterija musterija;
 	private Vozac vozac;
+	private int cijena;
 	
 	
 	

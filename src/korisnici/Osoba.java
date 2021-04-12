@@ -1,6 +1,8 @@
 package korisnici;
 
 public abstract class Osoba {
+
+     int idKOorisnika;
      String ime;
      String prezime;
      String korisnickoIme;

@@ -6,6 +6,7 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
 
 
     public VoznjaNarucenaAplikacijom(){
+        super();
 
 
     }

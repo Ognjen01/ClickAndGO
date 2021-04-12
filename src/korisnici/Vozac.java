@@ -21,6 +21,7 @@ public class Vozac extends Osoba {
 				 int plata,
 				 int brClanskeKarte,
 				 Automobil automobil) {
+		super();
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;
@@ -69,10 +70,5 @@ public class Vozac extends Osoba {
 		this.automobil = automobil;
 	}
 
-
-
-
-
-	
 
 }

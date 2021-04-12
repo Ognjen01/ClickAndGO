@@ -15,7 +15,7 @@ public class Dispecer extends Osoba{
              char pol,
              int brojTelefona,
              String uloga) {
-
+            super();
 
     }
 
