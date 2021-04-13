@@ -33,7 +33,7 @@ public class Vozac extends Osoba {
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;
-		this.ime = ime;
+		//this.ime = ime;
 		this.voznjeVozaca = voznjeVozaca;
 	}
 

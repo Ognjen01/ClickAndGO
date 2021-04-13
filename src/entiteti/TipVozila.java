@@ -1,6 +1,6 @@
 package entiteti;
 
-public enum TipAutomobila {
+public enum TipVozila {
     AUTO,
     KOMBI
 }

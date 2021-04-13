@@ -18,7 +18,9 @@ public class KorisnickiEkran extends JPanel{
         panel.add(panel1);
         panel.add(panel2);
         add(panel);
-        setSize(400, 200);
+        setSize(800, 800);
+
+
 
     }
 

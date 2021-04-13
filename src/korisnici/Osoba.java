@@ -2,30 +2,26 @@ package korisnici;
 
 public abstract class Osoba {
 
-     int idKOorisnika;
-     String ime;
-     String prezime;
-     String korisnickoIme;
-     String lozinka;
-     long jmbg;
-     String adresa;
-     char pol;
-     int brojTelefona;
-     String uloga;
+     private int idKOorisnika;
+     private String ime;
+     private String prezime;
+     private String korisnickoIme;
+     private String lozinka;
+     private long jmbg;
+     private String adresa;
+     private char pol;
+     private int brojTelefona;
+     private String uloga;
 
      // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
 
-     /*
+
 
     Osoba(String ime,
           String prezime,
           String korisnickoIme,
           String lozinka,
-          long jmbg,
-          String adresa,
-          char pol,
-          int brojTelefona,
-          String uloga){
+          long jmbg){
 
         this.ime = ime;
         this.prezime = prezime;
@@ -40,10 +36,22 @@ public abstract class Osoba {
 
     }
 
-      */
+    // Kreiran prazan konstruktor po preporuci asistenta
+      Osoba(){
+           this.ime = "";
+           this.prezime = "";
+           this.korisnickoIme = "";
+           this.lozinka = "";
+           this.jmbg = 0;
+           this.adresa = "";
+           this.pol = 'm';
+           this.brojTelefona = 0;
+           this.uloga = "";
+      }
 
 
 
+      // TODO: Generisati getere i setere
      public String getIme() {
           return ime;
      }

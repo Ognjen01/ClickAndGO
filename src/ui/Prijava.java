@@ -1,6 +1,6 @@
 package ui;
 
-import javax.swing.*;s
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,7 +16,7 @@ public class Prijava extends JFrame {
     public Prijava() {
 
         add(prijava);
-        setSize(400, 200);
+        setSize(800, 400);
         setTitle("Click&GO");
 
         prijaviSeButton.addActionListener(new ActionListener() {
@@ -24,7 +24,7 @@ public class Prijava extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 KorisnickiEkran k = new KorisnickiEkran();
                 prijava.setVisible(false);
-                add(k);
+                //add(k);
             }
         });
     }

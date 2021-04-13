@@ -10,7 +10,7 @@ public class Automobil {
 	private Date datumRegistracije;
 	private int brojVozila;	
 	private String brojRegistracije;
-	private String vrstaVozila;
+	private TipVozila tipVozila;
 	
 	
 	//konstruktori
@@ -21,14 +21,16 @@ public class Automobil {
 			Date datumRegistracije, 
 			int brojVozila, 
 			String brojRegistracije,
-			String vrstaVozila) {
+			TipVozila tipVozila) {
 		this.model = model;
 		this.proizvodjac = proizvodjac;
 		this.datumRegistracije = datumRegistracije;
 		this.brojVozila = brojVozila;
 		this.brojRegistracije = brojRegistracije;
-		this.vrstaVozila = vrstaVozila;
+		this.tipVozila = tipVozila;
 	}
+
+	// TODO: Generisati prazan konstruktor
 
 	//geteri i seteri
 
@@ -93,19 +95,6 @@ public class Automobil {
 	public void setBrojRegistracije(String brojRegistracije) {
 		this.brojRegistracije = brojRegistracije;
 	}
-
-
-
-	public String getVrstaVozila() {
-		return vrstaVozila;
-	}
-
-
-
-	public void setVrstaVozila(String vrstaVozila) {
-		this.vrstaVozila = vrstaVozila;
-	}
-
 
 
 	

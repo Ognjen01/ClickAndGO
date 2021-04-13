@@ -15,7 +15,7 @@ public class Dispecer extends Osoba{
              char pol,
              int brojTelefona,
              String uloga) {
-            super();
+            //super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga); prijavljije grešku na super zbog konstruktora
 
     }
 

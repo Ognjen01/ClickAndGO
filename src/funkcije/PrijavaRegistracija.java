@@ -6,9 +6,11 @@ import java.io.FileReader;
 
 public class PrijavaRegistracija {
 
-    //Funkcija za dobavljanje korisnika iz fajla
-    // Nakon ovoga ovakav niz korisnika se uzima i pretvara u objekat u nekoj drugoj funkciji
-    // TODO: Učitati sve fajlove u određene tipove lista i zatim prijavu i pretragu vršiti po tim tipovima podataka
+    /*
+    TODO: 1. Izmjeniti algoritam za prijavu tako da pretražuje po listi stringova
+          2. Nakon nađenog korisnika generisati novi objekat prijavljeniKorisnik
+          3. Prijava se vrši isključivo na osnovu prethodno učitanih fajlova!!!
+     */
 
     // Pronalaženje traženog korisnika u fajlu:
 
