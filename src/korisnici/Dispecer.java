@@ -14,9 +14,15 @@ public class Dispecer extends Osoba{
              String adresa,
              char pol,
              int brojTelefona,
-             String uloga) {
-            //super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga); prijavljije grešku na super zbog konstruktora
+             String uloga
+             ) {
+            super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+            this.plata = getPlata(); // ???
 
+    }
+
+    public Dispecer(){
+        // Generisati prazna polja DIspecera
     }
 
     public int getBrTelefonskeLinije() {

@@ -29,12 +29,15 @@ public class Vozac extends Osoba {
 				 Automobil automobil,
 				 List<Voznja> voznjeVozaca
 	) {
-		super();
+		super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;
-		//this.ime = ime;
 		this.voznjeVozaca = voznjeVozaca;
+	}
+
+	public Vozac() {
+		// Generisati prazna polja VOzaca
 	}
 
 

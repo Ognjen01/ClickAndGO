@@ -1,5 +1,6 @@
 package korisnici;
 
+import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Musterija extends Osoba {
+	public List<Voznja> voznjeMusterije;
 
 	public Musterija(String ime,
 					 String prezime,
@@ -16,9 +18,16 @@ public class Musterija extends Osoba {
 					 String adresa,
 					 char pol,
 					 int brojTelefona,
-					 String uloga) {
-		super();
-		// TODO Auto-generated constructor stub
+					 String uloga,
+					 List<Voznja> voznjeMusterije) {
+		super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+		this.voznjeMusterije = voznjeMusterije;
+	}
+
+	// Prazan konstruktor
+
+	public Musterija(){
+		// Generisati prazna polja Musterije
 	}
 
 	public void naruciVoznjuTelefonom(){

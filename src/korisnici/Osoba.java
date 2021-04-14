@@ -21,7 +21,11 @@ public abstract class Osoba {
           String prezime,
           String korisnickoIme,
           String lozinka,
-          long jmbg){
+          long jmbg,
+          String adresa,
+          char pol,
+          int brojTelefona,
+          String uloga){
 
         this.ime = ime;
         this.prezime = prezime;
