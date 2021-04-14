@@ -38,6 +38,5 @@ public class Musterija extends Osoba {
 
 	}
 
-
-
+	// Da li ima potrebe za Overide funkcijama iz klase Osoba??
 }

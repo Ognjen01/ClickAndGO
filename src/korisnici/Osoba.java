@@ -2,7 +2,7 @@ package korisnici;
 
 public abstract class Osoba {
 
-     private int idKOorisnika;
+     private int idKorisnika;
      private String ime;
      private String prezime;
      private String korisnickoIme;
@@ -55,8 +55,83 @@ public abstract class Osoba {
 
 
 
-      // TODO: Generisati getere i setere
      public String getIme() {
-          return ime;
+        return ime;
      }
+
+    public void setIme(String ime) {
+        this.ime = ime;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
+
+    public int getIdKorisnika() {
+        return idKorisnika;
+    }
+
+    public void setIdKorisnika(int idKorisnika) {
+        this.idKorisnika = idKorisnika;
+    }
+
+    public char getPol() {
+        return pol;
+    }
+
+    public void setPol(char pol) {
+        this.pol = pol;
+    }
+
+    public int getBrojTelefona() {
+        return brojTelefona;
+    }
+
+    public void setBrojTelefona(int brojTelefona) {
+        this.brojTelefona = brojTelefona;
+    }
+
+    public long getJmbg() {
+        return jmbg;
+    }
+
+    public void setJmbg(long jmbg) {
+        this.jmbg = jmbg;
+    }
+
+    public String getKorisnickoIme() {
+        return korisnickoIme;
+    }
+
+    public void setKorisnickoIme(String korisnickoIme) {
+        this.korisnickoIme = korisnickoIme;
+    }
+
+    public String getLozinka() {
+        return lozinka;
+    }
+
+    public void setLozinka(String lozinka) {
+        this.lozinka = lozinka;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public void setPrezime(String prezime) {
+        this.prezime = prezime;
+    }
+
+    public String getUloga() {
+        return uloga;
+    }
+
+    public void setUloga(String uloga) {
+        this.uloga = uloga;
+    }
 }

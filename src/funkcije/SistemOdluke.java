@@ -17,17 +17,20 @@ public class SistemOdluke {
         return null;
     }
 
+    // TODO: Da li je moguće napraviti preko generičke klase da se vraća drugačiji tip podatka??
+    // Sistem odluke će biti potreban i za učitavanje vožnji jer imamo dvije različite klase vožnji?
+
     public String odluciKojegKorisnikaInstancirati(String[] niz) {
 
         if (niz[9].equals("korisnik")){
-            Musterija novaMusterija = new Musterija(); // U konstruktor proslijediti pojedine vrijednosti niza
+            Musterija novaMusterija = new Musterija(); // U konstruktor proslijediti pojedine vrijednosti niza, trenutno je prazan konstruktor
         }
         else if (niz[9].equals("vozac")) {
-            Vozac noviVozac = new Vozac(); // U konstruktor proslijediti pojedine vrijednosti niza
+            Vozac noviVozac = new Vozac(); // U konstruktor proslijediti pojedine vrijednosti niza, trenutno je prazan konstruktor
         }
 
         else if (niz[9].equals("dispecer")){
-            Dispecer noviDispecer = new Dispecer(); // U konstruktor proslijediti pojedine vrijednosti niza
+            Dispecer noviDispecer = new Dispecer(); // U konstruktor proslijediti pojedine vrijednosti niza, trenutno je prazan konstruktor
         }
         else {
             System.out.println("Došlo je do greške prilikom kreiranja entiteta korinika");
