@@ -8,7 +8,6 @@ import java.util.List;
 
 public class CitanjeFajla {
 
-
     // Funkcija koja čita red i vraća niz vrijednosti izdvojenih iz reda
     
     public String[] procitajRed(String red){
@@ -22,6 +21,7 @@ public class CitanjeFajla {
     }
 
     // Funkcija koja prima naziv fajla i cita sve redove i vraca Listu stringova
+    // Može se primjeniti za sve entitete
 
     public List<String[]> procitajFajl(String nazivFajla) {
         List<String[]> podijeljeniRedovi = new ArrayList<String[]>();
