@@ -1,6 +1,7 @@
 package com.infinty;
 
 import entiteti.Automobil;
+import entiteti.Voznja;
 import funkcije.CitanjeFajla;
 import korisnici.*;
 import ui.Prijava;
@@ -44,6 +45,7 @@ public class Main {
         p.setVisible(true);
          */
 
+        Vozac v = new Vozac();
 
 
     }

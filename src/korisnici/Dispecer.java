@@ -17,7 +17,7 @@ public class Dispecer extends Osoba{
              String uloga
              ) {
             super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
-            this.plata = getPlata(); // ???
+            this.plata = getPlata(); // ??? Zašto ovdje ne mogu da stavim samo plata?
 
     }
 

@@ -23,15 +23,13 @@ public class KreiranjeEntiteta {
         // Ova funkcija prima korisnika u obliku niza iz one Liste stringova
         // Zatim na osnovu niza funkcija kreira objekat vozaca
 
-
-        Vozac noviVozac = new Vozac(
-                vozac[0], .......
-        );
+     */
 
 
+        Vozac noviVozac = new Vozac();
 
-        return null;
-    }
+
+    /*
 
     public Musterija kreirajVozaca(String[] musterija) {
 
@@ -49,7 +47,8 @@ public class KreiranjeEntiteta {
 
     }
 
-    */
+     */
+
 
 
 

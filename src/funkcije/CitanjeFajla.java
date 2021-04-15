@@ -21,7 +21,7 @@ public class CitanjeFajla {
     }
 
     // Funkcija koja prima naziv fajla i cita sve redove i vraca Listu stringova
-    // Može se primjeniti za sve entitete
+    // Može se primjeniti za sve entitete i sva čitanja iz fajlova
 
     public List<String[]> procitajFajl(String nazivFajla) {
         List<String[]> podijeljeniRedovi = new ArrayList<String[]>();

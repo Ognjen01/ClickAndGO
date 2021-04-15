@@ -13,6 +13,7 @@ public class Vozac extends Osoba {
 	private int plata;
 	private int brClanskeKarte;
 	private Automobil automobil;
+	private double prosjecnaOcjena;
 
 	
 	public Vozac(String ime,
@@ -27,17 +28,19 @@ public class Vozac extends Osoba {
 				 int plata,
 				 int brClanskeKarte,
 				 Automobil automobil,
-				 List<Voznja> voznjeVozaca
+				 List<Voznja> voznjeVozaca,
+				 double prosjecnaOcjena
 	) {
 		super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;
 		this.voznjeVozaca = voznjeVozaca;
+		this.prosjecnaOcjena = prosjecnaOcjena;
 	}
 
 	public Vozac() {
-		// Generisati prazna polja VOzaca
+		// Generisati prazna polja Vozaca
 	}
 
 
@@ -82,5 +85,11 @@ public class Vozac extends Osoba {
 		this.automobil = automobil;
 	}
 
+	public double getProsjecnaOcjena() {
+		return prosjecnaOcjena;
+	}
 
+	public void setProsjecnaOcjena(double prosjecnaOcjena) {
+		this.prosjecnaOcjena = prosjecnaOcjena;
+	}
 }

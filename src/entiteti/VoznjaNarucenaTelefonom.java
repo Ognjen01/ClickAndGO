@@ -9,7 +9,7 @@ public class VoznjaNarucenaTelefonom extends Voznja{
 
     public VoznjaNarucenaTelefonom(){
     super();
-    }
+    } // Dovršiti konstruktor
 
     public String getTipNarucivanje() {
         return tipNarucivanje;

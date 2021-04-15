@@ -19,13 +19,19 @@ public abstract class Voznja {
 	private Musterija musterija;
 	private Vozac vozac;
 	private int cijena;
-	
-	
-	
-	
-	/*
-	public Voznja(String adresaPolaska, String adresaDestinacije, String status, int duzina, int trajanje,
-			int cenaPoKilometru, int cenaStarta, Date vremeNarudzbine, Musterija musterija, Vozac vozac) {
+
+
+	public Voznja(String adresaPolaska,
+				  String adresaDestinacije,
+				  String status,
+				  int duzina,
+				  int trajanje,
+				  int cenaPoKilometru,
+				  int cenaStarta,
+				  Date vremeNarudzbine,
+				  Musterija musterija,
+				  Vozac vozac) {
+
 		this.adresaPolaska = adresaPolaska;
 		this.adresaDestinacije = adresaDestinacije;
 		this.status = status;
@@ -40,7 +46,7 @@ public abstract class Voznja {
 
 	}
 
-	 */
+
 
 
 
