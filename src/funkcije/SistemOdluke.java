@@ -13,6 +13,8 @@ import java.util.List;
 
 public class SistemOdluke {
 
+    //FUnkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
+
     public List<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta){
         List<Osoba> listaUcitanohOsoba = new ArrayList<Osoba>();
 
@@ -25,10 +27,12 @@ public class SistemOdluke {
         return listaUcitanohOsoba;
     }
 
+    // Funkcija koja odlučuje kojeg korisnika će instancirati i istovremeno ga instancira
+    // Pozvana je od strane funkcije iteracijaKrozListuStringova
+
     public Osoba odluciKojegKorisnikaInstancirati(String[] niz) {
 
         int idKorisnika = Integer.parseInt(niz[0]);
-        long jmbg = Long.parseLong(niz[5]);
         String p = niz[7];
         char pol = p.charAt(0);
         int brTelefona = 1; // Greška sa preuzimanjem vrijednosti iz niza
@@ -43,10 +47,10 @@ public class SistemOdluke {
                     niz[2],
                     niz[3],
                     niz[4],
-                    jmbg,
+                    niz[5],
                     niz[6],
                     pol,
-                    brTelefona,
+                    niz[8],
                     niz[9],
                     listaVoznjiMusterije
 
@@ -67,10 +71,10 @@ public class SistemOdluke {
                     niz[2],
                     niz[3],
                     niz[4],
-                    jmbg,
+                    niz[5],
                     niz[6],
                     pol,
-                    brTelefona,
+                    niz[8],
                     niz[9],
                     plata,
                     brojClanskeKarte,
@@ -84,7 +88,8 @@ public class SistemOdluke {
         else if (niz[9].equals("dispecer")){
 
             int plata = Integer.parseInt(niz[10]);
-            int brTelefonskeLinije = 1; // Greška sa preuzimanjem vrijdenosti iz niza
+            int brTelefonskeLinije = 1; // Greška sa preuzimanjem vrijdenosti iz niza za broj telefona
+            // Potencijalno rješenje da se broj telefona čuva kao string
 
             Dispecer noviDispecer = new Dispecer(
                     idKorisnika,
@@ -92,15 +97,15 @@ public class SistemOdluke {
                     niz[2],
                     niz[3],
                     niz[4],
-                    jmbg,
+                    niz[5],
                     niz[6],
                     pol,
-                    brTelefona,
+                    niz[7],
                     niz[9],
                     plata,
                     brTelefona,
                     niz[11]
-            ); // U konstruktor proslijediti pojedine vrijednosti niza, trenutno je prazan konstruktor
+            );
             return  noviDispecer;
         }
         else {
@@ -111,12 +116,3 @@ public class SistemOdluke {
 
     }
 }
-
-/*
-    TODO: Ova funkcija iznad vraća niz osoba i ima fleksibilnost zato što ove klase ispod nasleđuju klasu osoba
-        Sve korisnike vratiti u tri različita niza koji se razlikuju po tipu korisnika
-        Uprostiti ovu klasu iznad da možda vraća upravo taj niz Osoba i da se u klasi nalazi sama iteracija kroz listu stringova
-        Nina će napraviti obrnuti algoritak koji će koristiti za upisivanje u fajlove
- */
-
-// U vozacu nece biti id automobila vec ce u automobilu biti id vozaca

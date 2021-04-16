@@ -25,21 +25,17 @@ public class Main {
         System.out.println(Arrays.toString(nizic));
 
         List<Osoba> listaOsoba = new ArrayList<Osoba>();
-
         SistemOdluke vratiListuOsoba = new SistemOdluke();
 
         listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
-        String[] slobo = lista.get(0);
-        System.out.println(slobo[9]); // Niz za provjeru da li su mi objekti OK
 
         Osoba sloboObj = listaOsoba.get(0);
         for (Osoba osopa: listaOsoba
              ) {
-            System.out.println("Ovo je Osopa naky: " + osopa.getIme());
+            System.out.println("Ovo je Osopa naky: " + osopa.getIme() + "//" + osopa.getJmbg());
 
         }
         System.out.println(sloboObj.getBrojTelefona());
-
 
     }
 

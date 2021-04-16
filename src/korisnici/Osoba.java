@@ -7,10 +7,10 @@ public abstract class Osoba {
      private String prezime;
      private String korisnickoIme;
      private String lozinka;
-     private long jmbg;
+     private String jmbg; // Mora biti string jer pojedini jmbg počinju sa 0
      private String adresa;
      private char pol;
-     private int brojTelefona;
+     private String brojTelefona;
      private String uloga;
 
      // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
@@ -22,10 +22,10 @@ public abstract class Osoba {
           String prezime,
           String korisnickoIme,
           String lozinka,
-          long jmbg,
+          String jmbg,
           String adresa,
           char pol,
-          int brojTelefona,
+          String brojTelefona,
           String uloga){
 
         this.idKorisnika = idKorisnika;
@@ -48,10 +48,10 @@ public abstract class Osoba {
            this.prezime = "";
            this.korisnickoIme = "";
            this.lozinka = "";
-           this.jmbg = 0;
+           this.jmbg = "";
            this.adresa = "";
            this.pol = 'm';
-           this.brojTelefona = 0;
+           this.brojTelefona = "";
            this.uloga = "";
       }
 
@@ -89,19 +89,19 @@ public abstract class Osoba {
         this.pol = pol;
     }
 
-    public int getBrojTelefona() {
+    public String getBrojTelefona() {
         return brojTelefona;
     }
 
-    public void setBrojTelefona(int brojTelefona) {
+    public void setBrojTelefona(String brojTelefona) {
         this.brojTelefona = brojTelefona;
     }
 
-    public long getJmbg() {
+    public String getJmbg() {
         return jmbg;
     }
 
-    public void setJmbg(long jmbg) {
+    public void setJmbg(String jmbg) {
         this.jmbg = jmbg;
     }
 

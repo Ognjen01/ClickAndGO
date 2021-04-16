@@ -6,15 +6,16 @@ public class Dispecer extends Osoba{
     private int brTelefonskeLinije;
     private String odjeljenje;
 
-    public Dispecer(int idKorisnika,
-            String ime,
+    public Dispecer(
+             int idKorisnika,
+             String ime,
              String prezime,
              String korisnickoIme,
              String lozinka,
-             long jmbg,
+             String  jmbg,
              String adresa,
              char pol,
-             int brojTelefona,
+             String brojTelefona,
              String uloga,
              int plata,
              int brTelefonskeLinije,

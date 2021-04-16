@@ -15,10 +15,10 @@ public class Musterija extends Osoba {
 					 String prezime,
 					 String korisnickoIme,
 					 String lozinka,
-					 long jmbg,
+					 String jmbg,
 					 String adresa,
 					 char pol,
-					 int brojTelefona,
+					 String brojTelefona,
 					 String uloga,
 					 List<Voznja> voznjeMusterije) {
 		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
