@@ -35,7 +35,7 @@ public class Main {
         Osoba sloboObj = listaOsoba.get(0);
         for (Osoba osopa: listaOsoba
              ) {
-            System.out.println();
+            System.out.println("Ovo je Osopa naky: " + osopa.getIme());
 
         }
         System.out.println(sloboObj.getBrojTelefona());

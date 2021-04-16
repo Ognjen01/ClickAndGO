@@ -6,7 +6,7 @@ public class Dispecer extends Osoba{
     private int brTelefonskeLinije;
     private String odjeljenje;
 
-    Dispecer(int idKorisnika,
+    public Dispecer(int idKorisnika,
             String ime,
              String prezime,
              String korisnickoIme,

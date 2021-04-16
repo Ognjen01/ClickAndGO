@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Musterija extends Osoba {
-	public List<Voznja> voznjeMusterije;
+	private List<Voznja> voznjeMusterije;
 
 	public Musterija(int idKorisnika,
 					 String ime,
