@@ -1,12 +1,8 @@
 package com.infinty;
 
-import entiteti.Automobil;
-import entiteti.Voznja;
 import funkcije.CitanjeFajla;
-import funkcije.SistemOdluke;
-import funkcije.UcitavanjeEntiteta;
+import funkcije.SistemOdlukeKorisnici;
 import korisnici.*;
-import ui.Prijava;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +21,7 @@ public class Main {
         System.out.println(Arrays.toString(nizic));
 
         List<Osoba> listaOsoba = new ArrayList<Osoba>();
-        SistemOdluke vratiListuOsoba = new SistemOdluke();
+        SistemOdlukeKorisnici vratiListuOsoba = new SistemOdlukeKorisnici();
 
         listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
 

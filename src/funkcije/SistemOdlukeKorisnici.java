@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SistemOdluke {
+public class SistemOdlukeKorisnici {
 
-    //FUnkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
+    //Funkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
 
     public List<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta){
         List<Osoba> listaUcitanohOsoba = new ArrayList<Osoba>();
