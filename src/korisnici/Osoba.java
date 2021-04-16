@@ -17,7 +17,8 @@ public abstract class Osoba {
 
 
 
-    Osoba(String ime,
+    Osoba(int idKorisnika,
+          String ime,
           String prezime,
           String korisnickoIme,
           String lozinka,
@@ -27,6 +28,7 @@ public abstract class Osoba {
           int brojTelefona,
           String uloga){
 
+        this.idKorisnika = idKorisnika;
         this.ime = ime;
         this.prezime = prezime;
         this.korisnickoIme = korisnickoIme;

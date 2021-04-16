@@ -3,6 +3,8 @@ package com.infinty;
 import entiteti.Automobil;
 import entiteti.Voznja;
 import funkcije.CitanjeFajla;
+import funkcije.SistemOdluke;
+import funkcije.UcitavanjeEntiteta;
 import korisnici.*;
 import ui.Prijava;
 
@@ -17,35 +19,26 @@ public class Main {
 
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
-        Automobil auto = new Automobil();
+        CitanjeFajla citajFajl = new CitanjeFajla();
+        List<String[]> lista = citajFajl.procitajFajl("korisnici.txt");
+        String[] nizic = lista.get(0);
+        System.out.println(Arrays.toString(nizic));
 
-        //VoznjaNarucenaAplikacijom v = new VoznjaNarucenaAplikacijom();
+        List<Osoba> listaOsoba = new ArrayList<Osoba>();
 
-        // Ovaj dio je samo proba instanciranja klase Vozac
+        SistemOdluke vratiListuOsoba = new SistemOdluke();
 
-/*
-        Vozac v = new Vozac("Markec", null, null, null, 99999999, null, 'm', 9999, null, 999, 9999, null);
-        v.getAutomobil();
-        v.getBrClanskeKarte();
-         v.setAutomobil(auto);
-        System.out.println(v.getIme());
+        listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
+        String[] slobo = lista.get(0);
+        System.out.println(slobo[9]); // Niz za provjeru da li su mi objekti OK
 
- */
+        Osoba sloboObj = listaOsoba.get(0);
+        for (Osoba osopa: listaOsoba
+             ) {
+            System.out.println();
 
-        // Sta ako nam se nakon KT1 pojavi potreba za još nekom klasom da li možemo mijenjati uml dijagram??
-
-        CitanjeFajla citanjeFajla = new CitanjeFajla();
-        List<String[]> listaKorisnika = citanjeFajla.procitajFajl("korisnici.txt");
-        System.out.println(Arrays.toString(listaKorisnika.get(0)));
-        String[] nizic = listaKorisnika.get(0);
-        System.out.println(nizic[0]);
-
-        /*
-        Prijava p = new Prijava();
-        p.setVisible(true);
-         */
-
-        Vozac v = new Vozac();
+        }
+        System.out.println(sloboObj.getBrojTelefona());
 
 
     }

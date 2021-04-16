@@ -6,7 +6,8 @@ public class Dispecer extends Osoba{
     private int brTelefonskeLinije;
     private String odjeljenje;
 
-    Dispecer(String ime,
+    Dispecer(int idKorisnika,
+            String ime,
              String prezime,
              String korisnickoIme,
              String lozinka,
@@ -14,15 +15,20 @@ public class Dispecer extends Osoba{
              String adresa,
              char pol,
              int brojTelefona,
-             String uloga
+             String uloga,
+             int plata,
+             int brTelefonskeLinije,
+             String odjeljenje
              ) {
-            super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
-            this.plata = getPlata(); // ??? Zašto ovdje ne mogu da stavim samo plata?
+            super(idKorisnika ,ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+            this.plata = plata;
+            this.brTelefonskeLinije = brTelefonskeLinije;
+            this.odjeljenje = odjeljenje;
 
     }
 
     public Dispecer(){
-        // Generisati prazna polja DIspecera
+        // Generisati prazna polja Dispecera
     }
 
     public int getBrTelefonskeLinije() {
@@ -31,6 +37,10 @@ public class Dispecer extends Osoba{
 
     public int getPlata() {
         return plata;
+    }
+
+    public void setPlata(int plata) {
+        this.plata = plata;
     }
 
     public String getOdjeljenje() {
@@ -45,7 +55,4 @@ public class Dispecer extends Osoba{
         this.odjeljenje = odjeljenje;
     }
 
-    public void setPlata(int plata) {
-        this.plata = plata;
-    }
 }

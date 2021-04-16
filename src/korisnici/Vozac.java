@@ -16,7 +16,8 @@ public class Vozac extends Osoba {
 	private double prosjecnaOcjena;
 
 	
-	public Vozac(String ime,
+	public Vozac(int idKorisnika,
+				 String ime,
 				 String prezime,
 				 String korisnickoIme,
 				 String lozinka,
@@ -28,10 +29,10 @@ public class Vozac extends Osoba {
 				 int plata,
 				 int brClanskeKarte,
 				 Automobil automobil,
-				 List<Voznja> voznjeVozaca,
+				 List<Voznja> voznjeVozaca, // Lista nije navedena u fajlu ona se navodi na osnovu id vozaca u listi voznji
 				 double prosjecnaOcjena
 	) {
-		super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;
@@ -91,5 +92,13 @@ public class Vozac extends Osoba {
 
 	public void setProsjecnaOcjena(double prosjecnaOcjena) {
 		this.prosjecnaOcjena = prosjecnaOcjena;
+	}
+
+	public void setVoznjeVozaca(List<Voznja> voznjeVozaca) {
+		this.voznjeVozaca = voznjeVozaca;
+	}
+
+	public List<Voznja> getVoznjeVozaca() {
+		return voznjeVozaca;
 	}
 }

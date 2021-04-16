@@ -10,7 +10,8 @@ import java.util.List;
 public class Musterija extends Osoba {
 	public List<Voznja> voznjeMusterije;
 
-	public Musterija(String ime,
+	public Musterija(int idKorisnika,
+					 String ime,
 					 String prezime,
 					 String korisnickoIme,
 					 String lozinka,
@@ -20,7 +21,7 @@ public class Musterija extends Osoba {
 					 int brojTelefona,
 					 String uloga,
 					 List<Voznja> voznjeMusterije) {
-		super(ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
 		this.voznjeMusterije = voznjeMusterije;
 	}
 

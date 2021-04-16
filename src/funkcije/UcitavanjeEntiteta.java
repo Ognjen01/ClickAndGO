@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class UcitavanjeEntiteta {
 
     // TODO: Definisati da li će povratni tipovi biti List ili ArrayList
+    //      Preispitati da li je ova forma uopšte potrebna
 
     public ArrayList<Vozac> ucitajVozace(){
         ArrayList<Vozac> vozaci = null;
