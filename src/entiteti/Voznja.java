@@ -8,26 +8,32 @@ import korisnici.Vozac;
 public abstract class Voznja {
 
 	private int idVoznje;
+	private int idVozaca;
+	private  int idMusterije;
 	private String adresaPolaska;
 	private String adresaDestinacije;
 	private String status;
-	private int duzina;
-	private int trajanje;
+	private double duzina;
+	private double trajanje;
 	private int cenaPoKilometru = 60;
 	private int cenaStarta = 100;
+	private int cenaVoznje;
 	private Date vremeNarudzbine;
 	private Musterija musterija;
 	private Vozac vozac;
 	private int cijena;
 
 
-	public Voznja(String adresaPolaska,
+	public Voznja(
+				  int idVoznje,
+				  int idVozaca,
+				  int idMusterije,
+				  String adresaPolaska,
 				  String adresaDestinacije,
 				  String status,
-				  int duzina,
-				  int trajanje,
-				  int cenaPoKilometru,
-				  int cenaStarta,
+				  double duzina,
+				  double trajanje,
+				  int cenaVoznje,
 				  Date vremeNarudzbine,
 				  Musterija musterija,
 				  Vozac vozac) {
@@ -42,15 +48,39 @@ public abstract class Voznja {
 		this.vremeNarudzbine = vremeNarudzbine;
 		this.musterija = musterija;
 		this.vozac = vozac;
+		this.idMusterije = idMusterije;
+		this.idVoznje = idVoznje;
+		this.idVozaca = idVozaca;
 
 
 	}
 
+	// TODO: Algoritam za računanje cijene vožnje ali nema potrebe za njim prilikom učitavanja fajlova
 
 
+	public int getIdMusterije() {
+		return idMusterije;
+	}
 
+	public void setIdMusterije(int idMusterije) {
+		this.idMusterije = idMusterije;
+	}
 
+	public int getIdVozaca() {
+		return idVozaca;
+	}
 
+	public void setIdVozaca(int idVozaca) {
+		this.idVozaca = idVozaca;
+	}
+
+	public int getIdVoznje() {
+		return idVoznje;
+	}
+
+	public void setIdVoznje(int idVoznje) {
+		this.idVoznje = idVoznje;
+	}
 
 	public String getAdresaPolaska() {
 		return adresaPolaska;
@@ -97,32 +127,18 @@ public abstract class Voznja {
 	}
 
 
-
-
-
-	public int getDuzina() {
+	public double getDuzina() {
 		return duzina;
 	}
-
-
-
-
 
 	public void setDuzina(int duzina) {
 		this.duzina = duzina;
 	}
 
 
-
-
-
-	public int getTrajanje() {
+	public double getTrajanje() {
 		return trajanje;
 	}
-
-
-
-
 
 	public void setTrajanje(int trajanje) {
 		this.trajanje = trajanje;
@@ -217,3 +233,6 @@ public abstract class Voznja {
 	}
 
 }
+
+// TODO: NApraviti metode za računanje cijene
+//		i za generisanje ID voznje

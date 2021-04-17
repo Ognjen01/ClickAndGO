@@ -1,7 +1,9 @@
 package com.infinty;
 
+import entiteti.Voznja;
 import funkcije.CitanjeFajla;
 import funkcije.SistemOdlukeKorisnici;
+import funkcije.SistemOdlukeVoznje;
 import korisnici.*;
 
 import java.util.ArrayList;
@@ -17,11 +19,18 @@ public class Main {
 
         CitanjeFajla citajFajl = new CitanjeFajla();
         List<String[]> lista = citajFajl.procitajFajl("korisnici.txt");
+        List<String[]> listaVoznji = citajFajl.procitajFajl("voznje.txt");
+
         String[] nizic = lista.get(0);
         System.out.println(Arrays.toString(nizic));
 
         List<Osoba> listaOsoba = new ArrayList<Osoba>();
         SistemOdlukeKorisnici vratiListuOsoba = new SistemOdlukeKorisnici();
+
+        List<Voznja> listaVoznjiObj = new ArrayList<Voznja>();
+        SistemOdlukeVoznje vratiListuvoznji = new SistemOdlukeVoznje();
+
+        listaVoznjiObj = vratiListuvoznji.iteracijaKrozListuStringova(listaVoznji);
 
         listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
 
@@ -32,6 +41,12 @@ public class Main {
 
         }
         System.out.println(sloboObj.getBrojTelefona());
+
+        for (Voznja voznja: listaVoznjiObj
+        ) {
+            System.out.println("Ovo je Voznja naky: " + voznja.getAdresaDestinacije());
+
+        }
 
     }
 
