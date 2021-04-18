@@ -1,42 +1,76 @@
 package funkcije;
 
 import entiteti.Automobil;
-import entiteti.Voznja;
-import korisnici.Dispecer;
-import korisnici.Musterija;
-import korisnici.Vozac;
+import entiteti.TipVozila;
 
 import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class UcitavanjeEntiteta {
 
-    // TODO: Definisati da li će povratni tipovi biti List ili ArrayList
-    //      Preispitati da li je ova forma uopšte potrebna
+    // UČITAVANJE AUTOMOBILA
 
-    public ArrayList<Vozac> ucitajVozace(){
-        ArrayList<Vozac> vozaci = null;
-        return vozaci;
+    // TODO: U string automobila mora da bude id vozaca kako bi na osnovu tof id prosao kroz listu vozaca i tom vozacu dodijelio automobil
+    //      SIstem odluke za tip vozila
+    //      Nula prilikom ucitavanja na mjestu id vozaca znaci da auto nije dodjeljen
+    //      Ovaj sistem ce vjerovatno biti u mainu izvrsen nakon svih ucitavanja jer bi u supronom funkcije ispod morale da prime lsitu vozaca kao parametar
+
+    public List<Automobil> ucitajListuAutomobila (List<String[]> nizAutomobila){
+
+        List<Automobil> listaAutomobila = new ArrayList<Automobil>();
+
+        for (String[] automobil: nizAutomobila) {
+
+            Automobil automobil1 = transformisiAutomobil(automobil);
+            listaAutomobila.add(automobil1);
+        }
+
+        return listaAutomobila;
+
     }
 
-    public ArrayList<Musterija> ucitajMusterije(){
-        ArrayList<Musterija> musterije = null;
-        return musterije;
-    }
+    private Automobil transformisiAutomobil (String[] automobil) {
 
-    public ArrayList<Dispecer> ucitajDispecere(){
-        ArrayList<Dispecer> dispeceri = null;
-        return dispeceri;
-    }
+        TipVozila tipVozila = null;
 
-    public ArrayList<Voznja> ucitajVoznje() { // Kako Lista voznji kada je to apstrakta klasa kako ubaciti klase naslednice
-        ArrayList<Voznja> voznje = null;
-        return voznje;
-    }
+        if(automobil[6].equals("auto")){
+            tipVozila = TipVozila.AUTO;
+        }
+        else if(automobil[6].equals("kombi")){
+            tipVozila = TipVozila.KOMBI;
+        }
+        else {
+            System.out.println("Došlo je do greške instanciranja tipa vozila.");
+        }
 
-    public ArrayList<Automobil> ucitajAutomobile(){
-        ArrayList<Automobil> automobili = null;
-        return automobili;
+        Date datumRegistracije = null;
+        try {
+            datumRegistracije = new SimpleDateFormat("dd-MM-yyyy").parse(automobil[4]);
+        } catch (ParseException e) {
+            System.out.println("Došlo je do greške prilikom konverzije datuma");
+        }
+        int idAutomobila = Integer.parseInt(automobil[0]);
+        int brojVozila = Integer.parseInt(automobil[1]);
+        int idVozaca = Integer.parseInt(automobil[7]);
+
+        Automobil auto = new Automobil(
+                idAutomobila,
+                brojVozila,
+                automobil[2],
+                automobil[3],
+                datumRegistracije,
+                automobil[5],
+                tipVozila,
+                idVozaca
+        );
+
+
+
+        return auto;
     }
 
 }

@@ -16,6 +16,7 @@ public class KreiranjeEntiteta {
             - POTREBAN MEĐUKORAK KOJI SVE REDOVE ČUVA U LISTI NIZOVA -> Odrađeno
             - 2. funkcija koja za svaki red prima taj string i kreira ga u objekat
             - ovakva funkcija mora da prima string niz i u zavisnosti od uloge imaćemo više ovakvih funkcija
+                OVA KLASA VJEROVATNO NIJE POTREBNA
 
 
     public Vozac kreirajVozaca(String[] vozac){

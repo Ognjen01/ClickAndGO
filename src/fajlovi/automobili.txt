@@ -1,6 +1,6 @@
-1|Opel|Corsa|15.06.2020.|123|NS-213-AR|auto
-2|Renault|Kangoo|27.12.2020.|678|NS-847-KK|kombi
-3|Suzuki|Swift|12.02.2021.|155|NS-655-OR|auto
-4|Volkswagen|Passat|12.03.2021.|NS-123-OL|auto
-5|Mercedes|Transporter|24.05.2021.|BG-434-KK|kombi
-6|Volkswagen|T6|30.08.2021.|NS-212-NI|kombis
+600000|1|Opel|Corsa|2020-06-15|NS-213-AR|auto|300000
+600001|2|Renault|Kangoo|2020-07-27|NS-847-KK|kombi|300001
+600002|3|Suzuki|Swift|2020-08-01|NS-655-OR|auto|300002
+600003|4|Volkswagen|Passat|2020-08-02|NS-123-OL|auto|0
+600004|5|Mercedes|Transporter|2020-07-29|BG-434-KK|kombi|0
+600005|6|Volkswagen|T6|2020-07-24|NS-212-NI|kombi|0

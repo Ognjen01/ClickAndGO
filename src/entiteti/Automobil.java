@@ -7,27 +7,33 @@ public class Automobil {
 	private int automobilID;
 	private String model;
 	private String proizvodjac;
-	private Date datumRegistracije;
+	private java.util.Date datumRegistracije;
 	private int brojVozila;	
 	private String brojRegistracije;
 	private TipVozila tipVozila;
+	private int idVozaca;
 	
 	
 	//konstruktori
 	public Automobil() {}
 
-	public Automobil(String model, 
-			String proizvodjac, 
-			Date datumRegistracije, 
-			int brojVozila, 
+	public Automobil(
+			int automobilID,
+			int brojVozila,
+			String proizvodjac,
+			String model,
+			java.util.Date datumRegistracije,
 			String brojRegistracije,
-			TipVozila tipVozila) {
+			TipVozila tipVozila,
+			int idVozaca) {
 		this.model = model;
 		this.proizvodjac = proizvodjac;
 		this.datumRegistracije = datumRegistracije;
 		this.brojVozila = brojVozila;
 		this.brojRegistracije = brojRegistracije;
 		this.tipVozila = tipVozila;
+		this.automobilID = automobilID;
+		this.idVozaca = idVozaca;
 	}
 
 	// TODO: Generisati prazan konstruktor
@@ -61,12 +67,9 @@ public class Automobil {
 	}
 
 
-
-	public Date getDatumRegistracije() {
+	public java.util.Date getDatumRegistracije() {
 		return datumRegistracije;
 	}
-
-
 
 	public void setDatumRegistracije(Date datumRegistracije) {
 		this.datumRegistracije = datumRegistracije;
