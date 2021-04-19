@@ -13,6 +13,7 @@ import java.util.List;
 public class UcitavanjeEntiteta {
 
     // UČITAVANJE AUTOMOBILA
+    // Isti algoritam se može koristiti i za učitavanje obrisanih automobila
 
     // TODO: U string automobila mora da bude id vozaca kako bi na osnovu tof id prosao kroz listu vozaca i tom vozacu dodijelio automobil
     //      SIstem odluke za tip vozila
@@ -67,8 +68,6 @@ public class UcitavanjeEntiteta {
                 tipVozila,
                 idVozaca
         );
-
-
 
         return auto;
     }

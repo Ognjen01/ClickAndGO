@@ -2,10 +2,7 @@ package com.infinty;
 
 import entiteti.Automobil;
 import entiteti.Voznja;
-import funkcije.CitanjeFajla;
-import funkcije.SistemOdlukeKorisnici;
-import funkcije.SistemOdlukeVoznje;
-import funkcije.UcitavanjeEntiteta;
+import funkcije.*;
 import korisnici.*;
 
 import javax.swing.*;
@@ -57,6 +54,10 @@ public class Main {
         }
 
         // TODO: Potrebno doraditi sve algoritme za ucitavanje kako bi ucitavali entitete i u druge liste
+
+        PrijavaRegistracija prijava = new PrijavaRegistracija();
+        Osoba prijevljeniKorisnik = prijava.prijavaNaSistem("slobo", "slobo123", listaOsoba);
+        System.out.println("Prijavljeni korisnik je: " + prijevljeniKorisnik.getIme() + " " + prijevljeniKorisnik.getPrezime());
 
     }
 

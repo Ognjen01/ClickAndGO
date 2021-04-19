@@ -13,6 +13,9 @@ import java.util.List;
 
 public class SistemOdlukeKorisnici {
 
+    // UČITAVANJE KORISNIKA
+    // Isti algoritam se može koristiti i za učitavanje obrisanih korisnika
+
     //Funkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
 
     public List<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta){
