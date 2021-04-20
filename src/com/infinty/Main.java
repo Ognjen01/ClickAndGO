@@ -36,9 +36,14 @@ public class Main {
         listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
         automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);
 
+        A apdejtovanjeListe = new A();
+        apdejtovanjeListe.apdejtujListe(listaOsoba, listaVoznjiObj);
+
+
+
         for (Osoba osopa: listaOsoba
              ) {
-            System.out.println("Ovo je ime osobe: " + osopa.getIme() + ", a ovo JMBG osobe: " + osopa.getJmbg());
+            System.out.println("Ovo je ime osobe: " + osopa.getIme() + ", a ovo JMBG osobe: " + osopa.getLisaVoznji());
 
         }
 
@@ -61,6 +66,37 @@ public class Main {
 
     }
 
+
+
+
 }
+
+
+// Algoritam za dodjelu voznji korisnicima
+// Algoritam je smješten u drugu klasu zbog povratnog void tipa
+// Ovu funkciju premjestiti u neku drugu klasu
+
+class A {
+    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVznji){
+
+        for (Voznja voznja: listaVznji
+        ) {
+            int idMusterije = voznja.getIdMusterije();
+            int idVozaca = voznja.getIdVozaca();
+            for (Osoba osoba : listaOsoba
+            ) {
+
+                if (idMusterije == osoba.getIdKorisnika() || idVozaca == osoba.getIdKorisnika()){
+                    // sisitem za dodavanje u listu
+                    System.out.println(idMusterije + "//"  + voznja.getIdMusterije()+ "//" + idVozaca + "//" + voznja.getIdVozaca() + " voznja dodata korisnik " + osoba.getUloga());
+                    osoba.dodajVoznjuUListu(voznja);
+                }
+
+            }
+        }
+
+    }
+}
+
 
 

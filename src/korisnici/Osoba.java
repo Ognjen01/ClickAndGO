@@ -1,5 +1,10 @@
 package korisnici;
 
+import entiteti.Voznja;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Osoba {
 
      private int idKorisnika;
@@ -12,6 +17,7 @@ public abstract class Osoba {
      private char pol;
      private String brojTelefona;
      private String uloga;
+     private List<Voznja> lisaVoznji;
 
      // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
 
@@ -38,7 +44,7 @@ public abstract class Osoba {
         this.pol = pol;
         this.brojTelefona = brojTelefona;
         this.uloga = uloga;
-
+        this.lisaVoznji = new ArrayList<>();
 
     }
 
@@ -55,9 +61,17 @@ public abstract class Osoba {
            this.uloga = "";
       }
 
+      // TODO: Preispitati potrebu Liste voznji unutar osobe jer Dispecer nema polje liste voznji
 
+    public List<Voznja> getLisaVoznji() {
+        return lisaVoznji;
+    }
 
-     public String getIme() {
+    public void dodajVoznjuUListu(Voznja voznja){
+        this.lisaVoznji.add(voznja);
+    }
+
+    public String getIme() {
         return ime;
      }
 
