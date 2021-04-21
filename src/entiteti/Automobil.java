@@ -1,5 +1,7 @@
 package entiteti;
 
+import enumeracije.TipVozila;
+
 import java.sql.Date;
 
 public class Automobil {

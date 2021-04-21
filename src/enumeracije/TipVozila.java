@@ -1,4 +1,4 @@
-package entiteti;
+package enumeracije;
 
 public enum TipVozila {
     AUTO,

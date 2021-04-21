@@ -1,8 +1,12 @@
 package ui;
 
+import funkcije.PrijavaRegistracija;
+import korisnici.Osoba;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class Prijava extends JFrame {
 
@@ -10,10 +14,10 @@ public class Prijava extends JFrame {
 
     private JPanel prijava;
     private JTextField textField1;
-    private JPasswordField passwordField1;
+    private JTextField passwordField1;
     private JButton prijaviSeButton;
 
-    public Prijava() {
+    public Prijava(List<Osoba> lisstaOsoba) {
 
         add(prijava);
         setSize(800, 400);
@@ -22,9 +26,20 @@ public class Prijava extends JFrame {
         prijaviSeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                KorisnickiEkran k = new KorisnickiEkran();
-                prijava.setVisible(false);
-                //add(k);
+
+                String korisnickoIme = textField1.getText();
+                String lozinka = passwordField1.getText();
+                PrijavaRegistracija prijavaNaSistem = new PrijavaRegistracija();
+                Osoba prijavljeniKorsinik = prijavaNaSistem.prijavaNaSistem(korisnickoIme, lozinka, lisstaOsoba);
+
+
+                if (prijavljeniKorsinik != null) {
+                    System.out.println("prijavlajni ste kao musterija " + prijavljeniKorsinik.getIme());
+                    prijava.setVisible(false);
+                    KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik);
+                    add(k);
+                }
+
             }
         });
     }

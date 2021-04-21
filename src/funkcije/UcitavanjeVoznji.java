@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SistemOdlukeVoznje {
+public class UcitavanjeVoznji {
     public List<Voznja> iteracijaKrozListuStringova(List<String[]> listaEntiteta){
         List<Voznja> listaUcitanihVoznji = new ArrayList<Voznja>();
 

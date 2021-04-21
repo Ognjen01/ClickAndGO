@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SistemOdlukeKorisnici {
+public class UcitavanjeKorisnika {
+
+    // TODO: Izmjeniti ucitavanje entiteta tako da uzima u obzir da li su aktivni ili nisu!!! Logičko brisanje
 
     // UČITAVANJE KORISNIKA
     // Isti algoritam se može koristiti i za učitavanje obrisanih korisnika
@@ -115,7 +117,27 @@ public class SistemOdlukeKorisnici {
             System.out.println("Došlo je do greške prilikom kreiranja entiteta korinika");
             return null;
         }
+    }
 
+    // Ovu funckiju premjestiti u klasu opstih funkcija
+
+    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVznji){
+
+        for (Voznja voznja: listaVznji
+        ) {
+            int idMusterije = voznja.getIdMusterije();
+            int idVozaca = voznja.getIdVozaca();
+            for (Osoba osoba : listaOsoba
+            ) {
+
+                if (idMusterije == osoba.getIdKorisnika() || idVozaca == osoba.getIdKorisnika()){
+                    // sisitem za dodavanje u listu
+                    System.out.println(idMusterije + "//"  + voznja.getIdMusterije()+ "//" + idVozaca + "//" + voznja.getIdVozaca() + " voznja dodata korisnik " + osoba.getUloga());
+                    osoba.dodajVoznjuUListu(voznja);
+                }
+
+            }
+        }
 
     }
 }

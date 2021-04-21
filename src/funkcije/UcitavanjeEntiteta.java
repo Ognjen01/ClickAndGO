@@ -1,9 +1,8 @@
 package funkcije;
 
 import entiteti.Automobil;
-import entiteti.TipVozila;
+import enumeracije.TipVozila;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

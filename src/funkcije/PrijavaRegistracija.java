@@ -18,17 +18,19 @@ public class PrijavaRegistracija {
     // Pronalaženje traženog korisnika u fajlu:
 
     public Osoba prijavaNaSistem(String korisnikckoIme, String lozinka, List<Osoba> listaKorisnika){
-        Osoba prjavljeniKorisnik = null;
+        Osoba prijavljeniKorisnik = null;
         for (Osoba korisnik: listaKorisnika) {
             System.out.println("Trazeni: " + korisnikckoIme + " " + lozinka + " ; Nađeni: " + korisnik.getIme() + " " + korisnik.getLozinka());
             if (korisnikckoIme.equals(korisnik.getKorisnickoIme()) && lozinka.equals(korisnik.getLozinka())){
-                prjavljeniKorisnik = korisnik;
+                prijavljeniKorisnik = korisnik;
                 break;
             }
-
-
         }
-        return prjavljeniKorisnik;
+        if (prijavljeniKorisnik == null){
+            System.out.println("Nije pronađen korisnik molimo pokušajte ponovo ");
+            // TODO: Ovdje pokrenuti prozor kada korisnik nije pronađen
+        }
+        return prijavljeniKorisnik;
     }
 
 
