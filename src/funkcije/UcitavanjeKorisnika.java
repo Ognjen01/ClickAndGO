@@ -37,6 +37,20 @@ public class UcitavanjeKorisnika {
 
     public Osoba odluciKojegKorisnikaInstancirati(String[] niz) {
 
+        boolean aktivan;
+        switch (niz[10]){
+            case "true":
+                aktivan = true;
+                break;
+
+            case "false":
+                aktivan = false;
+                break;
+
+            default:
+                aktivan = false;
+        }
+
         int idKorisnika = Integer.parseInt(niz[0]);
         String p = niz[7];
         char pol = p.charAt(0);
@@ -57,6 +71,7 @@ public class UcitavanjeKorisnika {
                     pol,
                     niz[8],
                     niz[9],
+                    aktivan,
                     listaVoznjiMusterije
 
             );
@@ -64,9 +79,9 @@ public class UcitavanjeKorisnika {
         }
         else if (niz[9].equals("vozac")) {
 
-            int plata = Integer.parseInt(niz[10]);
-            int brojClanskeKarte = Integer.parseInt(niz[11]);
-            double prosjecnaOcjena = Double.parseDouble(niz[12]);
+            int plata = Integer.parseInt(niz[11]);
+            int brojClanskeKarte = Integer.parseInt(niz[12]);
+            double prosjecnaOcjena = Double.parseDouble(niz[13]);
             Automobil automobilVozaca = new Automobil();
             List<Voznja> listaVoznjiVozaca = new ArrayList<Voznja>();
 
@@ -81,6 +96,7 @@ public class UcitavanjeKorisnika {
                     pol,
                     niz[8],
                     niz[9],
+                    aktivan,
                     plata,
                     brojClanskeKarte,
                     automobilVozaca,
@@ -92,7 +108,7 @@ public class UcitavanjeKorisnika {
 
         else if (niz[9].equals("dispecer")){
 
-            int plata = Integer.parseInt(niz[10]);
+            int plata = Integer.parseInt(niz[11]);
             int brTelefonskeLinije = 1; // Greška sa preuzimanjem vrijdenosti iz niza za broj telefona
             // Potencijalno rješenje da se broj telefona čuva kao string
 
@@ -107,9 +123,10 @@ public class UcitavanjeKorisnika {
                     pol,
                     niz[7],
                     niz[9],
+                    aktivan,
                     plata,
                     brTelefona,
-                    niz[11]
+                    niz[12]
             );
             return  noviDispecer;
         }

@@ -20,8 +20,9 @@ public class Musterija extends Osoba {
 					 char pol,
 					 String brojTelefona,
 					 String uloga,
+					 boolean aktivan,
 					 List<Voznja> voznjeMusterije) {
-		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga, aktivan);
 		this.voznjeMusterije = voznjeMusterije;
 	}
 
