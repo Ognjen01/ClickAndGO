@@ -4,6 +4,7 @@ import entiteti.Automobil;
 import entiteti.Voznja;
 import funkcije.*;
 import korisnici.*;
+import ui.PodaciTaksiSluzbe;
 import ui.Prijava;
 
 import java.util.ArrayList;
@@ -14,6 +15,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe();
+        podaciTaksiSluzbe.setVisible(true);
+/*
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
         CitanjeFajla citajFajl = new CitanjeFajla();
@@ -59,7 +63,7 @@ public class Main {
 
         Prijava prijava = new Prijava(listaOsoba);
         prijava.setVisible(true);
-
+*/
 
 
     }
