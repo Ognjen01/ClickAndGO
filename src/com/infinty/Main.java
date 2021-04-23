@@ -4,6 +4,7 @@ import entiteti.Automobil;
 import entiteti.Voznja;
 import funkcije.*;
 import korisnici.*;
+import ui.Automobili;
 import ui.PodaciTaksiSluzbe;
 import ui.Prijava;
 
@@ -14,6 +15,9 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
+        Automobili automobili = new Automobili();
+        automobili.setVisible(true);
 
         PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe();
         podaciTaksiSluzbe.setVisible(true);

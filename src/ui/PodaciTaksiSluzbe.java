@@ -26,7 +26,8 @@ public class PodaciTaksiSluzbe extends JFrame {
     private int counter;
 
     public void CitanjePodatakaOTaksiSluzbi() {
-        try {
+        try
+        {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/fajlovi/podaciOTaksiSluzbi.txt"))));
             String line = null;
 
@@ -79,7 +80,7 @@ public class PodaciTaksiSluzbe extends JFrame {
                     txtCenaStarta.setEditable(false);
                     txtCenaPoKilometru.setEditable(false);
                     int input = JOptionPane.showConfirmDialog(null,
-                            "Do you want to proceed?", "Select an Option...", JOptionPane.YES_NO_CANCEL_OPTION);
+                            "Zelite li da nastavite?", "Izaberite opciju...", JOptionPane.YES_NO_CANCEL_OPTION);
 
                     if (input == 0) {
                         try {

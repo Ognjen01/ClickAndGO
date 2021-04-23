@@ -1,8 +1,8 @@
 package ui;
 
 import javax.swing.*;
-import javax.swing.table.JTableHeader;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Automobili extends JFrame {
     private JPanel AutomobiliFrame;
@@ -32,11 +32,25 @@ public class Automobili extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        /*
-        Object[] zaglavlje = {"Model","Proizvodjac","Godina proizvodnje","Registracija","Broj vozila","Vrsta vozila"};
+/*
+        Object[] zaglavlje = {"ID","Model","Proizvodjac","Godina proizvodnje","Registracija","Broj vozila","Vrsta vozila","Vozač"};
         Object[][] prikaz = new Object[3][zaglavlje.length];
-        AutomobiliTable = new JTable(prikaz,zaglavlje);
-        AutomobiliScrollPane = new JScrollPane(AutomobiliTable);
-         */
+        JTable model = new JTable(prikaz,zaglavlje);
+        AutomobiliScrollPane = new JScrollPane(model);
+
+        add(AutomobiliTable);
+        add(AutomobiliScrollPane);
+*/
+
+        btnDodaj.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DodavanjeIzmenaAutomobila dodavanjeIzmenaAutomobila = new DodavanjeIzmenaAutomobila();
+                dodavanjeIzmenaAutomobila.setVisible(true);
+            }
+        });
+
+
+
     }
 }

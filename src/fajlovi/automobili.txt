@@ -4,3 +4,4 @@
 600003|4|Volkswagen|Passat|2020-08-02|NS-123-OL|auto|0
 600004|5|Mercedes|Transporter|2020-07-29|BG-434-KK|kombi|0
 600005|6|Volkswagen|T6|2020-07-24|NS-212-NI|kombi|0
+52613|Model312|peyo|DATUM REGISTRACIJE|si-001-ns|kombi|300003

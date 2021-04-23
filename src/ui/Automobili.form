@@ -37,31 +37,6 @@
           </component>
         </children>
       </scrollpane>
-      <component id="6ba2b" class="javax.swing.JButton" binding="btnIzmeni">
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Izmeni"/>
-        </properties>
-      </component>
-      <component id="a8cfc" class="javax.swing.JButton" binding="btnIzbrisi">
-        <constraints>
-          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Izbriši"/>
-        </properties>
-      </component>
-      <component id="412b9" class="javax.swing.JButton" binding="btnDodaj">
-        <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <horizontalTextPosition value="0"/>
-          <text value="Dodaj"/>
-        </properties>
-      </component>
       <component id="235c4" class="javax.swing.JTextField" binding="txtProizvodjac">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -92,7 +67,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="cd1f" class="javax.swing.JButton" binding="btnPretrazi">
         <constraints>
@@ -149,6 +126,31 @@
         </constraints>
         <properties>
           <text value="Broj vozila"/>
+        </properties>
+      </component>
+      <component id="412b9" class="javax.swing.JButton" binding="btnDodaj">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalTextPosition value="0"/>
+          <text value="Dodaj"/>
+        </properties>
+      </component>
+      <component id="a8cfc" class="javax.swing.JButton" binding="btnIzbrisi">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Izbriši"/>
+        </properties>
+      </component>
+      <component id="6ba2b" class="javax.swing.JButton" binding="btnIzmeni">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Izmeni"/>
         </properties>
       </component>
     </children>
