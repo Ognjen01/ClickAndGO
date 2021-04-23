@@ -26,13 +26,14 @@ public class Vozac extends Osoba {
 				 char pol,
 				 String brojTelefona,
 				 String uloga,
+				 boolean aktivan,
 				 int plata,
 				 int brClanskeKarte,
 				 Automobil automobil,
 				 List<Voznja> voznjeVozaca, // Lista nije navedena u fajlu ona se navodi na osnovu id vozaca u listi voznji
 				 double prosjecnaOcjena
 	) {
-		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+		super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga, aktivan);
 		this.plata = plata;
 		this.brClanskeKarte = brClanskeKarte;
 		this.automobil = automobil;

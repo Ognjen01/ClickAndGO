@@ -17,11 +17,12 @@ public class Dispecer extends Osoba{
              char pol,
              String brojTelefona,
              String uloga,
+             boolean aktivan,
              int plata,
              int brTelefonskeLinije,
              String odjeljenje
              ) {
-            super(idKorisnika ,ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga);
+            super(idKorisnika ,ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga, aktivan);
             this.plata = plata;
             this.brTelefonskeLinije = brTelefonskeLinije;
             this.odjeljenje = odjeljenje;

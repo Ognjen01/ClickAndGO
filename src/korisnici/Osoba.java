@@ -17,6 +17,7 @@ public abstract class Osoba {
      private char pol;
      private String brojTelefona;
      private String uloga;
+     private boolean aktivan;
      private List<Voznja> lisaVoznji;
 
      // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
@@ -32,7 +33,8 @@ public abstract class Osoba {
           String adresa,
           char pol,
           String brojTelefona,
-          String uloga){
+          String uloga,
+          boolean aktivan){
 
         this.idKorisnika = idKorisnika;
         this.ime = ime;
@@ -44,6 +46,7 @@ public abstract class Osoba {
         this.pol = pol;
         this.brojTelefona = brojTelefona;
         this.uloga = uloga;
+        this.aktivan = aktivan;
         this.lisaVoznji = new ArrayList<>();
 
     }
@@ -59,9 +62,19 @@ public abstract class Osoba {
            this.pol = 'm';
            this.brojTelefona = "";
            this.uloga = "";
+           this.aktivan = true;
       }
 
       // TODO: Preispitati potrebu Liste voznji unutar osobe jer Dispecer nema polje liste voznji
+
+
+    public void setAktivan(boolean aktivan) {
+        this.aktivan = aktivan;
+    }
+
+    public boolean isAktivan() {
+        return aktivan;
+    }
 
     public List<Voznja> getLisaVoznji() {
         return lisaVoznji;
@@ -150,4 +163,6 @@ public abstract class Osoba {
     public void setUloga(String uloga) {
         this.uloga = uloga;
     }
+
+
 }
