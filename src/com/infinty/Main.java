@@ -15,13 +15,13 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
+/*
         Automobili automobili = new Automobili();
         automobili.setVisible(true);
 
         PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe();
         podaciTaksiSluzbe.setVisible(true);
-/*
+*/
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
         CitanjeFajla citajFajl = new CitanjeFajla();
@@ -49,7 +49,7 @@ public class Main {
 
         for (Osoba osopa: listaOsoba
              ) {
-            System.out.println("Ovo je ime osobe: " + osopa.getIme() + ", a ovo JMBG osobe: " + osopa.getLisaVoznji());
+            System.out.println("Ovo je ime osobe: " + osopa.getIme() + ", a ovo JMBG osobe: " + osopa.getLisaVoznji() + osopa.isAktivan());
 
         }
 
@@ -67,22 +67,7 @@ public class Main {
 
         Prijava prijava = new Prijava(listaOsoba);
         prijava.setVisible(true);
-*/
 
 
     }
-
-
-
-
 }
-
-
-// Algoritam za dodjelu voznji korisnicima
-// Algoritam je smješten u drugu klasu zbog povratnog void tipa
-// Ovu funkciju premjestiti u neku drugu klasu
-
-
-
-
-

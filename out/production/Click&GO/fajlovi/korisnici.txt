@@ -1,3 +1,8 @@
+100000|Slobodan|Jović|slobo|slobo123|1305001124092|Jug Bogdana 12|m|64992334|korisnik|true
+100001|Milan|Milaković|milan|milan123|1205002098865|Ćirpanova 12|m|65777654|korisnik|true
+100002|Sladjana|Petrić|saldja|sladja123|0406000987345|Karađorđeva 19|z|32456123|korisnik|true
+100003|Marko|Živković|marko|marko123|3112999098456|Braće Ribnikar 13|m|64555987|korisnik|true
+100004|Stefan|Milinković|stefan|stefan123|3001000123124|Narodnog fronta 5A|m|64564893|korisnik|true
 200000|Sofija|Tadić|sofija|sofija123|1207995098789|Vojvode Mišića 20|z|063456098|dispecer|true|50000|1|narudzbe
 200001|Milena|Mitrović|milena|milena123|1104997097368|Njegoševa 4|64234765|z|dispecer|true|50000|2|narudzbe
 200002|Petar|Mirković|petar|petar123|2510994098245|Bulevar Jovana Dučića 14|m|64397492|dispecer|true|40000|reklamacije

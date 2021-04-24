@@ -22,6 +22,8 @@ public class Prijava extends JFrame {
         add(prijava);
         setSize(800, 400);
         setTitle("Click&GO");
+        setLocationRelativeTo(null);
+
 
         prijaviSeButton.addActionListener(new ActionListener() {
             @Override
@@ -33,14 +35,34 @@ public class Prijava extends JFrame {
                 Osoba prijavljeniKorsinik = prijavaNaSistem.prijavaNaSistem(korisnickoIme, lozinka, lisstaOsoba);
 
 
+
+
                 if (prijavljeniKorsinik != null) {
                     System.out.println("prijavlajni ste kao musterija " + prijavljeniKorsinik.getIme());
                     prijava.setVisible(false);
-                    KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik);
-                    add(k);
+                    if (prijavljeniKorsinik.getUloga().equals("korisnik")) {
+                        KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik);
+                        add(k);
+                    }
+                    else if (prijavljeniKorsinik.getUloga().equals("dispecer")){
+                        EkranDispecer enkranDis = new EkranDispecer();
+                        add(enkranDis);
+                    }
+                    else if(prijavljeniKorsinik.getUloga().equals("vozac")){
+                        EkranVozac ekranVozac = new EkranVozac();
+                    }
+                }
+                else {
+                    PorukaKorisniku porukaKorisniku = new PorukaKorisniku("Ne postoji traženi korinsik");
+                    porukaKorisniku.setVisible(true);
                 }
 
             }
+
         });
     }
+
+
+
+
 }

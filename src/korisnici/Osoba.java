@@ -7,18 +7,18 @@ import java.util.List;
 
 public abstract class Osoba {
 
-     private int idKorisnika;
-     private String ime;
-     private String prezime;
-     private String korisnickoIme;
-     private String lozinka;
-     private String jmbg; // Mora biti string jer pojedini jmbg počinju sa 0
-     private String adresa;
-     private char pol;
-     private String brojTelefona;
-     private String uloga;
-     private boolean aktivan;
-     private List<Voznja> lisaVoznji;
+     protected int idKorisnika;
+     protected String ime;
+     protected String prezime;
+     protected String korisnickoIme;
+     protected String lozinka;
+     protected String jmbg; // Mora biti string jer pojedini jmbg počinju sa 0
+     protected String adresa;
+     protected char pol;
+     protected String brojTelefona;
+     protected String uloga;
+     protected boolean aktivan;
+     protected List<Voznja> lisaVoznji;
 
      // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
 
