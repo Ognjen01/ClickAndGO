@@ -1,4 +1,4 @@
-package funkcije;
+package pomocneFunkcije;
 
 import entiteti.Automobil;
 import entiteti.Voznja;
@@ -18,6 +18,7 @@ public class UpisivanjeUFajl {
           7. Vjerovatno će biti neophodan sistem odluke koji će odlučivati da li se upisuje musterija, vozač ili korisnik
           8. Neophodna je funkcija za svaki entitet jer su formati unutar fajlova različiti
           9. Po potrebi kreirati dodatne klase koje će pomoći upsiivanje u fajl
+          10. Razloziti objekat TAXI SLUZBA za upisivanje u fajl, ova klasa će se prosledjivati kroz ozvrsavanje programa
      */
 
     public void upisiMusteriju(Musterija musterija) {}

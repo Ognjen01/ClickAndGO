@@ -1,4 +1,4 @@
-package funkcije;
+package pomocneFunkcije;
 
 public class Izvjestaj {
 

@@ -1,4 +1,4 @@
-package funkcije;
+package pomocneFunkcije;
 
 import entiteti.Automobil;
 import entiteti.Voznja;

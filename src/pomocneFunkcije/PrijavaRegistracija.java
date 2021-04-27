@@ -1,10 +1,7 @@
-package funkcije;
+package pomocneFunkcije;
 
 import korisnici.Osoba;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.util.List;
 
 public class PrijavaRegistracija {

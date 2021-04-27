@@ -1,6 +1,6 @@
 package ui;
 
-import funkcije.PrijavaRegistracija;
+import pomocneFunkcije.PrijavaRegistracija;
 import korisnici.Osoba;
 
 import javax.swing.*;

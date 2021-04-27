@@ -1,9 +1,5 @@
-package funkcije;
+package pomocneFunkcije;
 
-import entiteti.Automobil;
-import entiteti.Voznja;
-import korisnici.Dispecer;
-import korisnici.Musterija;
 import korisnici.Vozac;
 
 public class KreiranjeEntiteta {

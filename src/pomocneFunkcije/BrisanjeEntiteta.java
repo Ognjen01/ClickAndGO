@@ -1,4 +1,4 @@
-package funkcije;
+package pomocneFunkcije;
 
 import korisnici.Osoba;
 

@@ -2,10 +2,8 @@ package com.infinty;
 
 import entiteti.Automobil;
 import entiteti.Voznja;
-import funkcije.*;
+import pomocneFunkcije.*;
 import korisnici.*;
-import ui.Automobili;
-import ui.PodaciTaksiSluzbe;
 import ui.Prijava;
 
 import java.util.ArrayList;
@@ -15,13 +13,14 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-/*
+        /*
         Automobili automobili = new Automobili();
         automobili.setVisible(true);
 
         PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe();
         podaciTaksiSluzbe.setVisible(true);
-*/
+        */
+
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
         CitanjeFajla citajFajl = new CitanjeFajla();
@@ -69,5 +68,8 @@ public class Main {
         prijava.setVisible(true);
 
 
+
     }
+
+
 }

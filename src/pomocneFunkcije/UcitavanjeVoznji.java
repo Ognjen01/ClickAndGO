@@ -1,10 +1,9 @@
-package funkcije;
+package pomocneFunkcije;
 
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import korisnici.Musterija;
-import korisnici.Osoba;
 import korisnici.Vozac;
 
 import java.util.ArrayList;
