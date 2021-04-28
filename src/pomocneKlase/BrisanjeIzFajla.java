@@ -1,4 +1,4 @@
-package pomocneFunkcije;
+package pomocneKlase;
 
 public class BrisanjeIzFajla {
 

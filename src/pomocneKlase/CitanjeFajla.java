@@ -1,4 +1,4 @@
-package pomocneFunkcije;
+package pomocneKlase;
 
 import java.io.*;
 import java.util.ArrayList;

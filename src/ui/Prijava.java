@@ -1,12 +1,12 @@
 package ui;
 
-import pomocneFunkcije.PrijavaRegistracija;
+import entiteti.TaxiSluzba;
+import pomocneKlase.PrijavaRegistracija;
 import korisnici.Osoba;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 public class Prijava extends JFrame {
 
@@ -17,7 +17,7 @@ public class Prijava extends JFrame {
     private JTextField passwordField1;
     private JButton prijaviSeButton;
 
-    public Prijava(List<Osoba> lisstaOsoba) {
+    public Prijava(TaxiSluzba taxiSluzba) {
 
         add(prijava);
         setSize(800, 400);
@@ -32,7 +32,7 @@ public class Prijava extends JFrame {
                 String korisnickoIme = textField1.getText();
                 String lozinka = passwordField1.getText();
                 PrijavaRegistracija prijavaNaSistem = new PrijavaRegistracija();
-                Osoba prijavljeniKorsinik = prijavaNaSistem.prijavaNaSistem(korisnickoIme, lozinka, lisstaOsoba);
+                Osoba prijavljeniKorsinik = prijavaNaSistem.prijavaNaSistem(korisnickoIme, lozinka, taxiSluzba.getListaOsoba());
 
 
                 if (prijavljeniKorsinik != null) {

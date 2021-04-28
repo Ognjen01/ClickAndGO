@@ -1,4 +1,4 @@
-package pomocneFunkcije;
+package pomocneKlase;
 
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;

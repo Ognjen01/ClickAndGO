@@ -11,12 +11,22 @@ public class TaxiSluzba {
     private String adresa = "Bulevar Despota Stefana 5A";
     private int cijenaStarta = 180;
     private int cijenaPoKilometru = 60;
-    private List<Osoba> listaOsoba = null;
-    private List<Automobil> listaAutomovila = null;
-    private List<Voznja> listaVoznji = null;
+    private List<Osoba> listaOsoba ;
+    private List<Automobil> listaAutomobila;
+    private List<Voznja> listaVoznji;
 
     // TODO: Ognjen će dodati algoritam za prosledjivanje listi u objekat
     //      kako bi se objekat mogao prosledjivati kroz izbrsavanje programa
+
+    public TaxiSluzba(
+            List<Osoba> listaOsoba,
+            List<Automobil> listaAutomobila,
+            List<Voznja> listaVoznji
+    ){
+        this.listaAutomobila = listaAutomobila;
+        this.listaOsoba = listaOsoba;
+        this.listaVoznji = listaVoznji;
+    }
 
 
     // Geteri i seteri za entitet TaxiSluzba
@@ -62,7 +72,7 @@ public class TaxiSluzba {
     }
 
     public List<Automobil> getListaAutomovila() {
-        return listaAutomovila;
+        return listaAutomobila;
     }
 
     public List<Osoba> getListaOsoba() {
@@ -74,7 +84,7 @@ public class TaxiSluzba {
     }
 
     public void setListaAutomovila(List<Automobil> listaAutomovila) {
-        this.listaAutomovila = listaAutomovila;
+        this.listaAutomobila = listaAutomovila;
     }
 
     public void setListaOsoba(List<Osoba> listaOsoba) {

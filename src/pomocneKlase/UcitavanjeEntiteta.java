@@ -1,4 +1,4 @@
-package pomocneFunkcije;
+package pomocneKlase;
 
 import entiteti.Automobil;
 import enumeracije.TipVozila;

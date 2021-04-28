@@ -1,8 +1,9 @@
 package com.infinty;
 
 import entiteti.Automobil;
+import entiteti.TaxiSluzba;
 import entiteti.Voznja;
-import pomocneFunkcije.*;
+import pomocneKlase.*;
 import korisnici.*;
 import ui.Automobili;
 import ui.PodaciTaksiSluzbe;
@@ -24,7 +25,7 @@ public class Main {
 
 
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
-/*
+
         CitanjeFajla citajFajl = new CitanjeFajla();
         List<String[]> lista = citajFajl.procitajFajl("korisnici.txt");
         List<String[]> listaVoznji = citajFajl.procitajFajl("voznje.txt");
@@ -46,6 +47,8 @@ public class Main {
 
         vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj);
 
+        TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);
+
 
 
         for (Osoba osopa: listaOsoba
@@ -66,10 +69,10 @@ public class Main {
         }
 
 
-        Prijava prijava = new Prijava(listaOsoba);
+        Prijava prijava = new Prijava(taxiSluzba);
         prijava.setVisible(true);
 
-*/
+
 
     }
 
