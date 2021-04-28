@@ -43,6 +43,31 @@ public class Automobil {
 
     //geteri i seteri
 
+
+    public int getIdVozaca() {
+        return idVozaca;
+    }
+
+    public void setIdVozaca(int idVozaca) {
+        this.idVozaca = idVozaca;
+    }
+
+    public TipVozila getTipVozila() {
+        return tipVozila;
+    }
+
+    public void setTipVozila(TipVozila tipVozila) {
+        this.tipVozila = tipVozila;
+    }
+
+    public void setAutomobilID(int automobilID) {
+        this.automobilID = automobilID;
+    }
+
+    public void setDatumRegistracije(java.util.Date datumRegistracije) {
+        this.datumRegistracije = datumRegistracije;
+    }
+
     public int getAutomobilID() {
         return automobilID;
     }

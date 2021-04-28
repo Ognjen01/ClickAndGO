@@ -1,16 +1,17 @@
 package entiteti;
 
 import korisnici.Osoba;
+import pomocneKlase.CitanjeFajla;
 
 import java.util.List;
 
 public class TaxiSluzba {
 
-    private String naziv = "Click&GO";
+    private String naziv;
     private int pib;
-    private String adresa = "Bulevar Despota Stefana 5A";
-    private int cijenaStarta = 180;
-    private int cijenaPoKilometru = 60;
+    private String adresa;
+    private int cijenaStarta;
+    private int cijenaPoKilometru;
     private List<Osoba> listaOsoba ;
     private List<Automobil> listaAutomobila;
     private List<Voznja> listaVoznji;
@@ -26,6 +27,26 @@ public class TaxiSluzba {
         this.listaAutomobila = listaAutomobila;
         this.listaOsoba = listaOsoba;
         this.listaVoznji = listaVoznji;
+
+        // Dio za učitavanje informacija o taksi službi iz fajla
+
+        CitanjeFajla citanjeFajla = new CitanjeFajla();
+        List<String[]> poljaTaxiSluzbe = citanjeFajla.procitajFajl("podaciOTaksiSluzbi.txt");
+        String[] taxiSluzba = poljaTaxiSluzbe.get(0);
+
+        int pib = Integer.parseInt(taxiSluzba[0]);
+        String naziv = taxiSluzba[1];
+        String adresa = taxiSluzba[2];
+        int cijenaStarta = Integer.parseInt(taxiSluzba[3]);
+        int cijenaPoKilometru = Integer.parseInt(taxiSluzba[4]);
+
+        this.naziv = naziv;
+        this.pib = pib;
+        this.adresa = adresa;
+        this.cijenaPoKilometru = cijenaPoKilometru;
+        this.cijenaStarta = cijenaStarta;
+
+
     }
 
 

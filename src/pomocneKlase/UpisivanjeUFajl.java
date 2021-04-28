@@ -36,5 +36,4 @@ public class UpisivanjeUFajl {
     public void upisiVoznju(Voznja voznja) {
     }
 
-
 }

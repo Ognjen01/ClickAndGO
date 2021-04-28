@@ -17,13 +17,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Automobili automobili = new Automobili();
-        automobili.setVisible(true);
-
-        PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe();
-        podaciTaksiSluzbe.setVisible(true);
-
-
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
         CitanjeFajla citajFajl = new CitanjeFajla();
@@ -45,10 +38,9 @@ public class Main {
         listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
         automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);
 
-        vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj);
+        vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj, automobilList);
 
         TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);
-
 
 
         for (Osoba osopa: listaOsoba
@@ -72,9 +64,6 @@ public class Main {
         Prijava prijava = new Prijava(taxiSluzba);
         prijava.setVisible(true);
 
-
-
     }
-
 
 }

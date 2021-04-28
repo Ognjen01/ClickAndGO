@@ -8,7 +8,6 @@ public class DodavanjeKorisnika {
 
     public Osoba dodajKorisnika(List<Osoba> listaOsoba, Osoba osoba) {
         listaOsoba.add(osoba);
-
         return (Osoba) listaOsoba;
     }
 

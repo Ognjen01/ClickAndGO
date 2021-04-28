@@ -134,9 +134,9 @@ public class UcitavanjeKorisnika {
 
     // Ovu funckiju premjestiti u klasu opstih funkcija
 
-    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVznji) {
+    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVoznji, List<Automobil> listaAutomobila) {
 
-        for (Voznja voznja : listaVznji
+        for (Voznja voznja : listaVoznji
         ) {
             int idMusterije = voznja.getIdMusterije();
             int idVozaca = voznja.getIdVozaca();
@@ -147,6 +147,23 @@ public class UcitavanjeKorisnika {
                     // sisitem za dodavanje u listu
                     System.out.println(idMusterije + "//" + voznja.getIdMusterije() + "//" + idVozaca + "//" + voznja.getIdVozaca() + " voznja dodata korisnik " + osoba.getUloga());
                     osoba.dodajVoznjuUListu(voznja);
+                }
+
+            }
+        }
+
+        // Dodati dio za dodavanje automobila vozacu!!!
+        // TODO: Provjeriti algoritam za dodavanje automobila vozacu!!!
+
+        for (Automobil automobil: listaAutomobila
+             ) {
+            int idVozaca = automobil.getIdVozaca();
+            for (Osoba vozac: listaOsoba
+                 ) {
+                if (vozac instanceof Vozac){
+                    if (idVozaca == vozac.getIdKorisnika()){
+                        ((Vozac) vozac).setAutomobil(automobil);
+                    }
                 }
 
             }
