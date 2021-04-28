@@ -2,8 +2,6 @@ package korisnici;
 
 import entiteti.Automobil;
 import entiteti.Voznja;
-import entiteti.VoznjaNarucenaAplikacijom;
-import entiteti.VoznjaNarucenaTelefonom;
 
 import java.util.List;
 
@@ -89,5 +87,22 @@ public class Vozac extends Osoba {
 
     public List<Voznja> getVoznjeVozaca() {
         return voznjeVozaca;
+    }
+
+    public String toString() {
+        return idKorisnika + "|" +
+                ime + "|" +
+                prezime + "|" +
+                korisnickoIme + "|" +
+                lozinka + "|" +
+                jmbg + "|" +
+                adresa + "|" +
+                pol + "|" +
+                brojTelefona + "|" +
+                uloga + "|" +
+                aktivan + "|" +
+                plata + "|" +
+                brClanskeKarte + "|" +
+                prosjecnaOcjena + "\n";
     }
 }

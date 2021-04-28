@@ -3,10 +3,8 @@ package com.infinty;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
+import korisnici.Osoba;
 import pomocneKlase.*;
-import korisnici.*;
-import ui.Automobili;
-import ui.PodaciTaksiSluzbe;
 import ui.Prijava;
 
 import java.util.ArrayList;
@@ -61,6 +59,9 @@ public class Main {
         }
 
 
+        System.out.println("\n\n\n\n\n\n\n ================================\n\nPocetak upisa!\n\n================================");
+        UpisivanjeUFajl upis = new UpisivanjeUFajl();
+        upis.upisiTaxiSluzbu(taxiSluzba);
         Prijava prijava = new Prijava(taxiSluzba);
         prijava.setVisible(true);
 
