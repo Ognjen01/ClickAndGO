@@ -23,12 +23,11 @@ public class Automobili extends JFrame {
     private JLabel lblRegistracija;
     private JLabel lblBrojVozila;
 
-    public Automobili()
-    {
+    public Automobili() {
         add(AutomobiliFrame);
         setTitle("Click&Go - prikaz automobila");
         setResizable(false);
-        setSize(600,400);
+        setSize(600, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -49,7 +48,6 @@ public class Automobili extends JFrame {
                 dodavanjeIzmenaAutomobila.setVisible(true);
             }
         });
-
 
 
     }

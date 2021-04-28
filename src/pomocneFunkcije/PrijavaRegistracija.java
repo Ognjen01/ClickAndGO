@@ -14,16 +14,16 @@ public class PrijavaRegistracija {
 
     // Pronalaženje traženog korisnika u fajlu:
 
-    public Osoba prijavaNaSistem(String korisnikckoIme, String lozinka, List<Osoba> listaKorisnika){
+    public Osoba prijavaNaSistem(String korisnikckoIme, String lozinka, List<Osoba> listaKorisnika) {
         Osoba prijavljeniKorisnik = null;
-        for (Osoba korisnik: listaKorisnika) {
+        for (Osoba korisnik : listaKorisnika) {
             System.out.println("Trazeni: " + korisnikckoIme + " " + lozinka + " ; Nađeni: " + korisnik.getIme() + " " + korisnik.getLozinka());
-            if (korisnikckoIme.equals(korisnik.getKorisnickoIme()) && lozinka.equals(korisnik.getLozinka())){
+            if (korisnikckoIme.equals(korisnik.getKorisnickoIme()) && lozinka.equals(korisnik.getLozinka())) {
                 prijavljeniKorisnik = korisnik;
                 break;
             }
         }
-        if (prijavljeniKorisnik == null){
+        if (prijavljeniKorisnik == null) {
             System.out.println("Nije pronađen korisnik molimo pokušajte ponovo ");
             // TODO: Ovdje pokrenuti prozor kada korisnik nije pronađen
         }
@@ -32,7 +32,7 @@ public class PrijavaRegistracija {
 
 
     // TODO: Implementovati funkciju regostracija!!!
-    public void registracija(){
+    public void registracija() {
 
     }
 }

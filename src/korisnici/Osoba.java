@@ -7,21 +7,20 @@ import java.util.List;
 
 public abstract class Osoba {
 
-     protected int idKorisnika;
-     protected String ime;
-     protected String prezime;
-     protected String korisnickoIme;
-     protected String lozinka;
-     protected String jmbg; // Mora biti string jer pojedini jmbg počinju sa 0
-     protected String adresa;
-     protected char pol;
-     protected String brojTelefona;
-     protected String uloga;
-     protected boolean aktivan;
-     protected List<Voznja> lisaVoznji;
+    protected int idKorisnika;
+    protected String ime;
+    protected String prezime;
+    protected String korisnickoIme;
+    protected String lozinka;
+    protected String jmbg; // Mora biti string jer pojedini jmbg počinju sa 0
+    protected String adresa;
+    protected char pol;
+    protected String brojTelefona;
+    protected String uloga;
+    protected boolean aktivan;
+    protected List<Voznja> lisaVoznji;
 
-     // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
-
+    // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
 
 
     Osoba(int idKorisnika,
@@ -34,7 +33,7 @@ public abstract class Osoba {
           char pol,
           String brojTelefona,
           String uloga,
-          boolean aktivan){
+          boolean aktivan) {
 
         this.idKorisnika = idKorisnika;
         this.ime = ime;
@@ -52,20 +51,20 @@ public abstract class Osoba {
     }
 
     // Kreiran prazan konstruktor po preporuci asistenta
-      Osoba(){
-           this.ime = "";
-           this.prezime = "";
-           this.korisnickoIme = "";
-           this.lozinka = "";
-           this.jmbg = "";
-           this.adresa = "";
-           this.pol = 'm';
-           this.brojTelefona = "";
-           this.uloga = "";
-           this.aktivan = true;
-      }
+    Osoba() {
+        this.ime = "";
+        this.prezime = "";
+        this.korisnickoIme = "";
+        this.lozinka = "";
+        this.jmbg = "";
+        this.adresa = "";
+        this.pol = 'm';
+        this.brojTelefona = "";
+        this.uloga = "";
+        this.aktivan = true;
+    }
 
-      // TODO: Preispitati potrebu Liste voznji unutar osobe jer Dispecer nema polje liste voznji
+    // TODO: Preispitati potrebu Liste voznji unutar osobe jer Dispecer nema polje liste voznji
 
 
     public void setAktivan(boolean aktivan) {
@@ -80,13 +79,13 @@ public abstract class Osoba {
         return lisaVoznji;
     }
 
-    public void dodajVoznjuUListu(Voznja voznja){
+    public void dodajVoznjuUListu(Voznja voznja) {
         this.lisaVoznji.add(voznja);
     }
 
     public String getIme() {
         return ime;
-     }
+    }
 
     public void setIme(String ime) {
         this.ime = ime;

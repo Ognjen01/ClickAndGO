@@ -5,7 +5,7 @@ import korisnici.Vozac;
 
 import java.util.Date;
 
-public class VoznjaNarucenaTelefonom extends Voznja{
+public class VoznjaNarucenaTelefonom extends Voznja {
     // TODO: Implemetnirati naručivanje putem telefonom
 
     private final String tipNarucivanje = "telefon";
@@ -22,14 +22,17 @@ public class VoznjaNarucenaTelefonom extends Voznja{
                                    Date vremeNarudzbe,
                                    Musterija musterija,
                                    Vozac vozac
-    ){
+    ) {
         super(idVoznje, idVozaca, idMusterije, adresaPolaska,
                 adresaDestinacije, status, duzina, trajanje,
                 cenaVoznje, vremeNarudzbe, musterija, vozac);
 
     }
 
-    public VoznjaNarucenaTelefonom(){};
+    public VoznjaNarucenaTelefonom() {
+    }
+
+    ;
 
     public String getTipNarucivanje() {
         return tipNarucivanje;

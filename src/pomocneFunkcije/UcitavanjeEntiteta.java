@@ -19,11 +19,11 @@ public class UcitavanjeEntiteta {
     //      Nula prilikom ucitavanja na mjestu id vozaca znaci da auto nije dodjeljen
     //      Ovaj sistem ce vjerovatno biti u mainu izvrsen nakon svih ucitavanja jer bi u supronom funkcije ispod morale da prime lsitu vozaca kao parametar
 
-    public List<Automobil> ucitajListuAutomobila (List<String[]> nizAutomobila){
+    public List<Automobil> ucitajListuAutomobila(List<String[]> nizAutomobila) {
 
         List<Automobil> listaAutomobila = new ArrayList<Automobil>();
 
-        for (String[] automobil: nizAutomobila) {
+        for (String[] automobil : nizAutomobila) {
 
             Automobil automobil1 = transformisiAutomobil(automobil);
             listaAutomobila.add(automobil1);
@@ -33,17 +33,15 @@ public class UcitavanjeEntiteta {
 
     }
 
-    private Automobil transformisiAutomobil (String[] automobil) {
+    private Automobil transformisiAutomobil(String[] automobil) {
 
         TipVozila tipVozila = null;
 
-        if(automobil[6].equals("auto")){
+        if (automobil[6].equals("auto")) {
             tipVozila = TipVozila.AUTO;
-        }
-        else if(automobil[6].equals("kombi")){
+        } else if (automobil[6].equals("kombi")) {
             tipVozila = TipVozila.KOMBI;
-        }
-        else {
+        } else {
             System.out.println("Došlo je do greške instanciranja tipa vozila.");
         }
 

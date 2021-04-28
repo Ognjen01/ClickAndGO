@@ -11,11 +11,11 @@ import java.util.Date;
 import java.util.List;
 
 public class UcitavanjeVoznji {
-    public List<Voznja> iteracijaKrozListuStringova(List<String[]> listaEntiteta){
+    public List<Voznja> iteracijaKrozListuStringova(List<String[]> listaEntiteta) {
         List<Voznja> listaUcitanihVoznji = new ArrayList<Voznja>();
 
 
-        for (String[] nizEntitetaVoznje: listaEntiteta
+        for (String[] nizEntitetaVoznje : listaEntiteta
         ) {
             // Kreiranje Objekta voznje i dodavanje u listu
             Voznja novaVoznja = odluciKojuVoznjuUcitati(nizEntitetaVoznje);

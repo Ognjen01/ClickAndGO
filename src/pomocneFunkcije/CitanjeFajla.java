@@ -7,12 +7,12 @@ import java.util.List;
 public class CitanjeFajla {
 
     // Funkcija koja čita red i vraća niz vrijednosti izdvojenih iz reda
-    
-    public String[] procitajRed(String red){
+
+    public String[] procitajRed(String red) {
         String[] nizElemenata = null;
         try {
             nizElemenata = red.split("\\|");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Došlo je do greške u čitanju reda");
         }
         return nizElemenata;
@@ -29,10 +29,10 @@ public class CitanjeFajla {
             BufferedReader reader = new BufferedReader(new FileReader(fajl));
             String[] niz;
             String red;
-            while((red = reader.readLine()) != null) {
+            while ((red = reader.readLine()) != null) {
                 niz = procitajRed(red);
-                    podijeljeniRedovi.add(niz);
-             }
+                podijeljeniRedovi.add(niz);
+            }
 
         } catch (Exception e) {
             System.out.println("Došlo je do greke " + e);

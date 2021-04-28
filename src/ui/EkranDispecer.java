@@ -10,7 +10,7 @@ public class EkranDispecer extends JPanel {
     private JButton opcija3Button;
     private JButton opcija4Button;
 
-    public EkranDispecer(){
+    public EkranDispecer() {
         add(panelOpcija);
     }
 }

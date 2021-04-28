@@ -23,7 +23,7 @@ public class KreiranjeEntiteta {
      */
 
 
-        Vozac noviVozac = new Vozac();
+    Vozac noviVozac = new Vozac();
 
 
     /*
@@ -45,11 +45,6 @@ public class KreiranjeEntiteta {
     }
 
      */
-
-
-
-
-
 
 
 }

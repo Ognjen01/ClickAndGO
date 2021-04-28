@@ -21,15 +21,20 @@ public class UpisivanjeUFajl {
           10. Razloziti objekat TAXI SLUZBA za upisivanje u fajl, ova klasa će se prosledjivati kroz ozvrsavanje programa
      */
 
-    public void upisiMusteriju(Musterija musterija) {}
+    public void upisiMusteriju(Musterija musterija) {
+    }
 
-    public void upisiDispecera(Dispecer dispecer) {}
+    public void upisiDispecera(Dispecer dispecer) {
+    }
 
-    public void upisiVozaca(Vozac vozac) {}
+    public void upisiVozaca(Vozac vozac) {
+    }
 
-    public void upisiAutomobil(Automobil automobil) {}
+    public void upisiAutomobil(Automobil automobil) {
+    }
 
-    public void upisiVoznju(Voznja voznja) {}
+    public void upisiVoznju(Voznja voznja) {
+    }
 
 
 }

@@ -26,8 +26,7 @@ public class PodaciTaksiSluzbe extends JFrame {
     private int counter;
 
     public void CitanjePodatakaOTaksiSluzbi() {
-        try
-        {
+        try {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/fajlovi/podaciOTaksiSluzbi.txt"))));
             String line = null;
 

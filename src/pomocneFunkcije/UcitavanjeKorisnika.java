@@ -20,12 +20,12 @@ public class UcitavanjeKorisnika {
 
     //Funkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
 
-    public List<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta){
+    public List<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta) {
         List<Osoba> listaUcitanohOsoba = new ArrayList<Osoba>();
 
 
-        for (String[] nizEntitetaOsobe: listaEntiteta
-             ) {
+        for (String[] nizEntitetaOsobe : listaEntiteta
+        ) {
             Osoba ucitanaOsoba = odluciKojegKorisnikaInstancirati(nizEntitetaOsobe);
             listaUcitanohOsoba.add(ucitanaOsoba);
         }
@@ -38,7 +38,7 @@ public class UcitavanjeKorisnika {
     public Osoba odluciKojegKorisnikaInstancirati(String[] niz) {
 
         boolean aktivan;
-        switch (niz[10]){
+        switch (niz[10]) {
             case "true":
                 aktivan = true;
                 break;
@@ -56,7 +56,7 @@ public class UcitavanjeKorisnika {
         char pol = p.charAt(0);
         int brTelefona = 1; // Greška sa preuzimanjem vrijednosti iz niza
 
-        if (niz[9].equals("korisnik")){
+        if (niz[9].equals("korisnik")) {
 
             List<Voznja> listaVoznjiMusterije = new ArrayList<Voznja>();
 
@@ -76,8 +76,7 @@ public class UcitavanjeKorisnika {
 
             );
             return novaMusterija;
-        }
-        else if (niz[9].equals("vozac")) {
+        } else if (niz[9].equals("vozac")) {
 
             int plata = Integer.parseInt(niz[11]);
             int brojClanskeKarte = Integer.parseInt(niz[12]);
@@ -104,9 +103,7 @@ public class UcitavanjeKorisnika {
                     prosjecnaOcjena);
 
             return noviVozac;
-        }
-
-        else if (niz[9].equals("dispecer")){
+        } else if (niz[9].equals("dispecer")) {
 
             int plata = Integer.parseInt(niz[11]);
             int brTelefonskeLinije = 1; // Greška sa preuzimanjem vrijdenosti iz niza za broj telefona
@@ -128,9 +125,8 @@ public class UcitavanjeKorisnika {
                     brTelefona,
                     niz[12]
             );
-            return  noviDispecer;
-        }
-        else {
+            return noviDispecer;
+        } else {
             System.out.println("Došlo je do greške prilikom kreiranja entiteta korinika");
             return null;
         }
@@ -138,18 +134,18 @@ public class UcitavanjeKorisnika {
 
     // Ovu funckiju premjestiti u klasu opstih funkcija
 
-    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVznji){
+    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVznji) {
 
-        for (Voznja voznja: listaVznji
+        for (Voznja voznja : listaVznji
         ) {
             int idMusterije = voznja.getIdMusterije();
             int idVozaca = voznja.getIdVozaca();
             for (Osoba osoba : listaOsoba
             ) {
 
-                if (idMusterije == osoba.getIdKorisnika() || idVozaca == osoba.getIdKorisnika()){
+                if (idMusterije == osoba.getIdKorisnika() || idVozaca == osoba.getIdKorisnika()) {
                     // sisitem za dodavanje u listu
-                    System.out.println(idMusterije + "//"  + voznja.getIdMusterije()+ "//" + idVozaca + "//" + voznja.getIdVozaca() + " voznja dodata korisnik " + osoba.getUloga());
+                    System.out.println(idMusterije + "//" + voznja.getIdMusterije() + "//" + idVozaca + "//" + voznja.getIdVozaca() + " voznja dodata korisnik " + osoba.getUloga());
                     osoba.dodajVoznjuUListu(voznja);
                 }
 

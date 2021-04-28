@@ -24,14 +24,17 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
             Date vremeNarudzbe,
             Musterija musterija,
             Vozac vozac
-    ){
+    ) {
         super(idVoznje, idVozaca, idMusterije, adresaPolaska,
                 adresaDestinacije, status, duzina, trajanje,
-                  cenaVoznje,vremeNarudzbe, musterija, vozac); // Dovršiti konstruktor
+                cenaVoznje, vremeNarudzbe, musterija, vozac); // Dovršiti konstruktor
 
     }
 
-    public VoznjaNarucenaAplikacijom (){}; // Prazan konstruktor za instanciranje prazne voznje...
+    public VoznjaNarucenaAplikacijom() {
+    }
+
+    ; // Prazan konstruktor za instanciranje prazne voznje...
 
     public String getTipNarucivanja() {
         return tipNarucivanja;
