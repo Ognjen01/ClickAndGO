@@ -3,6 +3,7 @@ package entiteti;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class VoznjaNarucenaAplikacijom extends Voznja {
@@ -21,7 +22,7 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
             double duzina,
             double trajanje,
             int cenaVoznje,
-            Date vremeNarudzbe,
+            SimpleDateFormat vremeNarudzbe,
             Musterija musterija,
             Vozac vozac
     ) {

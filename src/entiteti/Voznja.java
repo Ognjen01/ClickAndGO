@@ -3,6 +3,7 @@ package entiteti;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class Voznja {
@@ -18,7 +19,7 @@ public abstract class Voznja {
     private int cenaPoKilometru = 60;
     private int cenaStarta = 100;
     private int cenaVoznje;
-    private Date vremeNarudzbine;
+    private SimpleDateFormat vremeNarudzbine;
     private Musterija musterija;
     private Vozac vozac;
     private int cijena;
@@ -34,7 +35,7 @@ public abstract class Voznja {
             double duzina,
             double trajanje,
             int cenaVoznje,
-            Date vremeNarudzbine,
+            SimpleDateFormat vremeNarudzbine,
             Musterija musterija,
             Vozac vozac) {
 
@@ -135,11 +136,11 @@ public abstract class Voznja {
         this.cenaStarta = cenaStarta;
     }
 
-    public Date getVremeNarudzbine() {
+    public SimpleDateFormat getVremeNarudzbine() {
         return vremeNarudzbine;
     }
 
-    public void setVremeNarudzbine(Date vremeNarudzbine) {
+    public void setVremeNarudzbine(SimpleDateFormat vremeNarudzbine) {
         this.vremeNarudzbine = vremeNarudzbine;
     }
 

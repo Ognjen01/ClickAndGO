@@ -6,6 +6,7 @@ import entiteti.VoznjaNarucenaTelefonom;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,9 +28,11 @@ public class UcitavanjeVoznji {
 
     public Voznja odluciKojuVoznjuUcitati(String[] elementiVoznje) {
 
+        //TODO: Potrebno definisati enum za status voznje prilikom ucitavanja
+
         Musterija musterija = new Musterija();
         Vozac vozac = new Vozac();
-        Date datume = new Date();
+        SimpleDateFormat datum = new SimpleDateFormat(elementiVoznje[9]);
 
         int idVoznje = Integer.parseInt(elementiVoznje[0]);
         int idVozaca = Integer.parseInt(elementiVoznje[1]);
@@ -50,7 +53,7 @@ public class UcitavanjeVoznji {
                     duzina,
                     trajanje,
                     cenaVoznje,
-                    datume, // Ovdje treba date time format
+                    datum, // Ovdje treba date time format
                     musterija,
                     vozac
             ); // Popuniti konstruktore
@@ -68,7 +71,7 @@ public class UcitavanjeVoznji {
                     duzina,
                     trajanje,
                     cenaVoznje,
-                    datume, // Ovdje treba date time format
+                    datum, // Ovdje treba date time format
                     musterija,
                     vozac
             ); // Popuniti konstruktore
