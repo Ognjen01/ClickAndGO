@@ -57,4 +57,22 @@ public class Dispecer extends Osoba {
         this.odjeljenje = odjeljenje;
     }
 
+    @Override
+    public String toString() {
+        return idKorisnika + "|" +
+                ime + "|" +
+                prezime + "|" +
+                korisnickoIme + "|" +
+                lozinka + "|" +
+                jmbg + "|" +
+                adresa + "|" +
+                pol + "|" +
+                brojTelefona + "|" +
+                uloga + "|" +
+                aktivan + "|" +
+                plata + "|" +
+                brTelefonskeLinije + "|" +
+                odjeljenje + "\n";
+    }
+
 }

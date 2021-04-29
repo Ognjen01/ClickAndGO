@@ -20,6 +20,18 @@ public class Automobil {
     public Automobil() {
     }
 
+    @Override
+    public String toString() {
+        return automobilID + "|" +
+                brojVozila + "|" +
+                proizvodjac + "|" +
+                model + "|" +
+                getDatumRegistracijeString() + "|" +
+                brojRegistracije + "|" +
+                tipVozila.toString().toLowerCase() + "|" +
+                idVozaca + "\n";
+    }
+
     public Automobil(
             int automobilID,
             int brojVozila,
@@ -112,5 +124,21 @@ public class Automobil {
         this.brojRegistracije = brojRegistracije;
     }
 
+    public String getDatumRegistracijeString(){
+        String povratnaVrednost = "";
+       povratnaVrednost += (datumRegistracije.getYear()+1900);
+       povratnaVrednost += "-";
+        if(datumRegistracije.getMonth()<10){
+            povratnaVrednost += "0";
+        }
+        povratnaVrednost += datumRegistracije.getMonth()+1;
+        povratnaVrednost += "-";
 
+        if(datumRegistracije.getDate()<10){
+            povratnaVrednost += "0";
+        }
+        povratnaVrednost += datumRegistracije.getDate();
+        return povratnaVrednost;
+
+    }
 }

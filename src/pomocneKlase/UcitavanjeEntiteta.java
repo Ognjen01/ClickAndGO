@@ -47,7 +47,7 @@ public class UcitavanjeEntiteta {
 
         Date datumRegistracije = null;
         try {
-            datumRegistracije = new SimpleDateFormat("dd-MM-yyyy").parse(automobil[4]);
+            datumRegistracije = new SimpleDateFormat("yyyy-MM-dd").parse(automobil[4]);
         } catch (ParseException e) {
             System.out.println("Došlo je do greške prilikom konverzije datuma");
         }

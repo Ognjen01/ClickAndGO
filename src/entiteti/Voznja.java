@@ -1,9 +1,9 @@
 package entiteti;
 
-import java.util.Date;
-
 import korisnici.Musterija;
 import korisnici.Vozac;
+
+import java.util.Date;
 
 public abstract class Voznja {
 
@@ -163,6 +163,20 @@ public abstract class Voznja {
         // TODO Auto-generated constructor stub
     }
 
+    @Override
+    public String toString() {
+        return idVoznje + "|" +
+                idVozaca + "|" +
+                idMusterije + "|" +
+                adresaPolaska + "|" +
+                adresaDestinacije + "|" +
+                status + "|" +
+                duzina + "|" +
+                trajanje + "|" +
+                cenaVoznje + "|" +
+                vremeNarudzbine + "|";
+
+    }
 }
 
 // TODO: NApraviti metode za računanje cijene

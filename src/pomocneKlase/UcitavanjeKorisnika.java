@@ -106,7 +106,7 @@ public class UcitavanjeKorisnika {
         } else if (niz[9].equals("dispecer")) {
 
             int plata = Integer.parseInt(niz[11]);
-            int brTelefonskeLinije = 1; // Greška sa preuzimanjem vrijdenosti iz niza za broj telefona
+            int brTelefonskeLinije = Integer.parseInt(niz[12]); // Greška sa preuzimanjem vrijdenosti iz niza za broj telefona
             // Potencijalno rješenje da se broj telefona čuva kao string
 
             Dispecer noviDispecer = new Dispecer(
@@ -118,12 +118,12 @@ public class UcitavanjeKorisnika {
                     niz[5],
                     niz[6],
                     pol,
-                    niz[7],
+                    niz[8],
                     niz[9],
                     aktivan,
                     plata,
-                    brTelefona,
-                    niz[12]
+                    brTelefonskeLinije,
+                    niz[13]
             );
             return noviDispecer;
         } else {

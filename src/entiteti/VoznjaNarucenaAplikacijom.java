@@ -39,4 +39,9 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
     public String getTipNarucivanja() {
         return tipNarucivanja;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + tipNarucivanja + "\n";
+    }
 }

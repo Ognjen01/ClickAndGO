@@ -1,14 +1,12 @@
 package korisnici;
 
 import entiteti.Voznja;
-import entiteti.VoznjaNarucenaAplikacijom;
-import entiteti.VoznjaNarucenaTelefonom;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Musterija extends Osoba {
     private List<Voznja> voznjeMusterije;
+
 
     public Musterija(int idKorisnika,
                      String ime,
@@ -38,6 +36,21 @@ public class Musterija extends Osoba {
 
     public void naruciVoznjuAplikacijom() {
 
+    }
+
+    @Override
+    public String toString() {
+        return idKorisnika + "|" +
+                ime + "|" +
+                prezime + "|" +
+                korisnickoIme + "|" +
+                lozinka + "|" +
+                jmbg + "|" +
+                adresa + "|" +
+                pol + "|" +
+                brojTelefona + "|" +
+                uloga + "|" +
+                aktivan + "\n";
     }
 
     // Da li ima potrebe za Overide funkcijama iz klase Osoba??
