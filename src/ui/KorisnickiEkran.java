@@ -9,9 +9,9 @@ import javax.xml.stream.Location;
 public class KorisnickiEkran extends JPanel {
 
     private JPanel panel1;
-    private JButton naručiVožnjuTelefonomButton;
-    private JButton istorijaVožnjiButton;
-    private JButton naručiVožnjuAplikacijomButton;
+    private JButton naruciVoznjuTelefonomButton;
+    private JButton istorijaVoznjiButton;
+    private JButton naruciVoznjuAplikacijomButton;
     private JLabel ime;
     private JPanel panelSlike;
 
