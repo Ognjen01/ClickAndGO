@@ -62,8 +62,8 @@ public class Main {
         System.out.println("\n\n\n\n\n\n\n ================================\n\nPocetak upisa!\n\n================================");
         UpisivanjeUFajl upis = new UpisivanjeUFajl();
         upis.upisiTaxiSluzbu(taxiSluzba);
-        Prijava prijava = new Prijava(taxiSluzba);
-        prijava.setVisible(true);
+        //Prijava prijava = new Prijava(taxiSluzba);
+        //prijava.setVisible(true);
 
     }
 

@@ -5,8 +5,8 @@
 100004|Stefan|Milinković|stefan|stefan123|3001000123124|Narodnog fronta 5A|m|64564893|korisnik|true
 200000|Sofija|Tadić|sofija|sofija123|1207995098789|Vojvode Mišića 20|z|063456098|dispecer|true|50000|1|narudzbe
 200001|Milena|Mitrović|milena|milena123|1104997097368|Njegoševa 4|z|64234765|dispecer|true|50000|2|narudzbe
-200002|Petar|Mirković|petar|petar123|2510994098245|Bulevar Jovana Dučića 14|m|64397492|dispecer|true|40000|3|reklamacije
+200002|Petar|Mirković|petar|petar123|2510994098245|Bulevar Jovana Du�?ića 14|m|64397492|dispecer|true|40000|3|reklamacije
 300000|Milenko|Bagić|milenko|milenko123|1203985083321|Vojvode Mišića 22|m|32456987|vozac|true|65000|400000|4.2
 300001|Predrag|Tubić|predrag|predrag123|0503979089245|Valentina Vodnika 33|m|65789234|vozac|true|65000|400001|4.0
-300002|Đorđe|Ibrahimović|djordje|djordje123|2309990789324|Anđe Ranković 20|m|97896354|vozac|true|65000|400002|3.6
+300002|�?orđe|Ibrahimović|djordje|djordje123|2309990789324|Anđe Ranković 20|m|97896354|vozac|true|65000|400002|3.6
 300003|Milorad|Stojković|milorad|milorad123|0708998983456|1300 kaplara|m|74567890|vozac|true|65000|400003|4.8
