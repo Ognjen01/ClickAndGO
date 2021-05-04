@@ -15,6 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // komnetar
+
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
         CitanjeFajla citajFajl = new CitanjeFajla();
