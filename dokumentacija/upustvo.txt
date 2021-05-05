@@ -1,0 +1,2 @@
+1. - Prilikom preuzimanja projekta sa github-a neophodno je preuzeti verziju koja se nalazi na grani Nova_grana
+   - Ova izpravka izvršena je zbog slučajnog commit-a u kome je zamjenjena verzija Jave sa Java 11 na Java 15
