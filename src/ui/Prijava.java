@@ -36,7 +36,7 @@ public class Prijava extends JFrame {
 
 
                 if (prijavljeniKorsinik != null) {
-                    System.out.println("prijavlajni ste kao musterija " + prijavljeniKorsinik.getIme());
+                    System.out.println("prijavlajni ste kao korisnik " + prijavljeniKorsinik.getIme());
                     prijava.setVisible(false);
                     if (prijavljeniKorsinik.getUloga().equals("korisnik")) {
                         KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik);
@@ -45,7 +45,8 @@ public class Prijava extends JFrame {
                         EkranDispecer enkranDis = new EkranDispecer();
                         add(enkranDis);
                     } else if (prijavljeniKorsinik.getUloga().equals("vozac")) {
-                        EkranVozac ekranVozac = new EkranVozac();
+                        EkranVozac ekranVozac = new EkranVozac(prijavljeniKorsinik, taxiSluzba);
+                        add(ekranVozac);
                     }
                 } else {
                     PorukaKorisniku porukaKorisniku = new PorukaKorisniku("Ne postoji traženi korinsik");

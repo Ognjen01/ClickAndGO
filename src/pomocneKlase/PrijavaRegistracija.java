@@ -6,12 +6,6 @@ import java.util.List;
 
 public class PrijavaRegistracija {
 
-    /*
-    TODO: 1. Izmjeniti algoritam za prijavu tako da pretražuje po listi stringova
-          2. Nakon nađenog korisnika generisati novi objekat prijavljeniKorisnik
-          3. Prijava se vrši isključivo na osnovu prethodno učitanih fajlova u nizove!!!
-     */
-
     // Pronalaženje traženog korisnika u fajlu:
 
     public Osoba prijavaNaSistem(String korisnikckoIme, String lozinka, List<Osoba> listaKorisnika) {
@@ -25,7 +19,6 @@ public class PrijavaRegistracija {
         }
         if (prijavljeniKorisnik == null) {
             System.out.println("Nije pronađen korisnik molimo pokušajte ponovo ");
-            // TODO: Ovdje pokrenuti prozor kada korisnik nije pronađen
         }
         return prijavljeniKorisnik;
     }

@@ -19,6 +19,8 @@ public class Main {
 
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
+        // Učitavanje listi koje se prosleđuju u TaxiSluzbu
+
         CitanjeFajla citajFajl = new CitanjeFajla();
         List<String[]> lista = citajFajl.procitajFajl("korisnici.txt");
         List<String[]> listaVoznji = citajFajl.procitajFajl("voznje.txt");
@@ -42,30 +44,17 @@ public class Main {
 
         TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);
 
-
-        for (Osoba osopa: listaOsoba
-             ) {
-            System.out.println("Ovo je ime osobe: " + osopa.getIme() + ", a ovo JMBG osobe: " + osopa.getLisaVoznji() + osopa.isAktivan());
-
-        }
-
-        for (Voznja voznja: listaVoznjiObj
-        ) {
-            System.out.println("Ovo je adresa voznje: " + voznja.getAdresaDestinacije());
-
-        }
-
-        for (Automobil auto: automobilList
-             ) {
-            System.out.println("Ovo je automobila: " + auto.getModel() + " proizvodjaca " + auto.getProizvodjac());
-        }
-
-
-        System.out.println("\n\n\n\n\n\n\n ================================\n\nPocetak upisa!\n\n================================");
-        UpisivanjeUFajl upis = new UpisivanjeUFajl();
-        upis.upisiTaxiSluzbu(taxiSluzba);
         Prijava prijava = new Prijava(taxiSluzba);
         prijava.setVisible(true);
+
+
+        UpisivanjeUFajl upis = new UpisivanjeUFajl();
+        upis.upisiTaxiSluzbu(taxiSluzba);
+
+
+        // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
+        //       - Potrebno dodati samo taj osluškivač za pritisak na X
+
 
     }
 

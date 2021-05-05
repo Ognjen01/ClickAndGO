@@ -9,11 +9,11 @@ import javax.xml.stream.Location;
 public class KorisnickiEkran extends JPanel {
 
     private JPanel panel1;
-    private JButton naruciVoznjuTelefonomButton;
-    private JButton istorijaVoznjiButton;
-    private JButton naruciVoznjuAplikacijomButton;
     private JLabel ime;
-    private JPanel panelSlike;
+    private JButton naruciAplikacijomBtn;
+    private JButton naruciTelefonomBtn;
+    private JButton nazadBtn;
+    private JButton izvjestajBtn;
 
 
     public KorisnickiEkran(Osoba prijavljeniKorisnik) {
@@ -21,10 +21,7 @@ public class KorisnickiEkran extends JPanel {
         panel1.setLocation(400, 400);
         add(panel1);
 
-
         ime.setText("Dobrodosli: " + prijavljeniKorisnik.getIme());
-
-
     }
 
 
