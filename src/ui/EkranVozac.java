@@ -6,10 +6,10 @@ import korisnici.Osoba;
 import javax.swing.*;
 
 public class EkranVozac extends JPanel {
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton nazadBtn;
+    private JButton istorijaVoznjiBtn;
+    private JButton licitacijaBtn;
+    private JButton statistikaBtn;
+    private JButton odjavaBtn;
     private JLabel imeVozaca;
     private JPanel panelVozaca;
 

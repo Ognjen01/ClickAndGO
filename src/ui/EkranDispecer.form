@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ui.EkranDispecer">
-  <grid id="27dc6" binding="panelOpcija" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panelOpcija" layout-manager="GridLayoutManager" row-count="13" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="589" height="528"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -17,25 +17,25 @@
           <verticalAlignment value="3"/>
         </properties>
       </component>
-      <component id="88243" class="javax.swing.JButton" binding="opcija1Button" default-binding="true">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Opcija 1"/>
-        </properties>
-      </component>
-      <component id="ff207" class="javax.swing.JButton" binding="opcija2Button" default-binding="true">
+      <component id="88243" class="javax.swing.JButton" binding="teksiSluzbaIzmjene">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Opcija 2"/>
+          <text value="Operacije sa taksi službom"/>
+        </properties>
+      </component>
+      <component id="ff207" class="javax.swing.JButton" binding="operacijeVozaci">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Operacije sa vozačima"/>
         </properties>
       </component>
       <vspacer id="8b78f">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <vspacer id="2ba69">
@@ -45,28 +45,76 @@
       </vspacer>
       <hspacer id="1c7b1">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
       <hspacer id="a5ed7">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
-      <component id="bca06" class="javax.swing.JButton" binding="opcija3Button" default-binding="true">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Opcija 3"/>
-        </properties>
-      </component>
-      <component id="9f30e" class="javax.swing.JButton" binding="opcija4Button" default-binding="true">
+      <component id="bca06" class="javax.swing.JButton" binding="operacijeAutomobili">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Opcija 4"/>
+          <text value="Operacije sa automobilima"/>
+        </properties>
+      </component>
+      <component id="9f30e" class="javax.swing.JButton" binding="prikazVoznji">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Prikaz vožnji"/>
+        </properties>
+      </component>
+      <component id="7f1fa" class="javax.swing.JButton" binding="pretragaVozaca">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Pretraga vozača"/>
+        </properties>
+      </component>
+      <component id="67ebc" class="javax.swing.JButton" binding="dodjelaVoznji">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Dodeli vožnje"/>
+        </properties>
+      </component>
+      <component id="cdec8" class="javax.swing.JButton" binding="pretragaAutomobila">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Pretraga automobila"/>
+        </properties>
+      </component>
+      <component id="6ec32" class="javax.swing.JButton" binding="izvjestajVoznji">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Izveštaj vožnji"/>
+        </properties>
+      </component>
+      <component id="8781f" class="javax.swing.JButton" binding="izvjestajVozaca">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Izveštaj vozača"/>
+        </properties>
+      </component>
+      <component id="c7080" class="javax.swing.JButton" binding="odjava">
+        <constraints>
+          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Odjavi se"/>
         </properties>
       </component>
     </children>

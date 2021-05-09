@@ -20,7 +20,7 @@ public class Prijava extends JFrame {
     public Prijava(TaxiSluzba taxiSluzba) {
 
         add(prijava);
-        setSize(800, 400);
+        setSize(800, 600);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
 
@@ -39,10 +39,10 @@ public class Prijava extends JFrame {
                     System.out.println("prijavlajni ste kao korisnik " + prijavljeniKorsinik.getIme());
                     prijava.setVisible(false);
                     if (prijavljeniKorsinik.getUloga().equals("korisnik")) {
-                        KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik);
+                        KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik, taxiSluzba);
                         add(k);
                     } else if (prijavljeniKorsinik.getUloga().equals("dispecer")) {
-                        EkranDispecer enkranDis = new EkranDispecer();
+                        EkranDispecer enkranDis = new EkranDispecer(prijavljeniKorsinik, taxiSluzba);
                         add(enkranDis);
                     } else if (prijavljeniKorsinik.getUloga().equals("vozac")) {
                         EkranVozac ekranVozac = new EkranVozac(prijavljeniKorsinik, taxiSluzba);

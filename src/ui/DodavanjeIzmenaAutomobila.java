@@ -38,6 +38,8 @@ public class DodavanjeIzmenaAutomobila extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        // TODO: !! Izmjeniti logiku pristupa fajlovima, ne pristupa se fajlovima nego listama !!
+
         listaVozaca = new ArrayList<Vozac>();
 
         try {

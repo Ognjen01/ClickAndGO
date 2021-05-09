@@ -29,6 +29,7 @@ public class Dispecer extends Osoba {
 
     }
 
+    // TODO: Dodati prazna polja ali ne i prazne zagrade kao do sada
     public Dispecer() {
         // Generisati prazna polja Dispecera
     }

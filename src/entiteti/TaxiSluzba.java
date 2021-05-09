@@ -16,8 +16,6 @@ public class TaxiSluzba {
     private List<Automobil> listaAutomobila;
     private List<Voznja> listaVoznji;
 
-    // TODO: Ognjen će dodati algoritam za prosledjivanje listi u objekat
-    //      kako bi se objekat mogao prosledjivati kroz izbrsavanje programa
 
     public TaxiSluzba(
             List<Osoba> listaOsoba,

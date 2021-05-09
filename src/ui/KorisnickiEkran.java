@@ -1,5 +1,6 @@
 package ui;
 
+import entiteti.TaxiSluzba;
 import korisnici.Osoba;
 
 import java.awt.*;
@@ -12,11 +13,11 @@ public class KorisnickiEkran extends JPanel {
     private JLabel ime;
     private JButton naruciAplikacijomBtn;
     private JButton naruciTelefonomBtn;
-    private JButton nazadBtn;
+    private JButton odjavaBtn;
     private JButton izvjestajBtn;
 
 
-    public KorisnickiEkran(Osoba prijavljeniKorisnik) {
+    public KorisnickiEkran(Osoba prijavljeniKorisnik, TaxiSluzba taxiSluzba) {
         panel1.setSize(100, 200);
         panel1.setLocation(400, 400);
         add(panel1);

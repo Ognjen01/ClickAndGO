@@ -21,6 +21,7 @@ public class Main {
 
         // Učitavanje listi koje se prosleđuju u TaxiSluzbu
 
+        // TODO: Instancirati učitavanja unutar same klase taxi sluzbe
         CitanjeFajla citajFajl = new CitanjeFajla();
         List<String[]> lista = citajFajl.procitajFajl("korisnici.txt");
         List<String[]> listaVoznji = citajFajl.procitajFajl("voznje.txt");
@@ -41,6 +42,7 @@ public class Main {
         automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);
 
         vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj, automobilList);
+
 
         TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);
 
