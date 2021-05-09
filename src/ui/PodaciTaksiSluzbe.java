@@ -26,6 +26,9 @@ public class PodaciTaksiSluzbe extends JFrame {
     private int counter;
 
     public void CitanjePodatakaOTaksiSluzbi() {
+
+        // TODO: Dodoati dugme za nazad kako bi se vratili na opcije
+
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/fajlovi/podaciOTaksiSluzbi.txt"))));
             String line = null;
@@ -55,7 +58,7 @@ public class PodaciTaksiSluzbe extends JFrame {
         add(PodaciTaksiSluzbeFrame);
         setTitle("Click&Go - Podaci o taksi sluzbi");
         setResizable(false);
-        setSize(400, 500);
+        setSize(800, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 

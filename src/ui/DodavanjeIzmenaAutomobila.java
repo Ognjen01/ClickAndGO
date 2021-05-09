@@ -31,10 +31,13 @@ public class DodavanjeIzmenaAutomobila extends JFrame {
 
 
     public DodavanjeIzmenaAutomobila() {
+
+        // TODO: D0dati dugme za nazad
+
         add(DodadavanjeAutomobilaFrame);
         setTitle("Click&Go - Dodavanje automobila");
         setResizable(false);
-        setSize(400, 500);
+        setSize(800, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 

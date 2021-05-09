@@ -1,5 +1,6 @@
 package ui;
 
+import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
 
@@ -34,7 +35,9 @@ public class EkranDispecer extends JFrame {
         teksiSluzbaIzmjene.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe(); // DOdati objekat taxi sluzbe u konstruktor
+                podaciTaksiSluzbe.setVisible(true);
+                setVisible(false);
             }
         });
 
@@ -48,7 +51,9 @@ public class EkranDispecer extends JFrame {
         operacijeAutomobili.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                DodavanjeIzmenaAutomobila dodavanjeIzmenaAutomobila = new DodavanjeIzmenaAutomobila();
+                dodavanjeIzmenaAutomobila.setVisible(true);
+                setVisible(false);
             }
         });
 
@@ -77,7 +82,9 @@ public class EkranDispecer extends JFrame {
         pretragaAutomobila.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Automobili automobili = new Automobili();
+                automobili.setVisible(true);
+                setVisible(false);
             }
         });
 

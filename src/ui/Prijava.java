@@ -5,6 +5,7 @@ import pomocneKlase.PrijavaRegistracija;
 import korisnici.Osoba;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -52,8 +53,11 @@ public class Prijava extends JFrame {
                         setVisible(false);
                     }
                 } else {
-                    PorukaKorisniku porukaKorisniku = new PorukaKorisniku("Ne postoji traženi korinsik");
-                    porukaKorisniku.setVisible(true);
+                    JOptionPane.showMessageDialog( new Frame(),
+                            "Ne postoji traženi korisnik.",
+                            "Greška",
+                            JOptionPane.WARNING_MESSAGE);
+
                 }
 
             }
