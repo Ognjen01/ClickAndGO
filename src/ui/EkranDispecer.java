@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class EkranDispecer extends JPanel {
+public class EkranDispecer extends JFrame {
     private JLabel imeDispecera;
     private JButton teksiSluzbaIzmjene;
     private JButton operacijeVozaci;
@@ -24,6 +24,9 @@ public class EkranDispecer extends JPanel {
     public EkranDispecer(Osoba prijavljeniDispecer, TaxiSluzba taxiSluzba) {
 
 
+        setSize(800, 400);
+        setTitle("Click&GO");
+        setLocationRelativeTo(null);
         imeDispecera.setText(prijavljeniDispecer.getIme());
 
         add(panelOpcija);
@@ -92,6 +95,14 @@ public class EkranDispecer extends JPanel {
             }
         });
 
+        odjava.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Prijava nazadNaPrijavu = new Prijava(taxiSluzba);
+                nazadNaPrijavu.setVisible(true);
+                setVisible(false);
+            }
+        });
 
 
     }

@@ -20,7 +20,7 @@ public class Prijava extends JFrame {
     public Prijava(TaxiSluzba taxiSluzba) {
 
         add(prijava);
-        setSize(800, 600);
+        setSize(800, 400);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
 
@@ -40,13 +40,16 @@ public class Prijava extends JFrame {
                     prijava.setVisible(false);
                     if (prijavljeniKorsinik.getUloga().equals("korisnik")) {
                         KorisnickiEkran k = new KorisnickiEkran(prijavljeniKorsinik, taxiSluzba);
-                        add(k);
+                        k.setVisible(true);
+                        setVisible(false);
                     } else if (prijavljeniKorsinik.getUloga().equals("dispecer")) {
                         EkranDispecer enkranDis = new EkranDispecer(prijavljeniKorsinik, taxiSluzba);
-                        add(enkranDis);
+                        enkranDis.setVisible(true);
+                        setVisible(false);
                     } else if (prijavljeniKorsinik.getUloga().equals("vozac")) {
                         EkranVozac ekranVozac = new EkranVozac(prijavljeniKorsinik, taxiSluzba);
-                        add(ekranVozac);
+                        ekranVozac.setVisible(true);
+                        setVisible(false);
                     }
                 } else {
                     PorukaKorisniku porukaKorisniku = new PorukaKorisniku("Ne postoji traženi korinsik");
