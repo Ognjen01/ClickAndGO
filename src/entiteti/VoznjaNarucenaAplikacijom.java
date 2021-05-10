@@ -22,7 +22,7 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
             double duzina,
             double trajanje,
             int cenaVoznje,
-            SimpleDateFormat vremeNarudzbe,
+            Date vremeNarudzbe,
             Musterija musterija,
             Vozac vozac
     ) {

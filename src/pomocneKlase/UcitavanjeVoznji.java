@@ -6,6 +6,7 @@ import entiteti.VoznjaNarucenaTelefonom;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,7 +33,13 @@ public class UcitavanjeVoznji {
 
         Musterija musterija = new Musterija();
         Vozac vozac = new Vozac();
-        SimpleDateFormat datum = new SimpleDateFormat(elementiVoznje[9]);
+        Date datum = null;
+        try {
+            datum = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse(elementiVoznje[9]);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
 
         int idVoznje = Integer.parseInt(elementiVoznje[0]);
         int idVozaca = Integer.parseInt(elementiVoznje[1]);

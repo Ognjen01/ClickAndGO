@@ -60,7 +60,9 @@ public class EkranDispecer extends JFrame {
         prikazVoznji.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            PrikazVoznji prikazVoznji = new PrikazVoznji(taxiSluzba);
+            prikazVoznji.setVisible(true);
+            //setVisible(false);
             }
         });
 

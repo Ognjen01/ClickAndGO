@@ -3,6 +3,7 @@ package entiteti;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,7 +20,7 @@ public abstract class Voznja {
     private int cenaPoKilometru = 60;
     private int cenaStarta = 100;
     private int cenaVoznje;
-    private SimpleDateFormat vremeNarudzbine;
+    private Date vremeNarudzbine;
     private Musterija musterija;
     private Vozac vozac;
     private int cijena;
@@ -35,7 +36,7 @@ public abstract class Voznja {
             double duzina,
             double trajanje,
             int cenaVoznje,
-            SimpleDateFormat vremeNarudzbine,
+            Date vremeNarudzbine,
             Musterija musterija,
             Vozac vozac) {
 
@@ -52,6 +53,7 @@ public abstract class Voznja {
         this.idMusterije = idMusterije;
         this.idVoznje = idVoznje;
         this.idVozaca = idVozaca;
+        this.cenaVoznje = cenaVoznje;
     }
 
     // TODO: Algoritam za računanje cijene vožnje ali nema potrebe za njim prilikom učitavanja fajlova
@@ -136,11 +138,12 @@ public abstract class Voznja {
         this.cenaStarta = cenaStarta;
     }
 
-    public SimpleDateFormat getVremeNarudzbine() {
+
+    public Date getVremeNarudzbine() {
         return vremeNarudzbine;
     }
 
-    public void setVremeNarudzbine(SimpleDateFormat vremeNarudzbine) {
+    public void setVremeNarudzbine(Date vremeNarudzbine) {
         this.vremeNarudzbine = vremeNarudzbine;
     }
 
@@ -177,6 +180,24 @@ public abstract class Voznja {
                 cenaVoznje + "|" +
                 vremeNarudzbine + "|";
 
+    }
+
+    public String[] toStringArray(){
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        String datum = df.format(vremeNarudzbine);
+
+        String nizObjekat[] = new String[] {
+        String.valueOf(idVoznje),
+        String.valueOf(idMusterije),
+        String.valueOf(idVozaca),
+        adresaPolaska,
+        adresaDestinacije,
+        status,
+        String.valueOf(duzina),
+        String.valueOf(trajanje),
+        String.valueOf(cijena),
+        datum};
+        return  nizObjekat;
     }
 }
 
