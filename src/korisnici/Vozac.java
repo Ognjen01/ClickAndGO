@@ -119,7 +119,7 @@ public class Vozac extends Osoba {
                 brojTelefona,
                 String.valueOf(prosjecnaOcjena),
                 String.valueOf(plata),
-                automobil.getProizvodjac() // Ovaj dio izmjeniti da daje neki drugi dio objekta
+                "Model"// automobil.getProizvodjac()  Ovaj dio izmjeniti da daje neki drugi dio objekta
         };
 
         return nizObjekata;
