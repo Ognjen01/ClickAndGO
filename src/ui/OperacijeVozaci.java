@@ -6,6 +6,8 @@ import korisnici.Vozac;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,5 +54,14 @@ public class OperacijeVozaci extends JFrame {
         table1.setModel(new DefaultTableModel(data, column));
 
         add(panel1);
+
+
+        dodajVozacaBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DodavanjeVozaca dodavanjeVozaca = new DodavanjeVozaca(taxiSluzba);
+                dodavanjeVozaca.setVisible(true);
+            }
+        });
     }
 }
