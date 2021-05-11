@@ -47,7 +47,7 @@ public class UcitavanjeVoznji {
         double duzina = Double.parseDouble(elementiVoznje[6]);
         double trajanje = Double.parseDouble(elementiVoznje[7]);
         int cenaVoznje = Integer.parseInt(elementiVoznje[8]);
-
+        System.out.println(cenaVoznje);
         if (elementiVoznje[10].equals("telefon")) {
 
             VoznjaNarucenaTelefonom novaVoznjaTelefon = new VoznjaNarucenaTelefonom(

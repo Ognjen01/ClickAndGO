@@ -195,7 +195,7 @@ public abstract class Voznja {
         status,
         String.valueOf(duzina),
         String.valueOf(trajanje),
-        String.valueOf(cijena),
+        String.valueOf(cenaVoznje),
         datum};
         return  nizObjekat;
     }

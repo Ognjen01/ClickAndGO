@@ -106,4 +106,22 @@ public class Vozac extends Osoba {
                 brClanskeKarte + "|" +
                 prosjecnaOcjena + "\n";
     }
+
+    public String[] toArrayString(){
+        String nizObjekata[] = new String[] {
+          String.valueOf(idKorisnika),
+                ime,
+                prezime,
+                korisnickoIme,
+                jmbg,
+                adresa,
+                String.valueOf(pol),
+                brojTelefona,
+                String.valueOf(prosjecnaOcjena),
+                String.valueOf(plata),
+                automobil.getProizvodjac() // Ovaj dio izmjeniti da daje neki drugi dio objekta
+        };
+
+        return nizObjekata;
+    }
 }

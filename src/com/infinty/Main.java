@@ -7,6 +7,7 @@ import korisnici.Osoba;
 import pomocneKlase.*;
 import ui.Prijava;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,3 +62,67 @@ public class Main {
     }
 
 }
+/*
+
+package ui;
+
+        import entiteti.TaxiSluzba;
+        import korisnici.Osoba;
+        import korisnici.Vozac;
+
+        import javax.swing.*;
+        import java.awt.*;
+        import java.util.ArrayList;
+        import java.util.List;
+
+public class OperacijeVozaci extends JFrame {
+    private JButton prikazVozacaBtn;
+    private JButton dodajVozacaBtn;
+    private JButton izmjenaVozacaBtn;
+    private JButton brisanjeVozacaBtn;
+    private JPanel panelOpcija;
+    private JPanel panelTabele;
+    private JTable table1;
+    private JScrollPane sp;
+
+    public OperacijeVozaci(TaxiSluzba taxiSluzba){
+        /*
+        setSize(800, 400);
+        setTitle("Click&GO");
+        setLocationRelativeTo(null);
+        panelTabele.setPreferredSize(new Dimension(400, 40));
+        add(panelOpcija);
+
+        List<Vozac> listaVozaca = new ArrayList<Vozac>();;
+        for (Osoba osoba: taxiSluzba.getListaOsoba()){
+            if(osoba instanceof Vozac){
+                listaVozaca.add((Vozac) osoba);
+                System.out.println(osoba.getUloga() + " " + osoba.getIme());
+            }
+        }
+
+        int brojVozaca = listaVozaca.size();
+        String data[][] = new String[brojVozaca][11];
+
+        int index= 0;
+        for (Vozac vozac: listaVozaca
+             ) {
+            System.out.println(vozac.getIme());
+            data[index] = vozac.toArrayString();
+            index++;
+        }
+
+        String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Jos Nesto"};
+
+        table1 = new JTable(data, column);
+
+        sp = new JScrollPane(table1);
+        add(sp);
+
+
+
+    }
+}
+
+
+         */
