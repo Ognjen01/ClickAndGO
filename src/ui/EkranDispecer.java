@@ -71,7 +71,8 @@ public class EkranDispecer extends JFrame {
         pretragaVozaca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                PretragaVozaca pretragaVozaca = new PretragaVozaca(taxiSluzba);
+                pretragaVozaca.setVisible(true);
             }
         });
 
