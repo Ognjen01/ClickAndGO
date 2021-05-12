@@ -1,5 +1,6 @@
 package ui;
 
+import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
 import korisnici.Vozac;
@@ -31,6 +32,28 @@ public class IzmjenaVozaca extends JFrame {
         setSize(500, 500);
         setTitle("Click&GO");
         add(osnovniPanel);
+
+
+
+        // Sistem za prolaz kroz auta i ako vozac nema auto da prvi element u cambo box postavi na 0 kako kasnije ne bi neki auto slucajno bio dodjeljen!!
+
+        boolean vozacImaAuto = false;
+        for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
+            if (automobil.getIdVozaca() == idVozaca) {
+                comboBox1.addItem(new String(automobil.getModel() + " (ID " + automobil.getAutomobilID() +")"));
+                vozacImaAuto = true;
+            }
+
+        }
+        if (!vozacImaAuto){
+            comboBox1.addItem(new String("0"));
+        }
+        for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
+            if (automobil.getIdVozaca() == 0) {
+                comboBox1.addItem(new String(automobil.getModel() + " (ID " + automobil.getAutomobilID() +")"));
+            }
+
+        }
 
         System.out.println("Vozac za izmjenu u prozoru: " + idVozaca);
 
@@ -98,6 +121,8 @@ public class IzmjenaVozaca extends JFrame {
                             "Da li ste sigurni da želite izmjeniti vozača", "Potvrdite izmjenu",
                             JOptionPane.YES_NO_OPTION);
 
+
+
                     if(confirmed == JOptionPane.YES_OPTION) {
                         for (Osoba vozac : taxiSluzba.getListaOsoba()) {
                             if (idVozaca == vozac.getIdKorisnika() && vozac instanceof Vozac) {
@@ -111,6 +136,7 @@ public class IzmjenaVozaca extends JFrame {
                                 vozac.setAdresa(adresa);
                                 vozac.setBrojTelefona(brojTelefona);
                                 vozac.setPol(pol);
+                                // TODO: Napraviti pribavljanje auta iz combo boxa
                             }
                             setVisible(false);
 

@@ -8,6 +8,7 @@ import korisnici.Vozac;
 
 import javax.swing.*;
 import javax.swing.text.TabableView;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -32,7 +33,6 @@ public class DodavanjeVozaca extends JFrame {
     public DodavanjeVozaca(TaxiSluzba taxiSluzba){
 
         //TODO: DOODAVANJE DJELIMIČNO GOTOVO, DORADITI AUTOMOBIL
-        //      SETOVATI SLOBONDNE AUTMOBILE U DROP DOWN MENI camboBox1
 
         setSize(500, 500);
         setTitle("Click&GO");
@@ -42,15 +42,26 @@ public class DodavanjeVozaca extends JFrame {
         group.add(zenskiRadioButton);
         group.add(muskiRadioButton);
 
+        comboBox1.addItem(new String("0"));
+        for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
+            if (automobil.getIdVozaca() == 0) {
+                comboBox1.addItem(new String(automobil.getModel() + " (ID " + automobil.getAutomobilID() + ")"));
+            }
+        }
 
-        dodajVozacaButton.addActionListener(new ActionListener() {
+            dodajVozacaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 Vozac noviVozac = kreirajVozaca(taxiSluzba);
                 taxiSluzba.getListaOsoba().add(noviVozac);
+            }
+        });
 
-                System.out.println("vozac je dodat");
+        odustaniButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
             }
         });
     }
@@ -85,13 +96,23 @@ public class DodavanjeVozaca extends JFrame {
             int brojClanskeKarte = Integer.parseInt(brojClanskeKartePolje.getText());
             // Za aktivnost proslijediti true u konstruktor, uloga vozac, prosjecna ocjena nula
 
+            // TODO: Sistem dodjele automobila
+
+
+
+
+
+
+
             int id  = generisanjeIdVozaca(taxiSluzba);
 
             dodatiVozac = new Vozac(id,imeVozaca, prezimeVozaca, korisnickoIme, lozinkaVozaca, jmbgVozaca, adresaVozaca, polC, brTelefonaVozaca,"vozac",true,plata,brojClanskeKarte,automobilVozaca,null,0.0);
 
         } catch (Exception e) {
-            System.out.println("Neko od polja nije popunjeno molimo pokusajte ponovo");
-        }
+            JOptionPane.showMessageDialog( new Frame(),
+                    "Greška prilikom dodavanja vozača, provjerite unijete informacije!",
+                    "Greška",
+                    JOptionPane.WARNING_MESSAGE);        }
 
         return dodatiVozac;
     }

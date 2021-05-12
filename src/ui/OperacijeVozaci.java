@@ -6,6 +6,7 @@ import korisnici.Vozac;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -30,34 +31,17 @@ public class OperacijeVozaci extends JFrame {
         setTitle("Click&GO");
         setLocationRelativeTo(null);
 
+        postaviInformacijeTabele(taxiSluzba);
 
-        List<Vozac> listaVozaca = new ArrayList<Vozac>();;
-        for (Osoba osoba: taxiSluzba.getListaOsoba()){
-            if(osoba instanceof Vozac){
-                listaVozaca.add((Vozac) osoba);
-                System.out.println(osoba.getUloga() + " " + osoba.getIme() + " AKTIVAN:" + osoba.isAktivan());
+
+
+
+        prikaziVozace.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                postaviInformacijeTabele(taxiSluzba);
             }
-        }
-
-        int brojVozaca = listaVozaca.size();
-        String data[][] = new String[brojVozaca][11];
-
-        int index= 0;
-        for (Vozac vozac: listaVozaca
-        ) {
-            if(vozac.isAktivan()) {
-                System.out.println(vozac.getIme());
-                data[index] = vozac.toArrayString();
-                index++;
-            }
-        }
-
-        String column[]={"Vozač ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa", "Pol", "Broj telefona", "Prosječna ocjena", "Plata", "Automobil"};
-
-        table1.setModel(new DefaultTableModel(data, column));
-
-        add(panel1);
-
+        });
 
         dodajVozacaBtn.addActionListener(new ActionListener() {
             @Override
@@ -78,8 +62,10 @@ public class OperacijeVozaci extends JFrame {
                     IzmjenaVozaca izmjenaVozaca = new IzmjenaVozaca(taxiSluzba, idVozaca);
                     izmjenaVozaca.setVisible(true);
                 } catch (Exception e1) {
-                    System.out.println("Niste selektovali polje molimo pokušajte ponovo"); // Umjesto ovoga staviti prozor
-                }
+                    JOptionPane.showMessageDialog( new Frame(),
+                            "Niste odabrali korisnika kojeg želite izmjeniti!",
+                            null,
+                            JOptionPane.WARNING_MESSAGE);                }
             }
         });
 
@@ -112,10 +98,39 @@ public class OperacijeVozaci extends JFrame {
         nazadBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
                 EkranDispecer ekranDispecer = new EkranDispecer(prijvljeniDispecer, taxiSluzba);
                 ekranDispecer.setVisible(true);
+                setVisible(false);
             }
         });
+    }
+
+    public void postaviInformacijeTabele(TaxiSluzba taxiSluzba){
+        List<Vozac> listaVozaca = new ArrayList<Vozac>();;
+        for (Osoba osoba: taxiSluzba.getListaOsoba()){
+            if(osoba instanceof Vozac){
+                listaVozaca.add((Vozac) osoba);
+                System.out.println(osoba.getUloga() + " " + osoba.getIme() + " AKTIVAN:" + osoba.isAktivan());
+            }
+        }
+
+        int brojVozaca = listaVozaca.size();
+        String data[][] = new String[brojVozaca][11];
+
+        int index= 0;
+        for (Vozac vozac: listaVozaca
+        ) {
+            if(vozac.isAktivan()) {
+                System.out.println(vozac.getIme());
+                data[index] = vozac.toArrayString();
+                index++;
+            }
+        }
+
+        String column[]={"Vozač ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa", "Pol", "Broj telefona", "Prosječna ocjena", "Plata", "Automobil"};
+
+        table1.setModel(new DefaultTableModel(data, column));
+
+        add(panel1);
     }
 }
