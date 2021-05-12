@@ -31,6 +31,9 @@ public class DodavanjeVozaca extends JFrame {
 
     public DodavanjeVozaca(TaxiSluzba taxiSluzba){
 
+        //TODO: DOODAVANJE DJELIMIČNO GOTOVO, DORADITI AUTOMOBIL
+        //      SETOVATI SLOBONDNE AUTMOBILE U DROP DOWN MENI camboBox1
+
         setSize(500, 500);
         setTitle("Click&GO");
         add(osnovniPanel);
@@ -66,6 +69,7 @@ public class DodavanjeVozaca extends JFrame {
             String jmbgVozaca = jmbgVozacaPolje.getText();
             String adresaVozaca = adresaVozacaPolje.getText();
 
+            // dodati enum
             if(muskiRadioButton.isSelected()){
                 pol = Pol.MUSKI;
                 polC = 'm';
@@ -88,7 +92,6 @@ public class DodavanjeVozaca extends JFrame {
         } catch (Exception e) {
             System.out.println("Neko od polja nije popunjeno molimo pokusajte ponovo");
         }
-
 
         return dodatiVozac;
     }

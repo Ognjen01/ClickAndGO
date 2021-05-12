@@ -44,8 +44,9 @@ public class EkranDispecer extends JFrame {
         operacijeVozaci.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            OperacijeVozaci operacijeVozaci = new OperacijeVozaci(taxiSluzba);
+            OperacijeVozaci operacijeVozaci = new OperacijeVozaci(taxiSluzba, prijavljeniDispecer);
             operacijeVozaci.setVisible(true);
+            setVisible(false);
             }
         });
 

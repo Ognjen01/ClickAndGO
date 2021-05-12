@@ -108,6 +108,16 @@ public class Vozac extends Osoba {
     }
 
     public String[] toArrayString(){
+
+        // Sisitem za dodjelu auta i popunjavanje tabele
+        String modelIIdAutomobila;
+        if (getAutomobil() != null){
+            modelIIdAutomobila = String.valueOf(getAutomobil().getAutomobilID());
+        } else {
+            modelIIdAutomobila = "Automobil nije dodjeljen";
+        }
+
+
         String nizObjekata[] = new String[] {
           String.valueOf(idKorisnika),
                 ime,
@@ -119,7 +129,7 @@ public class Vozac extends Osoba {
                 brojTelefona,
                 String.valueOf(prosjecnaOcjena),
                 String.valueOf(plata),
-                "Model"// automobil.getProizvodjac()  Ovaj dio izmjeniti da daje neki drugi dio objekta
+                modelIIdAutomobila// automobil.getProizvodjac()  Ovaj dio izmjeniti da daje neki drugi dio objekta
         };
 
         return nizObjekata;

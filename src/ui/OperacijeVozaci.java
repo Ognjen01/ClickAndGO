@@ -22,8 +22,9 @@ public class OperacijeVozaci extends JFrame {
     private JButton obrisiVozacaBtn;
     private JPanel panel2;
     private JPanel panel3;
+    private JButton nazadBtn;
 
-    public OperacijeVozaci(TaxiSluzba taxiSluzba){
+    public OperacijeVozaci(TaxiSluzba taxiSluzba, Osoba prijvljeniDispecer){
 
         setSize(800, 400);
         setTitle("Click&GO");
@@ -70,8 +71,15 @@ public class OperacijeVozaci extends JFrame {
         izmjeniVozacaBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                IzmjenaVozaca izmjenaVozaca = new IzmjenaVozaca(taxiSluzba);
-                izmjenaVozaca.setVisible(true);
+                //int idVozaca = 0;
+                try {
+                    int idPozicija = table1.getSelectedRow();// Druga funkcija za uzimanje reda
+                    int idVozaca = Integer.parseInt((String) table1.getValueAt(idPozicija, 0));
+                    IzmjenaVozaca izmjenaVozaca = new IzmjenaVozaca(taxiSluzba, idVozaca);
+                    izmjenaVozaca.setVisible(true);
+                } catch (Exception e1) {
+                    System.out.println("Niste selektovali polje molimo pokušajte ponovo"); // Umjesto ovoga staviti prozor
+                }
             }
         });
 
@@ -98,6 +106,15 @@ public class OperacijeVozaci extends JFrame {
                     // TODO: Napraviti funkciju koja ce da rafresuje tabelu nakon klika na YES
 
                 }
+            }
+        });
+
+        nazadBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                EkranDispecer ekranDispecer = new EkranDispecer(prijvljeniDispecer, taxiSluzba);
+                ekranDispecer.setVisible(true);
             }
         });
     }
