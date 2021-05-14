@@ -17,6 +17,7 @@ public class Prijava extends JFrame {
     private JTextField textField1;
     private JTextField passwordField1;
     private JButton prijaviSeButton;
+    private JButton registracijaBtn;
 
     public Prijava(TaxiSluzba taxiSluzba) {
 
@@ -62,6 +63,15 @@ public class Prijava extends JFrame {
 
             }
 
+        });
+
+        registracijaBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Registracija registracija = new Registracija(taxiSluzba);
+                registracija.setVisible(true);
+                setVisible(false);
+            }
         });
     }
 
