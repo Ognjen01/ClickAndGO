@@ -38,9 +38,11 @@ public class IzmjenaVozaca extends JFrame {
         // Sistem za prolaz kroz auta i ako vozac nema auto da prvi element u cambo box postavi na 0 kako kasnije ne bi neki auto slucajno bio dodjeljen!!
 
         boolean vozacImaAuto = false;
+        int idStarogAuta =0;
         for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
             if (automobil.getIdVozaca() == idVozaca) {
                 comboBox1.addItem(new String(automobil.getModel() + " (ID " + automobil.getAutomobilID() +")"));
+                idStarogAuta = automobil.getAutomobilID();
                 vozacImaAuto = true;
             }
 
@@ -51,6 +53,7 @@ public class IzmjenaVozaca extends JFrame {
         for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
             if (automobil.getIdVozaca() == 0) {
                 comboBox1.addItem(new String(automobil.getModel() + " (ID " + automobil.getAutomobilID() +")"));
+                System.out.println("SLOBODAN AUTOMOBIL "+ automobil.getAutomobilID() + " " + automobil.getIdVozaca());
             }
 
         }
@@ -94,6 +97,8 @@ public class IzmjenaVozaca extends JFrame {
             }
         });
 
+        Vozac finalVozacZaIzmjenu = vozacZaIzmjenu;
+        int finalIdStarogAuta = idStarogAuta;
         izmjeniVozacaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -107,6 +112,28 @@ public class IzmjenaVozaca extends JFrame {
                     String brojTelefona = brojTelefonaVozaca.getText();
                     int plata = Integer.parseInt(plataVozacaPolje.getText());
                     int brClanskeKarte = Integer.parseInt(brojClanskeKartePolje.getText());
+                    String odabraniAutomobil = comboBox1.getSelectedItem().toString();
+
+                    // Nalaženje trenutnog automobila
+
+
+
+                    // Postavljanje automobila
+                    Automobil automobilVozaca = null;
+                    if (!odabraniAutomobil.equals("0")) {
+                        for (Automobil automobil :
+                                taxiSluzba.getListaAutomovila()) {
+                            String nadjeniAutomobi = automobil.getModel() + " (ID " + automobil.getAutomobilID() + ")";
+
+                            if (odabraniAutomobil.equals(nadjeniAutomobi)) {
+                                automobil.setIdVozaca(idVozaca);
+                                automobilVozaca = automobil;
+                            }
+
+                        }
+                    }
+
+
                     // TODO: Pol prebaciti u enumeraciju
                     char pol = 'm';
                     if(muskiRadioButton.isSelected()){
@@ -124,6 +151,16 @@ public class IzmjenaVozaca extends JFrame {
 
 
                     if(confirmed == JOptionPane.YES_OPTION) {
+
+                        // Oslobađanje automobila
+                        for (Automobil auto: taxiSluzba.getListaAutomovila()
+                        ) {
+                            if (finalIdStarogAuta == auto.getAutomobilID()){
+                                auto.setIdVozaca(0);
+                                System.out.println("PROMJENJEN JE ID VOZAČA U AUTOMOBILU " + auto.getAutomobilID());
+                            }
+                        }
+
                         for (Osoba vozac : taxiSluzba.getListaOsoba()) {
                             if (idVozaca == vozac.getIdKorisnika() && vozac instanceof Vozac) {
                                 vozac.setIme(ime);
@@ -136,11 +173,15 @@ public class IzmjenaVozaca extends JFrame {
                                 vozac.setAdresa(adresa);
                                 vozac.setBrojTelefona(brojTelefona);
                                 vozac.setPol(pol);
+                                ((Vozac) vozac).setAutomobil(automobilVozaca);
                                 // TODO: Napraviti pribavljanje auta iz combo boxa
                             }
-                            setVisible(false);
 
-                        }
+
+
+                            }
+
+                        setVisible(false);
                     }
 
 
