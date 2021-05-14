@@ -30,9 +30,11 @@ public class DodavanjeVozaca extends JFrame {
     protected JButton odustaniButton;
     private JTextField brojClanskeKartePolje;
 
-    public DodavanjeVozaca(TaxiSluzba taxiSluzba){
+    public DodavanjeVozaca(TaxiSluzba taxiSluzba) {
 
-        //TODO: DOODAVANJE DJELIMIČNO GOTOVO, DORADITI AUTOMOBIL
+        //TODO: Postoji problem kada je jednom pogriješi u dodavanju vozača, ne dozvoljava da se to ispravi i doda opet
+        // Moguće da negdje zaostaju neke varijable ili uslovi ispravnosti!!!!!!!!!!!
+        // Radi u većoj mjeri, manji nedostaci
 
         setSize(500, 500);
         setTitle("Click&GO");
@@ -49,12 +51,96 @@ public class DodavanjeVozaca extends JFrame {
             }
         }
 
-            dodajVozacaButton.addActionListener(new ActionListener() {
+        dodajVozacaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Vozac noviVozac = kreirajVozaca(taxiSluzba);
-                taxiSluzba.getListaOsoba().add(noviVozac);
+                try {
+                    Automobil automobilVozaca = null;
+                    Pol pol;
+                    char polC = 'm';
+
+                    String imeVozaca = imeVozacaPolje.getText();
+                    String prezimeVozaca = prezimeVozacaPolje.getText();
+                    String korisnickoIme = korisnickoImeVozacaPolje.getText();
+                    String lozinkaVozaca = lozinkaVozacaPolje.getText();
+                    String jmbgVozaca = jmbgVozacaPolje.getText();
+                    String adresaVozaca = adresaVozacaPolje.getText();
+
+                    // Provjera da li postoji korisničko ime
+
+                    for (Osoba osoba : taxiSluzba.getListaOsoba()
+                    ) {
+                        if (osoba.getKorisnickoIme().equals(imeVozaca)) {
+                            JOptionPane.showMessageDialog(new Frame(),
+                                    "Već postoji uneseno korisničko ime",
+                                    "Greška",
+                                    JOptionPane.WARNING_MESSAGE);
+                            throw new Exception();
+                        }
+
+                    }
+
+                    // dodati enum
+                    if (muskiRadioButton.isSelected()) {
+                        pol = Pol.MUSKI;
+                        polC = 'm';
+                    } else if (zenskiRadioButton.isSelected()) {
+                        pol = Pol.ZENSKI;
+                        polC = 'z';
+                    } else {
+                        System.out.println("Niste odabrali pol");
+                    }
+
+                    String brTelefonaVozaca = brojTelefonaVozaca.getText();
+                    int plata = Integer.parseInt(plataVozacaPolje.getText());
+                    int brojClanskeKarte = Integer.parseInt(brojClanskeKartePolje.getText());
+                    // Za aktivnost proslijediti true u konstruktor, uloga vozac, prosjecna ocjena nula
+
+                    // Sistem generisanja ID vozaca
+
+                    // TODO: Postoji problem sa uzastopnim dodoavanjem više vozača, generiše isti ID
+
+                    int id = 0;
+                    for (Osoba vozac: taxiSluzba.getListaOsoba()
+                    ) {
+                        int idVozaca = vozac.getIdKorisnika();
+                        if (idVozaca > id && vozac instanceof Vozac) {
+                            id = idVozaca + 2 ;
+                        }
+                    }
+
+                    System.out.println("\n ID NOVOKREIRANOG VOZACA : " + id + "\n");
+
+                    // Dodjeljivanje automobila
+
+                    String odabraniAutomobil = comboBox1.getSelectedItem().toString();
+
+                    if (!odabraniAutomobil.equals("0")) {
+                        for (Automobil automobil :
+                                taxiSluzba.getListaAutomovila()) {
+                            String nadjeniAutomobi = automobil.getModel() + " (ID " + automobil.getAutomobilID() + ")";
+
+                            if (odabraniAutomobil.equals(nadjeniAutomobi)) {
+                                automobil.setIdVozaca(id);
+                                automobilVozaca = automobil;
+                            }
+
+                        }
+                    }
+
+
+                    Vozac dodatiVozac = new Vozac(id, imeVozaca, prezimeVozaca, korisnickoIme, lozinkaVozaca, jmbgVozaca, adresaVozaca, polC, brTelefonaVozaca, "vozac", true, plata, brojClanskeKarte, automobilVozaca, null, 0.0);
+                    taxiSluzba.getListaOsoba().add(dodatiVozac);
+
+                } catch (Exception e3) {
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "Greška prilikom dodavanja vozača, provjerite unijete informacije!",
+                            "Greška",
+                            JOptionPane.WARNING_MESSAGE);
+                    System.out.println(e);
+                }
+
             }
         });
 
@@ -66,68 +152,4 @@ public class DodavanjeVozaca extends JFrame {
         });
     }
 
-    public Vozac kreirajVozaca (TaxiSluzba taxiSluzba){
-        Vozac dodatiVozac = null;
-        try {
-            Automobil automobilVozaca = null;
-            Pol pol;
-            char polC = 'm';
-
-            String imeVozaca = imeVozacaPolje.getText();
-            String prezimeVozaca = prezimeVozacaPolje.getText();
-            String korisnickoIme = korisnickoImeVozacaPolje.getText();
-            String lozinkaVozaca = lozinkaVozacaPolje.getText();
-            String jmbgVozaca = jmbgVozacaPolje.getText();
-            String adresaVozaca = adresaVozacaPolje.getText();
-
-            // dodati enum
-            if(muskiRadioButton.isSelected()){
-                pol = Pol.MUSKI;
-                polC = 'm';
-            } else if (zenskiRadioButton.isSelected()){
-                pol = Pol.ZENSKI;
-                polC = 'z';
-            } else {
-                System.out.println("Niste odabrali pol");
-            }
-
-            String brTelefonaVozaca = brojTelefonaVozaca.getText();
-            int plata = Integer.parseInt(plataVozacaPolje.getText());
-            int brojClanskeKarte = Integer.parseInt(brojClanskeKartePolje.getText());
-            // Za aktivnost proslijediti true u konstruktor, uloga vozac, prosjecna ocjena nula
-
-            // TODO: Sistem dodjele automobila
-
-
-
-
-
-
-
-            int id  = generisanjeIdVozaca(taxiSluzba);
-
-            dodatiVozac = new Vozac(id,imeVozaca, prezimeVozaca, korisnickoIme, lozinkaVozaca, jmbgVozaca, adresaVozaca, polC, brTelefonaVozaca,"vozac",true,plata,brojClanskeKarte,automobilVozaca,null,0.0);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog( new Frame(),
-                    "Greška prilikom dodavanja vozača, provjerite unijete informacije!",
-                    "Greška",
-                    JOptionPane.WARNING_MESSAGE);
-            System.out.println(e);
-        }
-
-        return dodatiVozac;
-    }
-
-    public int generisanjeIdVozaca(TaxiSluzba taxiSluzba){
-        int id = 0;
-        for (Osoba vozac: taxiSluzba.getListaOsoba()
-             ) {
-            int idVozaca = vozac.getIdKorisnika();
-            if (idVozaca > id && vozac instanceof Vozac) {
-                id = idVozaca + 2 ;
-            }
-        }
-        return id;
-    }
 }

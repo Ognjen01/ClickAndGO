@@ -1,5 +1,6 @@
 package ui;
 
+import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
 import korisnici.Vozac;
@@ -80,6 +81,7 @@ public class OperacijeVozaci extends JFrame {
                 String idVozacaZaBrisanje = (String) table1.getValueAt(idPozicija, 0);
                 System.out.println(idPozicija + "//" + idVozacaZaBrisanje);
 
+                int idAutomobilaObrisanogVozaca = 0;
                 if (confirmed == JOptionPane.YES_OPTION) {
                     // Funkcija za brisanje vozaca
                     int id = Integer.parseInt(idVozacaZaBrisanje);
@@ -90,12 +92,22 @@ public class OperacijeVozaci extends JFrame {
 
                             if (osoba.isAktivan() && osoba.getIdKorisnika() == id) {
                                 osoba.setAktivan(false);
+                                Vozac vozac = (Vozac) osoba;
+                                idAutomobilaObrisanogVozaca = vozac.getAutomobil().getAutomobilID();
                             }
                         } catch (Exception e1) {
                             System.out.println("Greška prilikom brisanja ali je vozač obrisan");
                         }
                     }
-                    // TODO: Napraviti funkciju koja ce da rafresuje tabelu nakon klika na YES
+                    // TODO: Napraviti funkciju koja ce da rafresuje tabelu nakon klika na  i setuje ID VOZAC u automobilu na 0
+
+                    for (Automobil automobil : taxiSluzba.getListaAutomovila()
+                         ) {
+                        if(automobil.getAutomobilID() == idAutomobilaObrisanogVozaca){
+                            automobil.setIdVozaca(0);
+                            System.out.println("Oslobođen automobil "+automobil.getAutomobilID() + " / " + automobil.getIdVozaca());
+                        }
+                    }
 
                 }
             }
