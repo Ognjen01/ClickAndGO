@@ -112,7 +112,9 @@ public class DodavanjeVozaca extends JFrame {
             JOptionPane.showMessageDialog( new Frame(),
                     "Greška prilikom dodavanja vozača, provjerite unijete informacije!",
                     "Greška",
-                    JOptionPane.WARNING_MESSAGE);        }
+                    JOptionPane.WARNING_MESSAGE);
+            System.out.println(e);
+        }
 
         return dodatiVozac;
     }
@@ -123,7 +125,7 @@ public class DodavanjeVozaca extends JFrame {
              ) {
             int idVozaca = vozac.getIdKorisnika();
             if (idVozaca > id && vozac instanceof Vozac) {
-                id = idVozaca + 1;
+                id = idVozaca + 2 ;
             }
         }
         return id;

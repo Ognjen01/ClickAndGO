@@ -76,6 +76,7 @@ public class OperacijeVozaci extends JFrame {
                         "Da li ste sigurni da želite izbristi vozača imeVozača?", "Potvrdite brisanje",
                         JOptionPane.YES_NO_OPTION);
                 int idPozicija = table1.getSelectedRow();// Druga funkcija za uzimanje reda
+
                 String idVozacaZaBrisanje = (String) table1.getValueAt(idPozicija, 0);
                 System.out.println(idPozicija + "//" + idVozacaZaBrisanje);
 
@@ -85,8 +86,13 @@ public class OperacijeVozaci extends JFrame {
 
                     for (Osoba osoba: taxiSluzba.getListaOsoba()
                          ) {
-                        if(osoba.isAktivan() && osoba.getIdKorisnika() == id){
-                            osoba.setAktivan(false);
+                        try {
+
+                            if (osoba.isAktivan() && osoba.getIdKorisnika() == id) {
+                                osoba.setAktivan(false);
+                            }
+                        } catch (Exception e1) {
+                            System.out.println("Greška prilikom brisanja ali je vozač obrisan");
                         }
                     }
                     // TODO: Napraviti funkciju koja ce da rafresuje tabelu nakon klika na YES
@@ -106,6 +112,7 @@ public class OperacijeVozaci extends JFrame {
     }
 
     public void postaviInformacijeTabele(TaxiSluzba taxiSluzba){
+
         List<Vozac> listaVozaca = new ArrayList<Vozac>();;
         for (Osoba osoba: taxiSluzba.getListaOsoba()){
             if(osoba instanceof Vozac){
