@@ -3,6 +3,7 @@ package pomocneKlase;
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
+import enumeracije.StatusVoznje;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
@@ -47,6 +48,7 @@ public class UcitavanjeVoznji {
         double duzina = Double.parseDouble(elementiVoznje[6]);
         double trajanje = Double.parseDouble(elementiVoznje[7]);
         int cenaVoznje = Integer.parseInt(elementiVoznje[8]);
+        StatusVoznje statusVoznje = StatusVoznje.valueOf(elementiVoznje[5]);
         System.out.println(cenaVoznje);
         if (elementiVoznje[10].equals("telefon")) {
 
@@ -56,7 +58,7 @@ public class UcitavanjeVoznji {
                     idMusterije,
                     elementiVoznje[3],
                     elementiVoznje[4],
-                    elementiVoznje[5],
+                    statusVoznje,
                     duzina,
                     trajanje,
                     cenaVoznje,
@@ -74,7 +76,7 @@ public class UcitavanjeVoznji {
                     idMusterije,
                     elementiVoznje[3],
                     elementiVoznje[4],
-                    elementiVoznje[5],
+                    statusVoznje,
                     duzina,
                     trajanje,
                     cenaVoznje,

@@ -2,6 +2,7 @@ package pomocneKlase;
 
 import entiteti.Automobil;
 import entiteti.Voznja;
+import enumeracije.Pol;
 import korisnici.Dispecer;
 import korisnici.Musterija;
 import korisnici.Osoba;
@@ -52,8 +53,7 @@ public class UcitavanjeKorisnika {
         }
 
         int idKorisnika = Integer.parseInt(niz[0]);
-        String p = niz[7];
-        char pol = p.charAt(0);
+        Pol pol = Pol.valueOf(niz[7]);
         int brTelefona = 1; // Greška sa preuzimanjem vrijednosti iz niza
 
         if (niz[9].equals("korisnik")) {

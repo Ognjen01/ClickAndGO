@@ -2,6 +2,7 @@ package ui;
 
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
+import enumeracije.Pol;
 import korisnici.Osoba;
 import korisnici.Vozac;
 
@@ -77,9 +78,9 @@ public class IzmjenaVozaca extends JFrame {
         adresaVozacaPolje.setText(vozacZaIzmjenu.getAdresa());
         brojClanskeKartePolje.setText(String.valueOf(vozacZaIzmjenu.getBrClanskeKarte()));
 
-        if (vozacZaIzmjenu.getPol() == 'm') {
+        if (vozacZaIzmjenu.getPol() == Pol.MUSKI) {
             muskiRadioButton.setSelected(true);
-        } else if (vozacZaIzmjenu.getPol() == 'z') {
+        } else if (vozacZaIzmjenu.getPol() == Pol.ZENSKI) {
             zenskiRadioButton.setSelected(true);
         } else {
             System.out.println("Došlo je do greške prilikom preuzimanja vozača za izmjenud");
@@ -135,11 +136,11 @@ public class IzmjenaVozaca extends JFrame {
 
 
                     // TODO: Pol prebaciti u enumeraciju
-                    char pol = 'm';
+                    Pol pol = Pol.MUSKI;
                     if(muskiRadioButton.isSelected()){
-                        pol = 'm';
+                        pol = Pol.MUSKI;
                     } else if (zenskiRadioButton.isSelected()){
-                        pol = 'z';
+                        pol = Pol.ZENSKI;
                     } else {
                         System.out.println("Problem sa polom");
                     }
@@ -174,7 +175,6 @@ public class IzmjenaVozaca extends JFrame {
                                 vozac.setBrojTelefona(brojTelefona);
                                 vozac.setPol(pol);
                                 ((Vozac) vozac).setAutomobil(automobilVozaca);
-                                // TODO: Napraviti pribavljanje auta iz combo boxa
                             }
 
 
@@ -183,9 +183,6 @@ public class IzmjenaVozaca extends JFrame {
 
                         setVisible(false);
                     }
-
-
-
 
                 } catch (Exception e1) {
                     System.out.println("Problem prilikom preuzimanja informacija iz polja greska" + e1);

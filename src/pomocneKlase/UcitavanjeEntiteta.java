@@ -35,15 +35,8 @@ public class UcitavanjeEntiteta {
 
     private Automobil transformisiAutomobil(String[] automobil) {
 
-        TipVozila tipVozila = null;
+        TipVozila tipVozila = TipVozila.valueOf(automobil[6]);
 
-        if (automobil[6].equals("auto")) {
-            tipVozila = TipVozila.AUTO;
-        } else if (automobil[6].equals("kombi")) {
-            tipVozila = TipVozila.KOMBI;
-        } else {
-            System.out.println("Došlo je do greške instanciranja tipa vozila.");
-        }
 
         Date datumRegistracije = null;
         try {

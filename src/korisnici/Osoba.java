@@ -1,6 +1,7 @@
 package korisnici;
 
 import entiteti.Voznja;
+import enumeracije.Pol;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ public abstract class Osoba {
     protected String lozinka;
     protected String jmbg; // Mora biti string jer pojedini jmbg počinju sa 0
     protected String adresa;
-    protected char pol;
+    protected Pol pol;
     protected String brojTelefona;
     protected String uloga;
     protected boolean aktivan;
@@ -30,7 +31,7 @@ public abstract class Osoba {
           String lozinka,
           String jmbg,
           String adresa,
-          char pol,
+          Pol pol,
           String brojTelefona,
           String uloga,
           boolean aktivan) {
@@ -58,7 +59,7 @@ public abstract class Osoba {
         this.lozinka = "";
         this.jmbg = "";
         this.adresa = "";
-        this.pol = 'm';
+        this.pol = Pol.MUSKI;
         this.brojTelefona = "";
         this.uloga = "";
         this.aktivan = true;
@@ -107,11 +108,12 @@ public abstract class Osoba {
         this.idKorisnika = idKorisnika;
     }
 
-    public char getPol() {
+
+    public Pol getPol() {
         return pol;
     }
 
-    public void setPol(char pol) {
+    public void setPol(Pol pol) {
         this.pol = pol;
     }
 

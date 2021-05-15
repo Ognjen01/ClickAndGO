@@ -57,8 +57,8 @@ public class DodavanjeVozaca extends JFrame {
 
                 try {
                     Automobil automobilVozaca = null;
-                    Pol pol;
-                    char polC = 'm';
+                    Pol polC = Pol.MUSKI;
+
 
                     String imeVozaca = imeVozacaPolje.getText();
                     String prezimeVozaca = prezimeVozacaPolje.getText();
@@ -83,11 +83,9 @@ public class DodavanjeVozaca extends JFrame {
 
                     // dodati enum
                     if (muskiRadioButton.isSelected()) {
-                        pol = Pol.MUSKI;
-                        polC = 'm';
+                        polC = Pol.MUSKI;
                     } else if (zenskiRadioButton.isSelected()) {
-                        pol = Pol.ZENSKI;
-                        polC = 'z';
+                        polC = Pol.ZENSKI;
                     } else {
                         System.out.println("Niste odabrali pol");
                     }

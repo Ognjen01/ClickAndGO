@@ -1,12 +1,12 @@
-100000|Slobodan|Jović|slobo|slobo123|1305001124092|Jug Bogdana 12|m|64992334|korisnik|true
-100001|Milan|Milaković|milan|milan123|1205002098865|Ćirpanova 12|m|65777654|korisnik|true
-100002|Sladjana|Petrić|saldja|sladja123|0406000987345|Karađorđeva 19|z|32456123|korisnik|true
-100003|Marko|Živković|marko|marko123|3112999098456|Braće Ribnikar 13|m|64555987|korisnik|true
-100004|Stefan|Milinković|stefan|stefan123|3001000123124|Narodnog fronta 5A|m|64564893|korisnik|true
-200000|Sofija|Tadić|sofija|sofija123|1207995098789|Vojvode Mišića 20|z|063456098|dispecer|true|50000|1|narudzbe
-200001|Milena|Mitrović|milena|milena123|1104997097368|Njegoševa 4|z|64234765|dispecer|true|50000|2|narudzbe
-200002|Petar|Mirković|petar|petar123|2510994098245|Bulevar Jovana Dučića 14|m|64397492|dispecer|true|40000|3|reklamacije
-300000|Milenko|Bagić|milenko|milenko123|1203985083321|Vojvode Mišića 22|m|32456987|vozac|true|65000|400000|4.2
-300001|Predrag|Tubić|predrag|predrag123|0503979089245|Valentina Vodnika 33|m|65789234|vozac|true|65000|400001|4.0
-300002|Đorđe|Ibrahimović|djordje|djordje123|2309990789324|Anđe Ranković 20|m|97896354|vozac|true|65000|400002|3.6
-300003|Milorad|Stojković|milorad|milorad123|0708998983456|1300 kaplara|m|74567890|vozac|true|65000|400003|4.8
+100000|Slobodan|Jović|slobo|slobo123|1305001124092|Jug Bogdana 12|MUSKI|64992334|korisnik|true
+100001|Milan|Milaković|milan|milan123|1205002098865|Ćirpanova 12|MUSKI|65777654|korisnik|true
+100002|Sladjana|Petrić|saldja|sladja123|0406000987345|Karađorđeva 19|ZENSKI|32456123|korisnik|true
+100003|Marko|Živković|marko|marko123|3112999098456|Braće Ribnikar 13|MUSKI|64555987|korisnik|true
+100004|Stefan|Milinković|stefan|stefan123|3001000123124|Narodnog fronta 5A|MUSKI|64564893|korisnik|true
+200000|Sofija|Tadić|sofija|sofija123|1207995098789|Vojvode Mišića 20|ZENSKI|063456098|dispecer|true|50000|1|narudzbe
+200001|Milena|Mitrović|milena|milena123|1104997097368|Njegoševa 4|ZENSKI|64234765|dispecer|true|50000|2|narudzbe
+200002|Petar|Mirković|petar|petar123|2510994098245|Bulevar Jovana Dučića 14|MUSKI|64397492|dispecer|true|40000|3|reklamacije
+300000|Milenko|Bagić|milenko|milenko123|1203985083321|Vojvode Mišića 22|MUSKI|32456987|vozac|true|65000|400000|4.2
+300001|Predrag|Tubić|predrag|predrag123|0503979089245|Valentina Vodnika 33|MUSKI|65789234|vozac|true|65000|400001|4.0
+300002|Đorđe|Ibrahimović|djordje|djordje123|2309990789324|Anđe Ranković 20|MUSKI|97896354|vozac|true|65000|400002|3.6
+300003|Milorad|Stojković|milorad|milorad123|0708998983456|1300 kaplara|MUSKI|74567890|vozac|true|65000|400003|4.8

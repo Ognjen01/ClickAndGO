@@ -1,6 +1,7 @@
 package korisnici;
 
 import entiteti.Voznja;
+import enumeracije.Pol;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Musterija extends Osoba {
                      String lozinka,
                      String jmbg,
                      String adresa,
-                     char pol,
+                     Pol pol,
                      String brojTelefona,
                      String uloga,
                      boolean aktivan,

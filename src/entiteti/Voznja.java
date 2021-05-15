@@ -1,5 +1,7 @@
 package entiteti;
 
+import enumeracije.StatusVoznje;
+import jdk.jshell.Snippet;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
@@ -14,7 +16,7 @@ public abstract class Voznja {
     private int idMusterije;
     private String adresaPolaska;
     private String adresaDestinacije;
-    private String status;
+    private StatusVoznje status;
     private double duzina;
     private double trajanje;
     private int cenaPoKilometru = 60;
@@ -32,7 +34,7 @@ public abstract class Voznja {
             int idMusterije,
             String adresaPolaska,
             String adresaDestinacije,
-            String status,
+            StatusVoznje status,
             double duzina,
             double trajanje,
             int cenaVoznje,
@@ -98,11 +100,11 @@ public abstract class Voznja {
         this.adresaDestinacije = adresaDestinacije;
     }
 
-    public String getStatus() {
+    public StatusVoznje getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusVoznje status) {
         this.status = status;
     }
 
@@ -192,7 +194,7 @@ public abstract class Voznja {
         String.valueOf(idVozaca),
         adresaPolaska,
         adresaDestinacije,
-        status,
+                String.valueOf(status),
         String.valueOf(duzina),
         String.valueOf(trajanje),
         String.valueOf(cenaVoznje),

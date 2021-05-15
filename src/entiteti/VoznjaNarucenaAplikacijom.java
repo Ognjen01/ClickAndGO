@@ -1,5 +1,6 @@
 package entiteti;
 
+import enumeracije.StatusVoznje;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
@@ -18,7 +19,7 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
             int idMusterije,
             String adresaPolaska,
             String adresaDestinacije,
-            String status,
+            StatusVoznje status,
             double duzina,
             double trajanje,
             int cenaVoznje,

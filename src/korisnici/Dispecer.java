@@ -1,5 +1,7 @@
 package korisnici;
 
+import enumeracije.Pol;
+
 public class Dispecer extends Osoba {
 
     private int plata;
@@ -14,7 +16,7 @@ public class Dispecer extends Osoba {
             String lozinka,
             String jmbg,
             String adresa,
-            char pol,
+            Pol pol,
             String brojTelefona,
             String uloga,
             boolean aktivan,
