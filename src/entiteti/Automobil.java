@@ -28,7 +28,7 @@ public class Automobil {
                 model + "|" +
                 getDatumRegistracijeString() + "|" +
                 brojRegistracije + "|" +
-                tipVozila.toString().toLowerCase() + "|" +
+                tipVozila + "|" +
                 idVozaca + "\n";
     }
 
