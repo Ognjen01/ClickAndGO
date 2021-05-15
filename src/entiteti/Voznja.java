@@ -185,8 +185,13 @@ public abstract class Voznja {
     }
 
     public String[] toStringArray(){
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-        String datum = df.format(vremeNarudzbine);
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        //String datum = df.format(vremeNarudzbine);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        System.out.println(vremeNarudzbine + getAdresaDestinacije());
+        System.out.println(formatter.format(vremeNarudzbine));
+        String datum = formatter.format(vremeNarudzbine);
 
         String nizObjekat[] = new String[] {
         String.valueOf(idVoznje),

@@ -5,10 +5,10 @@ import korisnici.Musterija;
 import korisnici.Vozac;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class VoznjaNarucenaTelefonom extends Voznja {
-    // TODO: Implemetnirati naručivanje putem telefonom
 
     private final String tipNarucivanje = "telefon";
 
@@ -31,8 +31,7 @@ public class VoznjaNarucenaTelefonom extends Voznja {
 
     }
 
-    public VoznjaNarucenaTelefonom() {
-    }
+
 
     ;
 

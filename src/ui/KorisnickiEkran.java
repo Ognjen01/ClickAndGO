@@ -23,8 +23,6 @@ public class KorisnickiEkran extends JFrame {
         setSize(800, 400);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
-        panel1.setSize(100, 200);
-        panel1.setLocation(400, 400);
         add(panel1);
 
         ime.setText("Dobrodosli: " + prijavljeniKorisnik.getIme());
@@ -39,6 +37,29 @@ public class KorisnickiEkran extends JFrame {
                 setVisible(false);
             }
         });
+
+        naruciTelefonomBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NarucivanjeVoznjeTelefonom narucivanjeVoznjeTelefonom = new NarucivanjeVoznjeTelefonom(taxiSluzba, prijavljeniKorisnik);
+                narucivanjeVoznjeTelefonom.setVisible(true);
+            }
+        });
+
+        naruciAplikacijomBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        izvjestajBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
     }
 
 
