@@ -128,9 +128,18 @@ public class PretragaVozaca extends JFrame {
                             }
                         }
 
+
+
                         String column[]={"Vozač ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa", "Pol", "Broj telefona", "Prosječna ocjena", "Plata", "Automobil"};
 
                         tabelaRezultatiPretrage.setModel(new DefaultTableModel(data, column));
+                    }
+
+                    if(litsaNajdenihVozaca.isEmpty()){
+                        JOptionPane.showMessageDialog( new Frame(),
+                                "Ne postoji niti jedan rezultat pretrage!",
+                                null,
+                                JOptionPane.WARNING_MESSAGE);
                     }
 
 

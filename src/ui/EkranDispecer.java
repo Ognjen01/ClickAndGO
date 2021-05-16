@@ -79,7 +79,8 @@ public class EkranDispecer extends JFrame {
         dodjelaVoznji.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            DodjelaVoznjiNarucenihTelefonom dodjela = new DodjelaVoznjiNarucenihTelefonom(taxiSluzba);
+            dodjela.setVisible(true);
             }
         });
 
