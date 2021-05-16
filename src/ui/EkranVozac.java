@@ -2,6 +2,7 @@ package ui;
 
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
+import korisnici.Vozac;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +15,7 @@ public class EkranVozac extends JFrame {
     private JButton odjavaBtn;
     private JLabel imeVozaca;
     private JPanel panelVozaca;
+    private JButton prihvatanjeVoznji;
 
     public EkranVozac(Osoba prijavljeniVozac, TaxiSluzba taxiSluzba){
         setSize(800, 400);
@@ -22,12 +24,22 @@ public class EkranVozac extends JFrame {
         add(panelVozaca);
         imeVozaca.setText(prijavljeniVozac.getIme());
 
+        Vozac prijavljeniVozac1 = (Vozac) prijavljeniVozac;
+
         odjavaBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Prijava nazadNaPrijavu = new Prijava(taxiSluzba);
                 nazadNaPrijavu.setVisible(true);
                 setVisible(false);
+            }
+        });
+
+        prihvatanjeVoznji.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PrihvatanjeOdbijanjeVoznji prihvatanjeOdbijanjeVoznji = new PrihvatanjeOdbijanjeVoznji(taxiSluzba, prijavljeniVozac1);
+                prihvatanjeOdbijanjeVoznji.setVisible(true);
             }
         });
     }
