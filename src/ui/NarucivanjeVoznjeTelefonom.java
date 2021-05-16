@@ -50,10 +50,11 @@ public class NarucivanjeVoznjeTelefonom extends JFrame {
                     int idVoznje = 0;
                     for (Voznja voznja: taxiSluzba.getListaVoznji()
                          ) {
-                        if(voznja.getIdVoznje() > idVoznje){
+                        if(voznja.getIdVoznje() >= idVoznje){
                             idVoznje = voznja.getIdVoznje() + 1;
                         }
                     }
+
 
                     int idKorisnika = prijavljenaMusterija.getIdKorisnika();
                     int idVozaca = 0;

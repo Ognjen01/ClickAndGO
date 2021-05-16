@@ -103,7 +103,7 @@ public class DodavanjeVozaca extends JFrame {
                     for (Osoba vozac: taxiSluzba.getListaOsoba()
                     ) {
                         int idVozaca = vozac.getIdKorisnika();
-                        if (idVozaca > id && vozac instanceof Vozac) {
+                        if (idVozaca >= id && vozac instanceof Vozac) {
                             id = idVozaca + 2 ;
                         }
                     }
