@@ -78,8 +78,7 @@ public class DodavanjeIzmenaAutomobila extends JFrame {
                         "Zelite li potvrdite unos?", "Izaberite opciju...", JOptionPane.YES_NO_CANCEL_OPTION);
 
                 if (input == 0) {
-                    try {
-                        Writer writer = new BufferedWriter(new FileWriter("src/fajlovi/automobili.txt", true));
+                    try { Writer writer = new BufferedWriter(new FileWriter("src/fajlovi/automobili.txt", true));
                         writer.append(automobil);
                         writer.close();
                         JOptionPane.showMessageDialog(null,

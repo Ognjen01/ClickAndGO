@@ -93,6 +93,11 @@ public class NarucivanjeVoznjeTelefonom extends JFrame {
                     System.out.println(voznja.toString());
                     taxiSluzba.getListaVoznji().add(voznja);
 
+                    JOptionPane.showMessageDialog( new Frame(),
+                            "Uspješno naručena vožnja, molimo sačekajte!",
+                            null,
+                            JOptionPane.INFORMATION_MESSAGE);
+
                 } catch (Exception e1) {
                     JOptionPane.showMessageDialog( new Frame(),
                             "Greška pri naručivanju vožnje!",

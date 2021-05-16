@@ -10,6 +10,7 @@ import korisnici.Vozac;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -22,7 +23,9 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
     private JButton odbijVoznjuBtn;
     private JScrollPane sp;
     private JTable tabelaVoznji;
-    private JTextField textField1;
+    private JTextField vrijemeDolaska;
+    private JButton osvjezi;
+    private JButton nazad;
 
     public PrihvatanjeOdbijanjeVoznji(TaxiSluzba taxiSluzba, Vozac prijavljeniVozac){
         setSize(800, 400);
@@ -32,19 +35,53 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
         add(panel1);
         osvjeziTabelu(taxiSluzba, prijavljeniVozac);
 
+        nazad.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
+
 
         prihvatiVoznjuBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int idPozicijaVoznje = tabelaVoznji.getSelectedRow();
-                int idVoznjazaPrihvatanje = Integer.parseInt((String) tabelaVoznji.getValueAt(idPozicijaVoznje, 0));
 
-                for (Voznja voznja: taxiSluzba.getListaVoznji()
-                     ) {
-                    if(idVoznjazaPrihvatanje == voznja.getIdVoznje()){
-                        voznja.setStatus(StatusVoznje.PRIHVACENA);
+                try {
+                    int idPozicijaVoznje = tabelaVoznji.getSelectedRow();
+                    int idVoznjazaPrihvatanje = Integer.parseInt((String) tabelaVoznji.getValueAt(idPozicijaVoznje, 0));
+
+                    int vrijemeDolaskaInt = Integer.parseInt(vrijemeDolaska.getText());
+
+                    for (Voznja voznja : taxiSluzba.getListaVoznji()
+                    ) {
+                        if (idVoznjazaPrihvatanje == voznja.getIdVoznje()) {
+                            voznja.setStatus(StatusVoznje.PRIHVACENA);
+                        }
                     }
+
+                    JOptionPane.showMessageDialog( new Frame(),
+                            "Uspješno prihvaćena vožnja!",
+                            null,
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    osvjeziTabelu(taxiSluzba, prijavljeniVozac);
+
+                } catch (Exception exception){
+                    JOptionPane.showMessageDialog( new Frame(),
+                            "Niste odabrali vožnju ili ste unijeli pogrešan format u polje vremena dolaska!",
+                            "Greška",
+                            JOptionPane.WARNING_MESSAGE);
                 }
+
+
+            }
+        });
+
+        osvjezi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                osvjeziTabelu(taxiSluzba, prijavljeniVozac);
             }
         });
 
@@ -60,6 +97,11 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
                         voznja.setStatus(StatusVoznje.ODBIJENA);
                     }
                 }
+
+                JOptionPane.showMessageDialog( new Frame(),
+                        "Vožnja odbijena!",
+                        null,
+                        JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
@@ -67,6 +109,9 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
     }
 
     public void osvjeziTabelu(TaxiSluzba taxiSluzba, Vozac prijavljeniVozac){
+
+
+
 
         List<Voznja> listaKreiranihVoznji = new ArrayList<Voznja>();
 
@@ -91,6 +136,14 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
 
         String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         tabelaVoznji.setModel(new DefaultTableModel(data, column));
+
+
+        if (listaKreiranihVoznji.isEmpty()){
+            JOptionPane.showMessageDialog( new Frame(),
+                    "Nema vožnji za prihvatanje",
+                    null,
+                    JOptionPane.WARNING_MESSAGE);
+        }
 
     }
 }

@@ -91,6 +91,7 @@ public class DodjelaVoznjiNarucenihTelefonom extends JFrame {
 
                     System.out.println("VOŽNJA JE DODJELJENA VOZAČU");
 
+                    osvjeziTabele(taxiSluzba);
 
                 }
                 catch (Exception exception) {
