@@ -91,20 +91,24 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
         odbijVoznjuBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int idPozicijaVoznje = tabelaVoznji.getSelectedRow();
-                int idVoznjazaPrihvatanje = Integer.parseInt((String) tabelaVoznji.getValueAt(idPozicijaVoznje, 0));
+                try {
+                    int idPozicijaVoznje = tabelaVoznji.getSelectedRow();
+                    int idVoznjazaPrihvatanje = Integer.parseInt((String) tabelaVoznji.getValueAt(idPozicijaVoznje, 0));
 
-                for (Voznja voznja: taxiSluzba.getListaVoznji()
-                ) {
-                    if(idVoznjazaPrihvatanje == voznja.getIdVoznje()){
-                        voznja.setStatus(StatusVoznje.ODBIJENA);
+                    for (Voznja voznja : taxiSluzba.getListaVoznji()
+                    ) {
+                        if (idVoznjazaPrihvatanje == voznja.getIdVoznje()) {
+                            voznja.setStatus(StatusVoznje.ODBIJENA);
+                        }
                     }
-                }
 
-                JOptionPane.showMessageDialog( new Frame(),
-                        "Vožnja odbijena!",
-                        null,
-                        JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "Vožnja odbijena!",
+                            null,
+                            JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception exception){
+                    System.out.println("Greška prilikom odbijanja vožnji");
+                }
             }
         });
 
@@ -140,13 +144,6 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
         String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         tabelaVoznji.setModel(new DefaultTableModel(data, column));
 
-
-        if (listaKreiranihVoznji.isEmpty()){
-            JOptionPane.showMessageDialog( new Frame(),
-                    "Nema vožnji za prihvatanje",
-                    null,
-                    JOptionPane.WARNING_MESSAGE);
-        }
 
     }
 }

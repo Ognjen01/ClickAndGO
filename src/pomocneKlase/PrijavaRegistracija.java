@@ -23,9 +23,4 @@ public class PrijavaRegistracija {
         return prijavljeniKorisnik;
     }
 
-
-    // TODO: Implementovati funkciju regostracija!!!
-    public void registracija() {
-
-    }
 }

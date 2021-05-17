@@ -28,28 +28,36 @@ public class ZavrsavanjeVoznje extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                double duzina = Double.parseDouble(duzinaPolje.getText());
-                double trajanje = Double.parseDouble(trajanjePolje.getText());
+                try {
+                    double duzina = Double.parseDouble(duzinaPolje.getText());
+                    double trajanje = Double.parseDouble(trajanjePolje.getText());
 
-                int cijena = (int) (taxiSluzba.getCijenaPoKilometru() * duzina + taxiSluzba.getCijenaStarta());
+                    int cijena = (int) (taxiSluzba.getCijenaPoKilometru() * duzina + taxiSluzba.getCijenaStarta());
 
-                for (Voznja voznja: taxiSluzba.getListaVoznji()
-                ) {
-                    if (voznja.getIdVoznje() == idVoznje){
-                        voznja.setStatus(StatusVoznje.ZAVRSENA);
+                    for (Voznja voznja : taxiSluzba.getListaVoznji()
+                    ) {
+                        if (voznja.getIdVoznje() == idVoznje) {
+                            voznja.setStatus(StatusVoznje.ZAVRSENA);
 
-                        voznja.setCenaVoznje(cijena);
-                        voznja.setTrajanje((int) trajanje);
-                        voznja.setDuzina((int) duzina);
+                            voznja.setCenaVoznje(cijena);
+                            voznja.setTrajanje((int) trajanje);
+                            voznja.setDuzina((int) duzina);
+                        }
                     }
+
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "Cijena vožnje je: " + cijena + " RSD",
+                            null,
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    setVisible(false);
+                } catch (Exception exception){
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "Greška prilikom završavanje vožnje",
+                            "Greška",
+                            JOptionPane.WARNING_MESSAGE);
                 }
 
-                JOptionPane.showMessageDialog( new Frame(),
-                        "Cijena vožnje je: " + cijena + " RSD",
-                        null,
-                        JOptionPane.INFORMATION_MESSAGE);
-
-                setVisible(false);
             }
         });
 
