@@ -63,18 +63,10 @@ public class NarucivanjeVoznjeTelefonom extends JFrame {
 
                     // Generisanje dužine vožnje kao random broja između 1 i 25 npr.
 
-                    int min = 1;
-                    int max = 15;
-                    double duzinaVoznje = (int)Math.floor(Math.random()*(max-min+1)+min);
-                    System.out.println("RANDOM GENERISAN BROJ: " + duzinaVoznje);
-
-                    double trajanjeVoznje = duzinaVoznje * 2;
-                    System.out.println("TRAJANJE VOZNJE: " + trajanjeVoznje);
-
-                    System.out.println("CIJENA PO KILOMETRU: " + taxiSluzba.getCijenaPoKilometru() + " CIJENA STARTA: " + taxiSluzba.getCijenaStarta());
-
-                    int cijena = (int) (taxiSluzba.getCijenaPoKilometru() * duzinaVoznje + taxiSluzba.getCijenaStarta());
-                    System.out.println("CIJENA VOZNJE: " + cijena);
+                    // TODO: Cijenu i trajanje unosi vozač
+                    double duzinaVoznje = 0;
+                    double trajanjeVoznje = 0;
+                    int cijena = 0;
 
                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                     Date datumKreiranja = new Date();

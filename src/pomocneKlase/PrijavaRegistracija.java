@@ -12,7 +12,7 @@ public class PrijavaRegistracija {
         Osoba prijavljeniKorisnik = null;
         for (Osoba korisnik : listaKorisnika) {
             System.out.println("Trazeni: " + korisnikckoIme + " " + lozinka + " ; Nađeni: " + korisnik.getIme() + " " + korisnik.getLozinka());
-            if (korisnikckoIme.equals(korisnik.getKorisnickoIme()) && lozinka.equals(korisnik.getLozinka())) {
+            if (korisnikckoIme.equals(korisnik.getKorisnickoIme()) && lozinka.equals(korisnik.getLozinka()) && korisnik.isAktivan()) {
                 prijavljeniKorisnik = korisnik;
                 break;
             }

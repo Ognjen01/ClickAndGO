@@ -65,6 +65,9 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
                             null,
                             JOptionPane.INFORMATION_MESSAGE);
 
+                    ZavrsavanjeVoznje zavrsavanjeVoznje = new ZavrsavanjeVoznje(taxiSluzba, idVoznjazaPrihvatanje);
+                    zavrsavanjeVoznje.setVisible(true);
+
                     osvjeziTabelu(taxiSluzba, prijavljeniVozac);
 
                 } catch (Exception exception){
