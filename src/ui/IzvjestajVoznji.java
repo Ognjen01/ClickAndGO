@@ -6,6 +6,8 @@ import entiteti.Voznja;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -68,17 +70,17 @@ public class IzvjestajVoznji extends JFrame {
                 String dan = (String) daniComboBox.getSelectedItem();
                 String mjesec = (String) mjeseciComboBox.getSelectedItem();
                 String godine = (String) godineComboBox.getSelectedItem();
-
-                System.out.println("ODABRANI DATUM: " + dan + "/" + mjesec + "/" + godine);
+                int zahtjevanaGodina = Integer.parseInt(godine);
 
                 String odabraniDatum = dan + "/" + mjesec + "/" + godine;
+
 
                 // TODO: Logika za izvještaje:
 
                 if (dan.equals("Nije odabrano") && mjesec.equals("Nije odabrano")){
 
                     // Logika izvjestaja godisnjeg
-                    int zahtjevanaGodina = Integer.parseInt(godine);
+
                     List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
 
                     for (Voznja voznja: taxiSluzba.getListaVoznji()
@@ -91,20 +93,81 @@ public class IzvjestajVoznji extends JFrame {
                         }
                     }
 
+                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    rezultati.setVisible(true);
+
                 } else if (dan.equals("Nije odabrano") && !mjesec.equals("Nije odabrano")){
 
                     // Logika za mjesecni izvjestaj
+
+                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
+                    int zahtjevaniMjesec = Integer.parseInt(mjesec);
+
+                    for (Voznja voznja: taxiSluzba.getListaVoznji()
+                         ) {
+                        int godinaNadjeneNarudzbe = voznja.getVremeNarudzbine().getYear() + 1900;
+                        int mjesecVoznje = voznja.getVremeNarudzbine().getMonth() + 1;
+
+                        if (mjesecVoznje == zahtjevaniMjesec && zahtjevanaGodina == godinaNadjeneNarudzbe){
+                            listaOdgovarajucihVoznji.add(voznja);
+                        }
+                    }
+
+                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    rezultati.setVisible(true);
 
                 } else if(!dan.equals("Nije odabrano") && !mjesec.equals("Nije odabrano") && !sedmicniIzvjestaj.isSelected()){
 
                     // Logika za dnevni izvjestaj
 
+                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
+
+                    for (Voznja voznja: taxiSluzba.getListaVoznji()
+                    ) {
+
+                        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                        String strDate = dateFormat.format(voznja.getVremeNarudzbine());
+                        System.out.println(strDate + " / " + odabraniDatum);
+
+                        if (strDate.equals(odabraniDatum)){
+                            System.out.println("Voznja se desila trazenog datuma");
+                            listaOdgovarajucihVoznji.add(voznja);
+                        }
+                    }
+
+                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    rezultati.setVisible(true);
+
                 } else if(!dan.equals("Nije odabrano") && !mjesec.equals("Nije odabrano") && sedmicniIzvjestaj.isSelected()) {
 
                     // Logika za sedmicni izvjestaj
 
-                }
+                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
 
+                    Date date1= null;
+                    try {
+                        date1 = new SimpleDateFormat("dd/MM/yyyy").parse(odabraniDatum);
+                    } catch (ParseException parseException) {
+                        parseException.printStackTrace();
+                    }
+
+                    Calendar zaSedamDana = Calendar.getInstance();
+                    zaSedamDana.setTime(date1);
+                    zaSedamDana.add(Calendar.DAY_OF_MONTH, 7);
+
+                    System.out.println(date1 + "/" + zaSedamDana.getTime());
+
+                    for (Voznja voznja: taxiSluzba.getListaVoznji()
+                         ) {
+                        if(voznja.getVremeNarudzbine().before(zaSedamDana.getTime()) && voznja.getVremeNarudzbine().after(date1)){
+                            listaOdgovarajucihVoznji.add(voznja);
+                            System.out.println("Voznja pripada odgovarajucem intervalu!");
+                        }
+                    }
+
+                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    rezultati.setVisible(true);
+                }
             }
         });
 
