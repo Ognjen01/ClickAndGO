@@ -90,6 +90,8 @@ public class NarucivanjeVoznjeTelefonom extends JFrame {
                             null,
                             JOptionPane.INFORMATION_MESSAGE);
 
+                    setVisible(false);
+
                 } catch (Exception e1) {
                     JOptionPane.showMessageDialog( new Frame(),
                             "Greška pri naručivanju vožnje!",

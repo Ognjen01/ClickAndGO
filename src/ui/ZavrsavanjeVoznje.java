@@ -17,7 +17,7 @@ public class ZavrsavanjeVoznje extends JFrame{
 
     public ZavrsavanjeVoznje(TaxiSluzba taxiSluzba, int idVoznje){
 
-        setSize(800, 400);
+        setSize(600, 300);
         setTitle("Click&GO - Prihvatanje vožnji");
         setLocationRelativeTo(null);
 

@@ -163,11 +163,6 @@ public class DodjelaVoznjiNarucenihTelefonom extends JFrame {
 
         tabelaVozaca.setModel(new DefaultTableModel(dataV, columnV));
 
-        if (listaKreiranihVoznji.isEmpty()){
-            JOptionPane.showMessageDialog( new Frame(),
-                    "Nema vožnji koje čekaju da dodjelu!",
-                    null,
-                    JOptionPane.WARNING_MESSAGE);
-        }
+
     }
 }
