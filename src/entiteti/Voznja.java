@@ -140,6 +140,13 @@ public abstract class Voznja {
         this.cenaStarta = cenaStarta;
     }
 
+    public int getCenaVoznje() {
+        return cenaVoznje;
+    }
+
+    public void setCenaVoznje(int cenaVoznje) {
+        this.cenaVoznje = cenaVoznje;
+    }
 
     public Date getVremeNarudzbine() {
         return vremeNarudzbine;
