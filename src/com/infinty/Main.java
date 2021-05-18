@@ -4,10 +4,11 @@ import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import korisnici.Osoba;
+import korisnici.Vozac;
+import list.DoublyLinkedList;
 import pomocneKlase.*;
 import ui.Prijava;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
+
 
         // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
@@ -50,6 +53,10 @@ public class Main {
 
         UpisivanjeUFajl upis = new UpisivanjeUFajl();
         upis.upisiTaxiSluzbu(taxiSluzba);
+
+        DoublyLinkedList<Osoba> lista11 = new DoublyLinkedList<>();
+
+
 
 
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
