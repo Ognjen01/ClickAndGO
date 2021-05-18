@@ -55,5 +55,19 @@ public class Musterija extends Osoba {
                 aktivan + "\n";
     }
 
-    // Da li ima potrebe za Overide funkcijama iz klase Osoba??
+    public String[] toArrayString(){
+
+        String nizObjekata[] = new String[] {
+                String.valueOf(idKorisnika),
+                ime,
+                prezime,
+                korisnickoIme,
+                jmbg,
+                adresa,
+                String.valueOf(pol),
+                brojTelefona
+        };
+
+        return nizObjekata;
+    }
 }

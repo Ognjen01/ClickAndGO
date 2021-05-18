@@ -21,11 +21,12 @@ public class EkranDispecer extends JFrame {
     private JButton izvjestajVoznji;
     private JButton izvjestajVozaca;
     private JButton odjava;
+    private JButton prikazMusterija;
 
     public EkranDispecer(Osoba prijavljeniDispecer, TaxiSluzba taxiSluzba) {
 
 
-        setSize(800, 400);
+        setSize(800, 470);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
         imeDispecera.setText(prijavljeniDispecer.getIme());
@@ -73,6 +74,14 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 PretragaVozaca pretragaVozaca = new PretragaVozaca(taxiSluzba);
                 pretragaVozaca.setVisible(true);
+            }
+        });
+
+        prikazMusterija.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PrikazMusterija prikazMusterija = new PrikazMusterija(taxiSluzba);
+                prikazMusterija.setVisible(true);
             }
         });
 
