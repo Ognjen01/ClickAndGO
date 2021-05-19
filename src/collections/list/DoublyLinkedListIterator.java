@@ -19,6 +19,6 @@ public class DoublyLinkedListIterator<T> implements Iterator<T> {
     public T next() {
         T element = currentNode.getElement();
         currentNode = currentNode.getNext();
-        return null;
+        return element;
     }
 }

@@ -1,6 +1,7 @@
 package collections.list;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class DoublyLinkedList<T> implements Iterable<T> {
 
@@ -26,13 +27,12 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             node.setNext(head);
             head = node;
         }
-
         listSize++;
     }
 
-    public void addLast(T element) {
+    public void add(T element) {
         ListNode<T> node = new ListNode<T>(element);
-
+        System.out.println(element + " " + node);
         if(head == null){
             head = node;
         } else {
@@ -43,7 +43,6 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             current.setNext(node);
             node.setPrevious(current);
         }
-        //TODO: TAil
         listSize++;
     }
 
@@ -74,25 +73,28 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         }
     }
 
-    public void remove(ListNode<T> del){
+    // Briše prvi isti element na koji naiđe
 
-            if (head == null || del == null) {
+    public void remove(T del){
+
+        ListNode<T> toRemove = new ListNode<T>(del);
+        if (head == null || del == null) {
                 return;
             }
-            // Ptelja
-            if (head == del) {
-                head = head.getNext();
+
+            ListNode<T> current = head;
+            while(current.getNext() != null){
+
+                if (current.getElement() == toRemove.getElement()){
+                    current.getPrevious().setNext(current.getNext());
+                    current.getNext().setPrevious(current.getPrevious());
+                    current = null;
+                    break;
+
+                } else {
+                    current = current.getNext();
+                }
             }
-
-            if (del.getNext() != null) {
-                del.getNext().setPrevious(del.getPrevious());
-            }
-
-            if (del.getPrevious() != null) {
-                del.getPrevious().setNext(del.getNext());
-            }
-
-
     }
 
     public ListNode<T> getHead(){
@@ -101,10 +103,6 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
     public ListNode<T> getLast(){
         return tail;
-    }
-
-    public void clear(){
-
     }
 
     @Override

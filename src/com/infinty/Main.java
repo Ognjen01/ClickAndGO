@@ -54,6 +54,37 @@ public class Main {
 
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
 
+        //TODO: !! Provjera doubly linked liste !!
+
+        DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<>();
+
+        for (String[] nizEntitetaOsobe : lista
+        ) {
+            Osoba ucitanaOsoba = vratiListuOsoba.odluciKojegKorisnikaInstancirati(nizEntitetaOsobe);
+            System.out.println(ucitanaOsoba.getIme());
+            listaUcitanohOsoba.add(ucitanaOsoba);
+            System.out.println("ENTITET DODAT U DOUBLEY LINKED LIST");
+        }
+
+
+        for (Osoba osoba: listaUcitanohOsoba
+             ) {
+
+            if (osoba.getIme().equals("Milenko")){
+                listaUcitanohOsoba.remove(osoba);
+            }
+            System.out.println(osoba.getIme() + " " + listaUcitanohOsoba.size());
+        }
+
+        for (Osoba osoba: listaUcitanohOsoba
+        ) {
+
+            if (osoba.getIme().equals("Predrag")){
+                System.out.println(osoba.getIme() + " " + osoba.getPrezime() + " " +  listaUcitanohOsoba.isEmpty());
+            }
+        }
+
+
     }
 
 }
