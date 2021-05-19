@@ -4,22 +4,18 @@ import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import korisnici.Osoba;
-import korisnici.Vozac;
-import list.DoublyLinkedList;
+import collections.list.DoublyLinkedList;
 import pomocneKlase.*;
 import ui.Prijava;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
 public class Main {
 
     public static void main(String[] args) {
-
-
-
-        // ZA SADA JE MAIN JOŠ UVIJEK ZA TESTIRANJE KODA U NJEMU SE NE NALAZI NIKAKVA KONKRETNA IMPLEMENTACIJA!!!
 
         // Učitavanje listi koje se prosleđuju u TaxiSluzbu
 
@@ -56,13 +52,7 @@ public class Main {
 
         DoublyLinkedList<Osoba> lista11 = new DoublyLinkedList<>();
 
-
-
-
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
-        //       - Potrebno dodati samo taj osluškivač za pritisak na X
-        //       - doraditi prikaz vožnji!!!!!!!!!!
-
 
     }
 

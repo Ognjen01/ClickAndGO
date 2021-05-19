@@ -1,4 +1,4 @@
-package list;
+package collections.list;
 
 public class ListNode<T> {
 

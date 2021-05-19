@@ -1,7 +1,6 @@
-package list;
+package collections.list;
 
 import java.util.Iterator;
-import java.util.List;
 
 public class DoublyLinkedList<T> implements Iterable<T> {
 
@@ -44,7 +43,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             current.setNext(node);
             node.setPrevious(current);
         }
-
+        //TODO: TAil
         listSize++;
     }
 
@@ -80,7 +79,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             if (head == null || del == null) {
                 return;
             }
-
+            // Ptelja
             if (head == del) {
                 head = head.getNext();
             }
