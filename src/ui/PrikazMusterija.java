@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 public class PrikazMusterija extends JFrame {
     private JPanel panelTabele;
     private JScrollPane sp;
-    private JTable tabelaVoznji;
+    private JTable tabelaMusterija;
     private JButton nazadBtn;
     private JButton osvjeziTabeluBtn;
 
@@ -61,9 +61,11 @@ public class PrikazMusterija extends JFrame {
         }
 
         String column[]={"ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa prebivališta", "Pol", "Broj telefona"};
-        tabelaVoznji.setModel(new DefaultTableModel(data, column));
+        tabelaMusterija.setModel(new DefaultTableModel(data, column));
+        tabelaMusterija.setAutoCreateRowSorter(true);
         add(panelTabele);
 
     }
+
 
 }

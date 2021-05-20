@@ -149,7 +149,7 @@ public class OperacijeVozaci extends JFrame {
         String column[]={"Vozač ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa", "Pol", "Broj telefona", "Prosječna ocjena", "Plata", "Automobil"};
 
         table1.setModel(new DefaultTableModel(data, column));
-
+        table1.setAutoCreateRowSorter(true);
         add(panel1);
     }
 }

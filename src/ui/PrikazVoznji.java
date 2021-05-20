@@ -51,12 +51,23 @@ public class PrikazVoznji extends JFrame {
     public void osvjeziTabelu (TaxiSluzba taxiSluzba) {
 // TODO: Doraditi algoritam
         int brojVoznji = taxiSluzba.getListaVoznji().size();
-        String data[][] = new String[brojVoznji][11];
+        Object[][] data = new Object[brojVoznji][11];
 
         int index = 0;
+
         for (Voznja voznja: taxiSluzba.getListaVoznji()
         ) {
-            data[index]= voznja.toStringArray();
+            data[index][0] = voznja.getIdVoznje();
+            data[index][1] = voznja.getIdMusterije();
+            data[index][2] = voznja.getIdVozaca();
+            data[index][3] = voznja.getAdresaPolaska();
+            data[index][4] = voznja.getAdresaDestinacije();
+            data[index][5] = voznja.getStatus();
+            data[index][6] = voznja.getDuzina();
+            data[index][7] = voznja.getTrajanje();
+            data[index][8] = voznja.getCenaVoznje();
+            data[index][9] = voznja.getVremeNarudzbine();
+
             if (voznja instanceof VoznjaNarucenaTelefonom){
                 data[index][10] = "telefon";
             } else {
@@ -68,12 +79,12 @@ public class PrikazVoznji extends JFrame {
         }
 
 
-        RowSorter<TableModel> sorter = new TableRowSorter<TableModel>();
-        //tabelaVoznji.setRowSorter(sorter);
-
 
         String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
-        tabelaVoznji.setModel(new DefaultTableModel(data, column));
+        TableModel tableModel = new DefaultTableModel(data, column);
+        tabelaVoznji.setModel(tableModel);
+
+        tabelaVoznji.setAutoCreateRowSorter(true);
         add(panelTabele);
     }
 }

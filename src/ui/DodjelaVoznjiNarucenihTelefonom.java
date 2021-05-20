@@ -133,7 +133,7 @@ public class DodjelaVoznjiNarucenihTelefonom extends JFrame {
 
         String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         tabelaVoznji.setModel(new DefaultTableModel(data, column));
-
+        tabelaVoznji.setAutoCreateRowSorter(true);
 
 
         // Postavljanje informacija vozača
@@ -162,7 +162,7 @@ public class DodjelaVoznjiNarucenihTelefonom extends JFrame {
         String columnV[]={"Vozač ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa", "Pol", "Broj telefona", "Prosječna ocjena", "Plata", "Automobil"};
 
         tabelaVozaca.setModel(new DefaultTableModel(dataV, columnV));
-
+        tabelaVozaca.setAutoCreateRowSorter(true);
 
     }
 }

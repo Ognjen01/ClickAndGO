@@ -133,6 +133,7 @@ public class PretragaVozaca extends JFrame {
                         String column[]={"Vozač ID","Ime","Prezime", "Korisničko ime", "JMBG", "Adresa", "Pol", "Broj telefona", "Prosječna ocjena", "Plata", "Automobil"};
 
                         tabelaRezultatiPretrage.setModel(new DefaultTableModel(data, column));
+                        tabelaRezultatiPretrage.setAutoCreateRowSorter(true);
                     }
 
                     if(litsaNajdenihVozaca.isEmpty()){

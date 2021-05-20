@@ -143,6 +143,7 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
 
         String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         tabelaVoznji.setModel(new DefaultTableModel(data, column));
+        tabelaVoznji.setAutoCreateRowSorter(true);
 
 
     }
