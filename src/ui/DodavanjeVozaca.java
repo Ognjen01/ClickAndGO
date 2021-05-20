@@ -56,6 +56,7 @@ public class DodavanjeVozaca extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 try {
+
                     Automobil automobilVozaca = null;
                     Pol polC = Pol.MUSKI;
 
@@ -66,6 +67,18 @@ public class DodavanjeVozaca extends JFrame {
                     String lozinkaVozaca = lozinkaVozacaPolje.getText();
                     String jmbgVozaca = jmbgVozacaPolje.getText();
                     String adresaVozaca = adresaVozacaPolje.getText();
+
+
+                    if (
+                            imeVozaca.equals("") ||
+                                    prezimeVozaca.equals("") ||
+                                    jmbgVozaca.equals("") ||
+                                    adresaVozaca.equals("") ||
+                                    korisnickoIme.equals("") ||
+                                    lozinkaVozaca.equals("")
+                    ){
+                        throw new Exception();
+                    }
 
                     // Provjera da li postoji korisničko ime
 

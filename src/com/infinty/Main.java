@@ -1,5 +1,6 @@
 package com.infinty;
 
+import collections.list.ListNode;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
@@ -8,7 +9,9 @@ import collections.list.DoublyLinkedList;
 import pomocneKlase.*;
 import ui.Prijava;
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -67,24 +70,43 @@ public class Main {
         }
 
 
-        for (Osoba osoba: listaUcitanohOsoba
-             ) {
-
-            if (osoba.getIme().equals("Milenko")){
-                listaUcitanohOsoba.remove(osoba);
-            }
-            System.out.println(osoba.getIme() + " " + listaUcitanohOsoba.size());
-        }
-
-        for (Osoba osoba: listaUcitanohOsoba
+        for (Osoba osoba : listaUcitanohOsoba
         ) {
+            System.out.println(osoba.getIme() + " " + osoba.getIdKorisnika());
+        }
 
-            if (osoba.getIme().equals("Predrag")){
-                System.out.println(osoba.getIme() + " " + osoba.getPrezime() + " " +  listaUcitanohOsoba.isEmpty());
+
+        for (Osoba osoba1: listaUcitanohOsoba
+             ) {
+            for ( Osoba osoba2: listaUcitanohOsoba
+                 ) {
+                if(osoba1.getIdKorisnika() > osoba2.getIdKorisnika()){
+
+                    // Kreiranje novog ListNode
+                    ListNode<Osoba> os1 = listaUcitanohOsoba.getElement(osoba1);
+                    ListNode<Osoba> os2 = listaUcitanohOsoba.getElement(osoba2);
+
+                    // Razmjena informacija između osoba
+                    Osoba prenos = osoba1;
+                    osoba1 = osoba2;
+                    osoba2 = prenos;
+
+                    // Postavljanje elementa na osobu, bez next i previous
+                    listaUcitanohOsoba.getElement(osoba1).setElement(osoba2);
+                    listaUcitanohOsoba.getElement(osoba2).setElement(prenos);
+
+                    // Postavljanje čitavog ListNode
+                    listaUcitanohOsoba.getElement(osoba1).setListNode(os2);
+                    listaUcitanohOsoba.getElement(osoba2).setListNode(os1);
+
+                }
             }
         }
 
 
+        for (Osoba osoba : listaUcitanohOsoba
+        ) {
+            System.out.println(osoba.getIme() + " " + osoba.getIdKorisnika());
+        }
     }
-
 }

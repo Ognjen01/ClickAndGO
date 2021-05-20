@@ -117,7 +117,17 @@ public class IzmjenaVozaca extends JFrame {
 
                     // Nalaženje trenutnog automobila
 
-
+                    if (
+                            ime.equals("") ||
+                                    prezime.equals("") ||
+                                    korisnickoIme.equals("") ||
+                                    lozinka.equals("") ||
+                                    jmbg.equals("") ||
+                                    adresa.equals("") ||
+                                    brojTelefona.equals("")
+                    ){
+                        throw new Exception();
+                    }
 
                     // Postavljanje automobila
                     Automobil automobilVozaca = null;

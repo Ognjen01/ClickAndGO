@@ -1,9 +1,11 @@
 package collections.list;
 
+import korisnici.Osoba;
+
 import java.util.Iterator;
 import java.util.List;
 
-public class DoublyLinkedList<T> implements Iterable<T> {
+public class DoublyLinkedList<T> implements Iterable<T>{
 
     private ListNode<T> head;
     private ListNode<T> tail;
@@ -95,6 +97,25 @@ public class DoublyLinkedList<T> implements Iterable<T> {
                     current = current.getNext();
                 }
             }
+    }
+
+
+    public ListNode<T> getElement(T element){
+        ListNode<T> toRemove = new ListNode<T>(element);
+        if (head == null || element == null) {
+            return null;
+        }
+
+        ListNode<T> current = head;
+        while(current.getNext() != null){
+
+            if (current.getElement() == toRemove.getElement()){
+                return current;
+            } else {
+                current = current.getNext();
+            }
+        }
+        return current;
     }
 
     public ListNode<T> getHead(){

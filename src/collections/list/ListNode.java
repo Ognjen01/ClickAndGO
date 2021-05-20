@@ -25,10 +25,16 @@ public class ListNode<T> {
 
     // Da li dodati konstruktor sa prethodnim elementom
 
-
-
     public T getElement() {
         return element;
+    }
+
+    // Možda nije potrebno
+
+    public void setListNode(ListNode<T> node){
+        this.element = node.getElement();
+        this.next = node.getNext();
+        this.previous = node.getPrevious();
     }
 
     public void setElement(T element) {

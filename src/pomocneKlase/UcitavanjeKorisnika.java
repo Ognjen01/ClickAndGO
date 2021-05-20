@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.Voznja;
 import enumeracije.Pol;

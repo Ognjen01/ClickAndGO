@@ -65,6 +65,18 @@ public class Registracija extends JFrame {
                     String brojTelefona = brojTelefonaPolje.getText(); // STring jer moze da pocinje sa 0 -> Potreban regex
                     Pol pol = null;
 
+                    if (
+                            ime.equals("") ||
+                                    prezime.equals("") ||
+                                    korisnickoIme.equals("") ||
+                                    lozinka.equals("") ||
+                                    jmbg.equals("") ||
+                                    adresaPrebivalista.equals("") ||
+                                    brojTelefona.equals("")
+                    ){
+                        throw new Exception();
+                    }
+
                     if (muskiRadioButton.isSelected()){
                         pol = Pol.MUSKI;
                     } else if (zenskiradioButton.isSelected()){

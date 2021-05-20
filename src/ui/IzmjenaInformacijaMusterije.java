@@ -73,6 +73,18 @@ public class IzmjenaInformacijaMusterije extends JFrame{
                     String jmbg = jmbgPolje.getText();
                     String brojTelefona = brojTelefonaPolje.getText();
 
+                    if (
+                            ime.equals("") ||
+                                    prezime.equals("") ||
+                                    korisnickoIme.equals("") ||
+                                    lozinka.equals("") ||
+                                    jmbg.equals("") ||
+                                    adresa.equals("") ||
+                                    brojTelefona.equals("")
+                    ){
+                        throw new Exception();
+                    }
+
                     Pol pol = null;
                     if (muskiRadioButton.isSelected()){
                         pol = Pol.MUSKI;

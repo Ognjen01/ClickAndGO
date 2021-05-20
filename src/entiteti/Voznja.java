@@ -201,7 +201,7 @@ public abstract class Voznja {
         String datum = formatter.format(vremeNarudzbine);
 
         String nizObjekat[] = new String[] {
-        String.valueOf(idVoznje),
+                String.valueOf(idVoznje),
         String.valueOf(idMusterije),
         String.valueOf(idVozaca),
         adresaPolaska,
