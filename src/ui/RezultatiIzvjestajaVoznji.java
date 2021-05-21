@@ -4,10 +4,12 @@ import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
+import korisnici.Vozac;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RezultatiIzvjestajaVoznji extends JFrame {
@@ -21,6 +23,7 @@ public class RezultatiIzvjestajaVoznji extends JFrame {
     private JLabel ukupnaZarada;
     private JButton stampajIzvještajButton;
     private JButton nazadButton;
+    private JLabel brojVozaca;
 
     public RezultatiIzvjestajaVoznji(List<Voznja> listaVoznji){
         setSize(400, 500);
@@ -38,6 +41,8 @@ public class RezultatiIzvjestajaVoznji extends JFrame {
         double prosTrajanje = 0;
         double prosDuzina = 0;
 
+        List<Integer> idVozaca = new ArrayList<Integer>();
+
 
         for (Voznja voznja : listaVoznji
              ) {
@@ -54,8 +59,15 @@ public class RezultatiIzvjestajaVoznji extends JFrame {
 
             ukZarada += voznja.getCenaVoznje();
 
+
+            if (!idVozaca.contains(voznja.getIdVozaca())){
+                idVozaca.add(voznja.getIdVozaca());
+                System.out.println(voznja.getIdVozaca());
+            }
+
         }
 
+        System.out.println("BROJ VOZAČA KOJI SU UČSTVOVALI: " + idVozaca.size());
         prosTrajanje = trajanje / listaVoznji.size();
         prosDuzina = duzina / listaVoznji.size();
 
@@ -65,6 +77,7 @@ public class RezultatiIzvjestajaVoznji extends JFrame {
         prosjecnoTrajanje.setText(String.valueOf(prosTrajanje));
         prosjecnaDuzina.setText(String.valueOf(prosDuzina));
         ukupnaZarada.setText(String.valueOf(ukZarada));
+        brojVozaca.setText(String.valueOf(idVozaca.size()));
 
 
         nazadButton.addActionListener(new ActionListener() {

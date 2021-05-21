@@ -67,7 +67,6 @@ public abstract class Osoba {
 
     // TODO: Preispitati potrebu Liste voznji unutar osobe jer Dispecer nema polje liste voznji
 
-
     public void setAktivan(boolean aktivan) {
         this.aktivan = aktivan;
     }
