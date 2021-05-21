@@ -5,6 +5,7 @@ import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import korisnici.Osoba;
+import korisnici.Vozac;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +25,7 @@ public class PrikazVoznji extends JFrame {
     private JTable tabelaVoznji;
     private JButton nazadBtn;
     private JButton osvjeziTabeluBtn;
+    private JButton izbrisiVoznjuBtn;
 
     public PrikazVoznji(TaxiSluzba taxiSluzba) {
         setSize(800, 400);
@@ -45,7 +47,41 @@ public class PrikazVoznji extends JFrame {
                 osvjeziTabelu(taxiSluzba);
             }
         });
-        
+
+        izbrisiVoznjuBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int confirmed = JOptionPane.showConfirmDialog(null,
+                        "Da li ste sigurni da želite izbristi vožnju", "Potvrdite brisanje",
+                        JOptionPane.YES_NO_OPTION);
+                int idPozicija = tabelaVoznji.getSelectedRow();// Druga funkcija za uzimanje reda
+
+                int idVoznjeZaBrisanje = (int) tabelaVoznji.getValueAt(idPozicija, 0);
+
+                int idAutomobilaObrisanogVozaca = 0;
+                if (confirmed == JOptionPane.YES_OPTION) {
+                    // Funkcija za brisanje voznje
+                    try {
+
+                        for (Voznja voznja : taxiSluzba.getListaVoznji()
+                        ) {
+                            try {
+
+                                if (voznja.getIdVoznje() == idVoznjeZaBrisanje) {
+                                    taxiSluzba.getListaVoznji().remove(voznja);
+                                }
+                            } catch (Exception e1) {
+                                System.out.println("Greška prilikom brisanja");
+                            }
+                        }
+                    } catch (Exception exception){
+
+                    }
+                    osvjeziTabelu(taxiSluzba);
+                }
+            }
+        });
+
     }
 
     public void osvjeziTabelu (TaxiSluzba taxiSluzba) {
