@@ -56,6 +56,71 @@ public class Main {
 
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
 
+        DoublyLinkedList<Integer> listaUcitanohOsoba = new DoublyLinkedList<>();
 
+        for (String[] nizEntitetaOsobe : lista
+        ) {
+            Osoba ucitanaOsoba = vratiListuOsoba.odluciKojegKorisnikaInstancirati(nizEntitetaOsobe);
+            System.out.println(ucitanaOsoba.getIme());
+            listaUcitanohOsoba.add(ucitanaOsoba.getIdKorisnika());
+            System.out.println("ENTITET DODAT U DOUBLEY LINKED LIST");
+        }
+
+
+        for (Integer osoba : listaUcitanohOsoba
+        ) {
+            System.out.println(osoba);
+        }
+
+/*
+        for (Osoba osoba1: listaUcitanohOsoba
+             ) {
+            for ( Osoba osoba2: listaUcitanohOsoba
+                 ) {
+                if(osoba1.getIdKorisnika() > osoba2.getIdKorisnika()){
+
+                    // Kreiranje novog ListNode
+                    ListNode<Osoba> os1 = listaUcitanohOsoba.getElement(osoba1);
+                    ListNode<Osoba> os2 = listaUcitanohOsoba.getElement(osoba2);
+
+                    // Razmjena informacija između osoba
+                    Osoba prenos = osoba1;
+                    osoba1 = osoba2;
+                    osoba2 = prenos;
+
+                    // Postavljanje elementa na osobu, bez next i previous
+                    listaUcitanohOsoba.getElement(osoba1).setElement(osoba2);
+                    listaUcitanohOsoba.getElement(osoba2).setElement(prenos);
+
+                    // Postavljanje čitavog ListNode
+                    listaUcitanohOsoba.getElement(osoba1).setListNode(os2);
+                    listaUcitanohOsoba.getElement(osoba2).setListNode(os1);
+
+                }
+            }
+        }
+
+
+ */
+
+        for (Integer i: listaUcitanohOsoba){
+            for (Integer j: listaUcitanohOsoba
+            ) {
+                if (i > j) {
+                    Integer prenos = i;
+                    i = j;
+                    j = prenos;
+                    System.out.println("prenos");
+                }
+            }
+        }
+
+
+        System.out.println("=================");
+
+        for (Integer osoba : listaUcitanohOsoba
+        ) {
+            System.out.println(osoba);
+        }
     }
 }
