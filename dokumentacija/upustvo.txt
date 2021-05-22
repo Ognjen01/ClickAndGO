@@ -1,2 +1,35 @@
-1. - Prilikom preuzimanja projekta sa github-a neophodno je preuzeti verziju koja se nalazi na grani Nova_grana
-   - Ova izpravka izvršena je zbog slučajnog commit-a u kome je zamjenjena verzija Jave sa Java 11 na Java 15
+** UPUSTVO ZA KORIŠĆENJE APLIKACIJE "Click&GO" **
+
+AUTORI:
+
+1. Ognjen Lazić SR 13/2020  email: lazicognjen2001@gmail.com
+2. Nikolina Olić SR 49/2020
+
+NAPOMENE:
+
+1. - Prilikom preuzimanja projekta sa github-a neophodno je preuzeti verziju koja se nalazi na grani "Nova_grana"
+   - Ova ispravka izvršena je zbog slučajnog commit-a u kome je zamjenjena verzija Jave sa Java 11 na Java 15
+
+2. - Grana "Ognjen_AISP" je kreirana od strane studenta Ognjen LAzić SR 13/2020 za potrebe implementacije projekta koji je
+     vezan za predmet algoritmi i strukture podataka
+   - Za potrebe kontrolne tačke 2, kao i odbrane projekta na predmetu uvod u objekto programiranje koristi se prethodno kreirana
+     grana "Nova_grana"
+
+
+3. - Prijava na sistem:
+
+   - Za prijavu mušterije:
+        Korisničko ime: marko
+        Lozinka marko123
+
+   - Za prijavu vozača:
+        Korisničko ime: milenko
+        Lozinka: milenko123
+
+   - Za prijavu dispečera:
+        Korisničko ime: sofija
+        Lozinka: sofija123
+
+TEHNOLOGIJE:
+
+1. - GUI aplikacije je urađen uz pomoć IntelliJ GUI builder-a
