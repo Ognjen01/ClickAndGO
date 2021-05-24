@@ -12,18 +12,6 @@ public class ListNode<T> {
         this.element = element;
     }
 
-    public ListNode(T element, ListNode<T> next){
-        this.element = element;
-        this.next = next;
-    }
-
-    public ListNode(T element, ListNode<T> next, ListNode<T> previous){
-        this.previous = previous;
-        this.element = element;
-        this.next = next;
-    }
-
-    // Da li dodati konstruktor sa prethodnim elementom
 
     public T getElement() {
         return element;

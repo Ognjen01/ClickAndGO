@@ -107,16 +107,25 @@ public class Main {
             for (Integer j: listaUcitanohOsoba
             ) {
                 if (i > j) {
+                    System.out.println("i = " + i + " j = "+ j);
                     Integer prenos = i;
                     i = j;
                     j = prenos;
-                    System.out.println("prenos");
+                    System.out.println("i = " + i + " j = "+ j);
+                    System.out.println("PRENOS \n NOVA LISTA:");
+                    listaUcitanohOsoba.swapElements(i, j);
+
+                    for (Integer osoba : listaUcitanohOsoba
+                    ) {
+                        System.out.println(osoba);
+                    }
                 }
             }
         }
 
 
-        System.out.println("=================");
+
+        System.out.println("================= \n KONAČNO: ");
 
         for (Integer osoba : listaUcitanohOsoba
         ) {
