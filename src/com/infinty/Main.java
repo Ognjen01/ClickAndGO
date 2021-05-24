@@ -56,8 +56,6 @@ public class Main {
 
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
 
-        //TODO: !! Provjera doubly linked liste !!
-
 
     }
 }

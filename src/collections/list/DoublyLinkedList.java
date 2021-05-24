@@ -118,6 +118,55 @@ public class DoublyLinkedList<T> implements Iterable<T>{
         return current;
     }
 
+    // Zamjena elementa sa novim elementom
+    public void setElement(T element, T zaZamjenu){
+
+        ListNode<T> current = head;
+        while(current.getNext() != null){
+
+            if (current.getElement() == zaZamjenu){
+                current.setElement(element);
+            } else {
+                current = current.getNext();
+            }
+        }
+    }
+
+    // Nije radilo za sortiranje
+    public void swapElements(T element1, T element2){
+
+        if (head == null || element1 == null) {
+            return;
+        }
+
+        ListNode<T> current = head;
+        while(current.getNext() != null){
+
+            if (current.getElement() == element1 && current.getElement() != element2){
+                current.setElement(element2);
+                System.out.println("Zamjnena 1 el1 " + element1 + " sa el2 " + element2 + " el2 ne smije biti " + current.getElement());
+
+            }
+            else {
+                current = current.getNext();
+
+            }
+        }
+
+        ListNode<T> current1 = head;
+        while(current1.getNext() != null){
+
+            if (current1.getElement() == element2 && current1.getElement() != element1){
+                current1.setElement(element1);
+                System.out.println("Zamjnena 2 el2 "  + element2 + " sa el1 " + element1 + " el1 ne smije biti " + current.getElement());
+
+            } else {
+                current1 = current1.getNext();
+            }
+        }
+
+    }
+
     public ListNode<T> getHead(){
         return head;
     }
