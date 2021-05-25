@@ -1,18 +1,13 @@
 package com.infinty;
 
-import collections.list.ListNode;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import korisnici.Osoba;
-import collections.list.DoublyLinkedList;
 import pomocneKlase.*;
 import ui.Prijava;
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 

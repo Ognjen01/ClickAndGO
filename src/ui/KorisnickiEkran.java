@@ -1,15 +1,11 @@
 package ui;
 
-import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
-import korisnici.Vozac;
 
-import java.awt.*;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
-import javax.xml.stream.Location;
 
 public class KorisnickiEkran extends JFrame {
 
@@ -53,7 +49,8 @@ public class KorisnickiEkran extends JFrame {
         naruciAplikacijomBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                NarucivanjeVoznjeAplikacijom narucivanjeVoznjeAplikacijom = new NarucivanjeVoznjeAplikacijom(taxiSluzba, prijavljeniKorisnik);
+                narucivanjeVoznjeAplikacijom.setVisible(true);
             }
         });
 

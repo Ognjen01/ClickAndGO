@@ -4,7 +4,6 @@ import enumeracije.StatusVoznje;
 import korisnici.Musterija;
 import korisnici.Vozac;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class VoznjaNarucenaAplikacijom extends Voznja {
