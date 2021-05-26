@@ -42,5 +42,13 @@ public class EkranVozac extends JFrame {
                 prihvatanjeOdbijanjeVoznji.setVisible(true);
             }
         });
+
+        licitacijaBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LicitacijaProzor licitacijaProzor = new LicitacijaProzor(taxiSluzba, prijavljeniVozac);
+                licitacijaProzor.setVisible(true);
+            }
+        });
     }
 }
