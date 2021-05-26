@@ -99,6 +99,91 @@ public class DoublyLinkedList<T> implements Iterable<T>{
             }
     }
 
+    public void setElement(T element, T zaZamjenu){
+
+        ListNode<T> current = head;
+        while(current.getNext() != null){
+
+            if (current.getElement() == zaZamjenu){
+                current.setElement(element);
+            } else {
+                current = current.getNext();
+            }
+        }
+    }
+
+    // Nije radilo za sortiranje
+    public void swapElements(T element1, T element2){
+
+        if (head == null || element1 == null) {
+            return;
+        }
+
+        ListNode<T> current = head;
+        while(current.getNext() != null){
+
+            if (current.getElement() == element1 && current.getElement() != element2){
+                current.setElement(element2);
+                System.out.println("Zamjnena 1 el1 " + element1 + " sa el2 " + element2 + " el2 ne smije biti " + current.getElement());
+
+            }
+            else {
+                current = current.getNext();
+
+            }
+        }
+
+        ListNode<T> current1 = head;
+        while(current1.getNext() != null){
+
+            if (current1.getElement() == element2 && current1.getElement() != element1){
+                current1.setElement(element1);
+                System.out.println("Zamjnena 2 el2 "  + element2 + " sa el1 " + element1 + " el1 ne smije biti " + current.getElement());
+
+            } else {
+                current1 = current1.getNext();
+            }
+        }
+
+    }
+
+    public T getElement(int index){
+        if(index < 0 || index >= listSize){
+            throw new IndexOutOfBoundsException("Index out of bounds!");
+        }
+        int i = 0;
+        ListNode<T> currentNode = head;
+
+        while (currentNode != null){
+            if(index == i){
+                return currentNode.getElement();
+            }
+
+            currentNode = currentNode.getNext();
+            i++;
+        }
+
+        return null;
+    }
+
+    public void set(int index, T element){
+        if(index < 0 || index >= listSize){
+            throw new IndexOutOfBoundsException("Index out of bounds!");
+        }
+        int i = 0;
+        ListNode<T> currentNode = head;
+
+        while (currentNode != null){
+            if(index == i){
+                currentNode.setElement(element);
+            }
+
+            currentNode = currentNode.getNext();
+            i++;
+        }
+
+    }
+
 
     public ListNode<T> getElement(T element){
         ListNode<T> toRemove = new ListNode<T>(element);

@@ -1,5 +1,6 @@
 package com.infinty;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
@@ -53,6 +54,43 @@ public class Main {
 
         //TODO: !! Provjera doubly linked liste !!
 
+        DoublyLinkedList<Integer> listaUcitanohOsoba = new DoublyLinkedList<>();
 
+        for (String[] nizEntitetaOsobe : lista
+        ) {
+            Osoba ucitanaOsoba = vratiListuOsoba.odluciKojegKorisnikaInstancirati(nizEntitetaOsobe);
+            System.out.println(ucitanaOsoba.getIme());
+            listaUcitanohOsoba.add(ucitanaOsoba.getIdKorisnika());
+            System.out.println("ENTITET DODAT U DOUBLEY LINKED LIST");
+        }
+
+        System.out.println("================= \n POČETNO: ");
+
+        for (Integer osoba : listaUcitanohOsoba
+        ) {
+            System.out.println(osoba);
+        }
+
+        // SORTIRANJE DOUBLY LINKED LISTE!!
+
+        for (int i = 0; i < listaUcitanohOsoba.size(); i++){
+            for (int j = 0; j < listaUcitanohOsoba.size(); j++){
+
+                if(listaUcitanohOsoba.getElement(i) < listaUcitanohOsoba.getElement(j)){
+                    Integer prenos = listaUcitanohOsoba.getElement(i);
+                    System.out.println("i: "+ listaUcitanohOsoba.getElement(i) + " j: " + listaUcitanohOsoba.getElement(j));
+                    listaUcitanohOsoba.set(i, listaUcitanohOsoba.getElement(j));
+                    listaUcitanohOsoba.set(j, prenos);
+                }
+            }
+        }
+
+
+        System.out.println("================= \n KONAČNO: ");
+
+        for (Integer osoba : listaUcitanohOsoba
+        ) {
+            System.out.println(osoba);
+        }
     }
 }
