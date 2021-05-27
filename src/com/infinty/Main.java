@@ -54,21 +54,21 @@ public class Main {
 
         //TODO: !! Provjera doubly linked liste !!
 
-        DoublyLinkedList<Integer> listaUcitanohOsoba = new DoublyLinkedList<>();
+        DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<>();
 
         for (String[] nizEntitetaOsobe : lista
         ) {
             Osoba ucitanaOsoba = vratiListuOsoba.odluciKojegKorisnikaInstancirati(nizEntitetaOsobe);
             System.out.println(ucitanaOsoba.getIme());
-            listaUcitanohOsoba.add(ucitanaOsoba.getIdKorisnika());
+            listaUcitanohOsoba.add(ucitanaOsoba);
             System.out.println("ENTITET DODAT U DOUBLEY LINKED LIST");
         }
 
         System.out.println("================= \n POČETNO: ");
 
-        for (Integer osoba : listaUcitanohOsoba
+        for (Osoba osoba : listaUcitanohOsoba
         ) {
-            System.out.println(osoba);
+            System.out.println(osoba.getIdKorisnika());
         }
 
         // SORTIRANJE DOUBLY LINKED LISTE!!
@@ -76,8 +76,8 @@ public class Main {
         for (int i = 0; i < listaUcitanohOsoba.size(); i++){
             for (int j = 0; j < listaUcitanohOsoba.size(); j++){
 
-                if(listaUcitanohOsoba.getElement(i) < listaUcitanohOsoba.getElement(j)){
-                    Integer prenos = listaUcitanohOsoba.getElement(i);
+                if(listaUcitanohOsoba.getElement(i).getIdKorisnika() < listaUcitanohOsoba.getElement(j).getIdKorisnika()){
+                    Osoba prenos = listaUcitanohOsoba.getElement(i);
                     System.out.println("i: "+ listaUcitanohOsoba.getElement(i) + " j: " + listaUcitanohOsoba.getElement(j));
                     listaUcitanohOsoba.set(i, listaUcitanohOsoba.getElement(j));
                     listaUcitanohOsoba.set(j, prenos);
@@ -88,9 +88,37 @@ public class Main {
 
         System.out.println("================= \n KONAČNO: ");
 
-        for (Integer osoba : listaUcitanohOsoba
+        for (Osoba osoba : listaUcitanohOsoba
         ) {
-            System.out.println(osoba);
+            System.out.println(osoba.getIdKorisnika());
+        }
+
+        // TODO: Binarna pretraga
+
+        Osoba trazenaOsoba =  pronadjiOsobuBinarySearch(listaUcitanohOsoba, 100005);
+        System.out.println(trazenaOsoba);
+
+    }
+
+    // BINARNA PRETRAGA ZA OSOBE
+
+    public static Osoba pronadjiOsobuBinarySearch(DoublyLinkedList<Osoba> array, int target){ // Ukloniti static
+        return binarySearch(array, target, 0, array.size());
+    }
+
+    public static Osoba binarySearch(DoublyLinkedList<Osoba> array, int target, int low, int high){ // Ukloniti static
+
+        if(low > high){
+            return null;
+        }
+        int mid = (low + high) / 2;
+
+        if (array.getElement(mid).getIdKorisnika() == target){
+            return array.getElement(mid);
+        } else if (array.getElement(mid).getIdKorisnika() > target){
+            return  binarySearch(array, target, low, mid-1);
+        } else {
+            return binarySearch(array, target, mid + 1, high);
         }
     }
 }
