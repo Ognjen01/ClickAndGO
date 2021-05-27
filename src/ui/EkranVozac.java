@@ -7,6 +7,7 @@ import korisnici.Vozac;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class EkranVozac extends JFrame {
     private JButton istorijaVoznjiBtn;
@@ -50,5 +51,16 @@ public class EkranVozac extends JFrame {
                 licitacijaProzor.setVisible(true);
             }
         });
+    }
+
+    protected void processWindowEvent(WindowEvent ev) {
+        super.processWindowEvent(ev);
+        if (ev.getID() == WindowEvent.WINDOW_CLOSING) {
+
+            // TODO: U ovoj funkciji implementirati poziv za upisivanje informacija Taxi Službe u fajlove!
+
+            System.out.println("ZATVARANJE PROZORA");
+            System.exit(0);
+        }
     }
 }

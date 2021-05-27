@@ -52,7 +52,7 @@ public class Main {
 
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
 
-        //TODO: !! Provjera doubly linked liste !!
+        //TODO: TESTIRANJE LISTE, SORTIRANJA I BINARNE PRETRAGE:
 
         DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<>();
 
@@ -78,7 +78,7 @@ public class Main {
 
                 if(listaUcitanohOsoba.getElement(i).getIdKorisnika() < listaUcitanohOsoba.getElement(j).getIdKorisnika()){
                     Osoba prenos = listaUcitanohOsoba.getElement(i);
-                    System.out.println("i: "+ listaUcitanohOsoba.getElement(i) + " j: " + listaUcitanohOsoba.getElement(j));
+                    //System.out.println("i: "+ listaUcitanohOsoba.getElement(i) + " j: " + listaUcitanohOsoba.getElement(j));
                     listaUcitanohOsoba.set(i, listaUcitanohOsoba.getElement(j));
                     listaUcitanohOsoba.set(j, prenos);
                 }
@@ -96,6 +96,7 @@ public class Main {
         // TODO: Binarna pretraga
 
         Osoba trazenaOsoba =  pronadjiOsobuBinarySearch(listaUcitanohOsoba, 100005);
+        System.out.println("TRAŽENI ID: 100005 / REZULTAT BINARNE PRETRAGE:");
         System.out.println(trazenaOsoba);
 
     }

@@ -44,7 +44,7 @@ public class PrikazMusterija extends JFrame {
     }
 
     public void osvjeziTabelu (TaxiSluzba taxiSluzba) {
-// TODO: Doraditi algoritam
+
         int brojMusterija = taxiSluzba.getListaOsoba().size();
         String data[][] = new String[brojMusterija][8];
 

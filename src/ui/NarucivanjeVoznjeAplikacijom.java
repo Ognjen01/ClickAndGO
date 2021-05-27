@@ -65,6 +65,8 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                     System.out.println(idVoznje + " " + idVozaca + " " + idMusterije + " " + adresaDolaska);
                     VoznjaNarucenaAplikacijom voznja = new VoznjaNarucenaAplikacijom(idVoznje, idVozaca, idMusterije, adresaPolaska, adresaDolaska, statusVoznje, duzina, trajanje, cenaVoznje, vremeNarudzbine, (Musterija) prijavljeniKorisnik, null);
                     System.out.println(voznja);
+                    //voznja.setPetFrendly(true);
+                    //voznja.setNapomena(String);
                     taxiSluzba.getListaVoznji().add(voznja);
 
                     JOptionPane.showMessageDialog( new Frame(),
