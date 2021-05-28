@@ -46,8 +46,6 @@ public class Main {
         prijava.setVisible(true);
 
 
-        UpisivanjeUFajl upis = new UpisivanjeUFajl();
-        upis.upisiTaxiSluzbu(taxiSluzba);
 
 
         // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove

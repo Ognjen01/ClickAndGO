@@ -3,6 +3,7 @@ package ui;
 import entiteti.TaxiSluzba;
 import pomocneKlase.PrijavaRegistracija;
 import korisnici.Osoba;
+import pomocneKlase.UpisivanjeUFajl;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ public class Prijava extends JFrame {
     private JTextField passwordField1;
     private JButton prijaviSeButton;
     private JButton registracijaBtn;
+    private TaxiSluzba sluzba;
 
     public Prijava(TaxiSluzba taxiSluzba) {
 
@@ -26,7 +28,7 @@ public class Prijava extends JFrame {
         setSize(800, 400);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
-
+        sluzba = taxiSluzba;
 
 
 
@@ -82,7 +84,8 @@ public class Prijava extends JFrame {
         super.processWindowEvent(ev);
         if (ev.getID() == WindowEvent.WINDOW_CLOSING) {
 
-            // TODO: U ovoj funkciji implementirati poziv za upisivanje informacija Taxi Službe u fajlove!
+            UpisivanjeUFajl upis = new UpisivanjeUFajl();
+            upis.upisiTaxiSluzbu(sluzba);
 
             System.out.println("ZATVARANJE PROZORA");
             System.exit(0);

@@ -2,10 +2,12 @@ package ui;
 
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
+import pomocneKlase.UpisivanjeUFajl;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class KorisnickiEkran extends JFrame {
 
@@ -17,9 +19,10 @@ public class KorisnickiEkran extends JFrame {
     private JButton izvjestajBtn;
     private JButton izmjeniProfil;
     private JButton obrisiProfil;
-
+    private TaxiSluzba sluzba;
 
     public KorisnickiEkran(Osoba prijavljeniKorisnik, TaxiSluzba taxiSluzba) {
+        sluzba = taxiSluzba;
         setSize(800, 400);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
@@ -92,5 +95,16 @@ public class KorisnickiEkran extends JFrame {
             }
         });
 
+    }
+    protected void processWindowEvent(WindowEvent ev) {
+        super.processWindowEvent(ev);
+        if (ev.getID() == WindowEvent.WINDOW_CLOSING) {
+
+            UpisivanjeUFajl upis = new UpisivanjeUFajl();
+            upis.upisiTaxiSluzbu(sluzba);
+
+            System.out.println("ZATVARANJE PROZORA");
+            System.exit(0);
+        }
     }
 }

@@ -3,6 +3,7 @@ package ui;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
 import korisnici.Vozac;
+import pomocneKlase.UpisivanjeUFajl;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,8 +18,10 @@ public class EkranVozac extends JFrame {
     private JLabel imeVozaca;
     private JPanel panelVozaca;
     private JButton prihvatanjeVoznji;
+    private TaxiSluzba sluzba;
 
     public EkranVozac(Osoba prijavljeniVozac, TaxiSluzba taxiSluzba){
+        sluzba = taxiSluzba;
         setSize(800, 400);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
@@ -57,7 +60,8 @@ public class EkranVozac extends JFrame {
         super.processWindowEvent(ev);
         if (ev.getID() == WindowEvent.WINDOW_CLOSING) {
 
-            // TODO: U ovoj funkciji implementirati poziv za upisivanje informacija Taxi Službe u fajlove!
+            UpisivanjeUFajl upis = new UpisivanjeUFajl();
+            upis.upisiTaxiSluzbu(sluzba);
 
             System.out.println("ZATVARANJE PROZORA");
             System.exit(0);
