@@ -30,8 +30,6 @@ public class UcitavanjeVoznji {
 
     public Voznja odluciKojuVoznjuUcitati(String[] elementiVoznje) {
 
-        //TODO: Potrebno definisati enum za status voznje prilikom ucitavanja
-
         Musterija musterija = new Musterija();
         Vozac vozac = new Vozac();
         Date datum = null;

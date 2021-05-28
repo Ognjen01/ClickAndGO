@@ -172,12 +172,13 @@ public abstract class Voznja {
         this.vozac = vozac;
     }
 
-    public Voznja() {
-        // TODO Auto-generated constructor stub
-    }
 
     @Override
     public String toString() {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String datum = formatter.format(vremeNarudzbine);
+
         return idVoznje + "|" +
                 idVozaca + "|" +
                 idMusterije + "|" +
@@ -187,13 +188,12 @@ public abstract class Voznja {
                 duzina + "|" +
                 trajanje + "|" +
                 cenaVoznje + "|" +
-                vremeNarudzbine + "|";
+                datum + "|";
 
     }
 
     public String[] toStringArray(){
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-        //String datum = df.format(vremeNarudzbine);
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         System.out.println(vremeNarudzbine + getAdresaDestinacije());
@@ -216,5 +216,3 @@ public abstract class Voznja {
     }
 }
 
-// TODO: NApraviti metode za računanje cijene
-//		i za generisanje ID voznje

@@ -18,18 +18,6 @@ public class UpisivanjeUFajl {
     private final String KORISNICI_FAJL = "korisnici.txt";
     private final String AUTOMOBILI_FAJL = "automobili.txt";
     private final String VOZNJE_FAJL = "voznje.txt";
-    /*
-    TODO: 1. Napraviti funkciju koja će iterirati kroz listu učitanih objekata (učitan na početku izvršavanja programa), ova funkcija može biti univerzalna za sve liste
-          2. U ovoj funkciji pozvati funkciju za pretvaranje objekta u niz, a može odma i u kompletan string
-          3. Treća funkcija treba da taj String (koji je u stvari jedan objekat u pisanom formatu) upiše u fajl, po pravilnom rasporedu elemenata
-          4. Ovi ciklusi se dešavaju unutar iteracije i svaki sledeći red se dodaje u fajl
-          5. Prije početka ovog procesa neophodno je očistiti sve trenutne redove iz fajla
-          6. Potrebno je implementirati upisivanje za sve entitete
-          7. Vjerovatno će biti neophodan sistem odluke koji će odlučivati da li se upisuje musterija, vozač ili korisnik
-          8. Neophodna je funkcija za svaki entitet jer su formati unutar fajlova različiti
-          9. Po potrebi kreirati dodatne klase koje će pomoći upsiivanje u fajl
-          10. Razloziti objekat TAXI SLUZBA za upisivanje u fajl, ova klasa će se prosledjivati kroz ozvrsavanje programa
-     */
 
     public void upisiTaxiSluzbu(TaxiSluzba taxiSluzba){
 
@@ -42,12 +30,14 @@ public class UpisivanjeUFajl {
         List<Automobil> automobili = taxiSluzba.getListaAutomovila();
         upisiSveAutomobile(automobili);
 
-        /*
+
         //POTREBNO POPRAVITI UCITAVANJE VOZNJI TAKO DA VREME NARUDZBINE BUDE U PRAVOM FORMATU, A NE TRENUTNO VREME IZVRSENJA (datume = <datum iz fajla>)
         ocistiFajl(PUTANJA_DO_FAJLOVA + VOZNJE_FAJL);
         List<Voznja> voznje = taxiSluzba.getListaVoznji();
         upisiSveVoznje(voznje);
-        */
+
+
+
     }
 
     private void ocistiFajl(String nazivFajla){

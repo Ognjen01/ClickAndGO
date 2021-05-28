@@ -32,8 +32,7 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
 
     }
 
-    public VoznjaNarucenaAplikacijom() {
-    }
+
 
     ; // Prazan konstruktor za instanciranje prazne voznje...
 
