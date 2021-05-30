@@ -37,8 +37,12 @@ public class UcitavanjeVoznji {
 
         Musterija musterija = new Musterija();
         Vozac vozac = new Vozac();
-        LocalDateTime localDateTime = LocalDateTime.parse(elementiVoznje[9], DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss z yyyy"));
-        Date datum = Date.from(localDateTime.atZone(ZoneId.of("UTC")).toInstant());
+        Date datum = null;
+        try{
+            datum = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse(elementiVoznje[9]);
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
 
         int idVoznje = Integer.parseInt(elementiVoznje[0]);
         int idVozaca = Integer.parseInt(elementiVoznje[1]);

@@ -10,7 +10,6 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
     // TODO: Implemetnirati naručivanje putem aplikacije
 
     private final String tipNarucivanja = "aplikacija";
-//    private Date datum;
     private boolean petFriendly;
     private String napomena;
 
@@ -27,14 +26,12 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
             Date vremeNarudzbe,
             Musterija musterija,
             Vozac vozac,
-//            Date datum,
             boolean petFriendly,
             String napomena
     ) {
         super(idVoznje, idVozaca, idMusterije, adresaPolaska,
                 adresaDestinacije, status, duzina, trajanje,
                 cenaVoznje, vremeNarudzbe, musterija, vozac); // Dovršiti konstruktor
-//        this.datum = datum;
         this.petFriendly = petFriendly;
         this.napomena = napomena;
 

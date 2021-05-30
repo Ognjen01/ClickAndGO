@@ -13,8 +13,6 @@ import java.awt.event.WindowEvent;
 
 public class Prijava extends JFrame {
 
-    //TODO: Postaviti slike logoa aplikacije i tima
-
     private JPanel prijava;
     private JTextField textField1;
     private JTextField passwordField1;

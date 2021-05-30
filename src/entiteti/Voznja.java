@@ -58,8 +58,6 @@ public abstract class Voznja {
         this.cenaVoznje = cenaVoznje;
     }
 
-    // TODO: Algoritam za računanje cijene vožnje ali nema potrebe za njim prilikom učitavanja fajlova
-
     public int getIdMusterije() {
         return idMusterije;
     }
@@ -178,6 +176,9 @@ public abstract class Voznja {
 
     @Override
     public String toString() {
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        String datum = df.format(vremeNarudzbine);
+
         return idVoznje + "|" +
                 idVozaca + "|" +
                 idMusterije + "|" +
@@ -187,7 +188,7 @@ public abstract class Voznja {
                 duzina + "|" +
                 trajanje + "|" +
                 cenaVoznje + "|" +
-                vremeNarudzbine + "|";
+                datum + "|";
 
     }
 

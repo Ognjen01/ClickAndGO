@@ -31,7 +31,7 @@ public class EkranDispecer extends JFrame {
     public EkranDispecer(Osoba prijavljeniDispecer, TaxiSluzba taxiSluzba) {
         sluzba = taxiSluzba;
 
-        setSize(800, 470);
+        setSize(800, 530);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
         imeDispecera.setText(prijavljeniDispecer.getIme());
