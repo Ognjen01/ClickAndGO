@@ -31,9 +31,21 @@ public class Dispecer extends Osoba {
 
     }
 
-    // TODO: Dodati prazna polja ali ne i prazne zagrade kao do sada
     public Dispecer() {
-        // Generisati prazna polja Dispecera
+        setIdKorisnika(0);
+        setIme(null);
+        setPrezime(null);
+        setKorisnickoIme(null);
+        setLozinka(null);
+        setJmbg(null);
+        setAdresa(null);
+        setPol(null);
+        setBrojTelefona(null);
+        setUloga(null);
+        setAktivan(false);
+        setPlata(0);
+        setBrTelefonskeLinije(0);
+        setOdjeljenje(null);
     }
 
     public int getBrTelefonskeLinije() {

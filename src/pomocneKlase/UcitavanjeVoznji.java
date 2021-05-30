@@ -33,8 +33,6 @@ public class UcitavanjeVoznji {
 
     public Voznja odluciKojuVoznjuUcitati(String[] elementiVoznje) {
 
-        //TODO: Potrebno definisati enum za status voznje prilikom ucitavanja
-
         Musterija musterija = new Musterija();
         Vozac vozac = new Vozac();
         Date datum = null;
@@ -64,10 +62,10 @@ public class UcitavanjeVoznji {
                     duzina,
                     trajanje,
                     cenaVoznje,
-                    datum, // Ovdje treba date time format
+                    datum,
                     musterija,
                     vozac
-            ); // Popuniti konstruktore
+            );
             return novaVoznjaTelefon;
 
         } else if (elementiVoznje[10].equals("aplikacija")) {
@@ -86,7 +84,7 @@ public class UcitavanjeVoznji {
                     duzina,
                     trajanje,
                     cenaVoznje,
-                    datum, // Ovdje treba date time format
+                    datum,
                     musterija,
                     vozac,
                     petFriendly,
@@ -101,6 +99,3 @@ public class UcitavanjeVoznji {
     }
 
 }
-
-// Prilikom prolaska kroz voznje i kreiranja njihovih objekata, možda kao ulaz u funkciju takođe uzeti
-// listu onih vozača i dodijeliti im vožnje u njihovu listu vožnji

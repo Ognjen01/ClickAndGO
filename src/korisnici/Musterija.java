@@ -27,9 +27,18 @@ public class Musterija extends Osoba {
 
     // Prazan konstruktor
 
-    // TODO: Dodati prazna polja ali ne i prazne zagrade kao do sada
     public Musterija() {
-        // Generisati prazna polja Musterije
+        setIdKorisnika(0);
+        setIme(null);
+        setPrezime(null);
+        setKorisnickoIme(null);
+        setLozinka(null);
+        setJmbg(null);
+        setAdresa(null);
+        setPol(null);
+        setBrojTelefona(null);
+        setUloga(null);
+        setAktivan(false);
     }
 
     public void naruciVoznjuTelefonom() {

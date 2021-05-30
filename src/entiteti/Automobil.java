@@ -18,6 +18,14 @@ public class Automobil {
 
     //konstruktori
     public Automobil() {
+        setAutomobilID(0);
+        setModel(null);
+        setIdVozaca(0);
+        setProizvodjac(null);
+        setDatumRegistracije(null);
+        setBrojVozila(0);
+        setBrojRegistracije(null);
+        setTipVozila(null);
     }
 
     @Override
@@ -50,8 +58,6 @@ public class Automobil {
         this.automobilID = automobilID;
         this.idVozaca = idVozaca;
     }
-
-    // TODO: Generisati prazan konstruktor
 
     //geteri i seteri
 

@@ -40,9 +40,23 @@ public class Vozac extends Osoba {
         this.prosjecnaOcjena = prosjecnaOcjena;
     }
 
-    // TODO: Dodati prazna polja ali ne i prazne zagrade kao do sada
     public Vozac() {
-        // Generisati prazna polja Vozaca
+        setIdKorisnika(0);
+        setIme(null);
+        setPrezime(null);
+        setKorisnickoIme(null);
+        setLozinka(null);
+        setJmbg(null);
+        setAdresa(null);
+        setPol(null);
+        setBrojTelefona(null);
+        setUloga(null);
+        setAktivan(false);
+        setPlata(0);
+        setBrClanskeKarte(0);
+        setAutomobil(null);
+        setVoznjeVozaca(null);
+        setProsjecnaOcjena(0);
     }
 
 

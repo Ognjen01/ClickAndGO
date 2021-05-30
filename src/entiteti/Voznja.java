@@ -171,7 +171,18 @@ public abstract class Voznja {
     }
 
     public Voznja() {
-        // TODO Auto-generated constructor stub
+        setIdVozaca(0);
+        setIdMusterije(0);
+        setIdVoznje(0);
+        setAdresaDestinacije(null);
+        setAdresaPolaska(null);
+        setStatus(null);
+        setDuzina(0);
+        setTrajanje(0);
+        setCenaVoznje(0);
+        setVremeNarudzbine(null);
+        setMusterija(null);
+        setVozac(null);
     }
 
     @Override
@@ -217,5 +228,3 @@ public abstract class Voznja {
     }
 }
 
-// TODO: NApraviti metode za računanje cijene
-//		i za generisanje ID voznje
