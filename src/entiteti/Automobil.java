@@ -141,4 +141,20 @@ public class Automobil {
         return povratnaVrednost;
 
     }
+
+    public String[] toArrayString(){
+
+        String nizObjekata[] = new String[] {
+                String.valueOf(automobilID),
+                model,
+                proizvodjac,
+                String.valueOf(datumRegistracije),
+                String.valueOf(brojVozila),
+                brojRegistracije,
+                String.valueOf(tipVozila),
+                String.valueOf(idVozaca)
+        };
+
+        return nizObjekata;
+    }
 }

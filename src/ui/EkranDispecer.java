@@ -24,6 +24,8 @@ public class EkranDispecer extends JFrame {
     private JButton izvjestajVozaca;
     private JButton odjava;
     private JButton prikazMusterija;
+    private JButton prikazAutomobilaButton;
+    private JButton prikazDispeceraButton;
     private TaxiSluzba sluzba;
 
     public EkranDispecer(Osoba prijavljeniDispecer, TaxiSluzba taxiSluzba) {
@@ -127,6 +129,22 @@ public class EkranDispecer extends JFrame {
                 Prijava nazadNaPrijavu = new Prijava(taxiSluzba);
                 nazadNaPrijavu.setVisible(true);
                 setVisible(false);
+            }
+        });
+
+        prikazAutomobilaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OperacijeAutomobili operacijeAutomobili = new OperacijeAutomobili(taxiSluzba);
+                operacijeAutomobili.setVisible(true);
+            }
+        });
+
+        prikazDispeceraButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OperacijeDispeceri operacijeDispeceri = new OperacijeDispeceri(taxiSluzba);
+                operacijeDispeceri.setVisible(true);
             }
         });
 

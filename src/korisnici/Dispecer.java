@@ -78,4 +78,24 @@ public class Dispecer extends Osoba {
                 odjeljenje + "\n";
     }
 
+    public String[] toArrayString(){
+
+        String nizObjekata[] = new String[] {
+                String.valueOf(idKorisnika),
+                ime,
+                prezime,
+                korisnickoIme,
+                lozinka,
+                jmbg,
+                adresa,
+                String.valueOf(pol),
+                brojTelefona,
+                String.valueOf(plata),
+                String.valueOf(brTelefonskeLinije),
+                odjeljenje
+        };
+
+        return nizObjekata;
+    }
+
 }
