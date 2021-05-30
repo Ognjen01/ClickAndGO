@@ -57,8 +57,6 @@ public class LicitacijaProzor extends JFrame {
                             null,
                             JOptionPane.WARNING_MESSAGE);
                 }
-
-
             }
         });
 

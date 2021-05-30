@@ -30,7 +30,7 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
     ) {
         super(idVoznje, idVozaca, idMusterije, adresaPolaska,
                 adresaDestinacije, status, duzina, trajanje,
-                cenaVoznje, vremeNarudzbe, musterija, vozac); // Dovršiti konstruktor
+                cenaVoznje, vremeNarudzbe, musterija, vozac);
         this.petFriendly = petFriendly;
         this.napomena = napomena;
 

@@ -12,12 +12,6 @@ import java.util.List;
 public class UcitavanjeEntiteta {
 
     // UČITAVANJE AUTOMOBILA
-    // Isti algoritam se može koristiti i za učitavanje obrisanih automobila
-
-    // TODO: U string automobila mora da bude id vozaca kako bi na osnovu tof id prosao kroz listu vozaca i tom vozacu dodijelio automobil
-    //      SIstem odluke za tip vozila
-    //      Nula prilikom ucitavanja na mjestu id vozaca znaci da auto nije dodjeljen
-    //      Ovaj sistem ce vjerovatno biti u mainu izvrsen nakon svih ucitavanja jer bi u supronom funkcije ispod morale da prime lsitu vozaca kao parametar
 
     public List<Automobil> ucitajListuAutomobila(List<String[]> nizAutomobila) {
 

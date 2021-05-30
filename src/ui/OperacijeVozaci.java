@@ -99,7 +99,6 @@ public class OperacijeVozaci extends JFrame {
                             System.out.println("Greška prilikom brisanja ali je vozač obrisan");
                         }
                     }
-                    // TODO: Napraviti funkciju koja ce da rafresuje tabelu nakon klika na  i setuje ID VOZAC u automobilu na 0
 
                     for (Automobil automobil : taxiSluzba.getListaAutomovila()
                          ) {

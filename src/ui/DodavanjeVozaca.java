@@ -32,9 +32,6 @@ public class DodavanjeVozaca extends JFrame {
 
     public DodavanjeVozaca(TaxiSluzba taxiSluzba) {
 
-        //TODO: Postoji problem kada je jednom pogriješi u dodavanju vozača, ne dozvoljava da se to ispravi i doda opet
-        // Moguće da negdje zaostaju neke varijable ili uslovi ispravnosti!!!!!!!!!!!
-        // Radi u većoj mjeri, manji nedostaci
 
         setSize(500, 500);
         setTitle("Click&GO");
@@ -110,8 +107,6 @@ public class DodavanjeVozaca extends JFrame {
 
                     // Sistem generisanja ID vozaca
 
-                    // TODO: Postoji problem sa uzastopnim dodoavanjem više vozača, generiše isti ID
-
                     int id = 0;
                     for (Osoba vozac: taxiSluzba.getListaOsoba()
                     ) {
@@ -143,6 +138,11 @@ public class DodavanjeVozaca extends JFrame {
 
                     Vozac dodatiVozac = new Vozac(id, imeVozaca, prezimeVozaca, korisnickoIme, lozinkaVozaca, jmbgVozaca, adresaVozaca, polC, brTelefonaVozaca, "vozac", true, plata, brojClanskeKarte, automobilVozaca, null, 0.0);
                     taxiSluzba.getListaOsoba().add(dodatiVozac);
+                    JOptionPane.showMessageDialog(new Frame(),
+                            "Uspješno ste dodali novog vozača",
+                            "",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    setVisible(false);
 
                 } catch (Exception e3) {
                     JOptionPane.showMessageDialog(new Frame(),

@@ -34,7 +34,6 @@ public class KorisnickiEkran extends JFrame {
         odjavaBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO : Doraditi odjavu, treba ukloniti prethodni JFrame
                 Prijava nazadNaPrijavu = new Prijava(taxiSluzba);
                 nazadNaPrijavu.setVisible(true);
                 setVisible(false);

@@ -31,10 +31,6 @@ public class VoznjaNarucenaTelefonom extends Voznja {
 
     }
 
-
-
-    ;
-
     public String getTipNarucivanje() {
         return tipNarucivanje;
     }

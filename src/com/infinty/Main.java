@@ -46,10 +46,6 @@ public class Main {
         prijava.setVisible(true);
 
 
-
-
-        // TODO: - Napraviti upisivanje u fajl tako da se na X (izlaz iz glavnog prozora) upišu sve liste u fajlove
-
         //TODO: TESTIRANJE LISTE, SORTIRANJA I BINARNE PRETRAGE:
 
         DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<>();
@@ -91,7 +87,7 @@ public class Main {
             System.out.println(osoba.getIdKorisnika());
         }
 
-        // TODO: Binarna pretraga
+        // Binarna pretraga
 
         Osoba trazenaOsoba =  pronadjiOsobuBinarySearch(listaUcitanohOsoba, 100005);
         System.out.println("TRAŽENI ID: 100005 / REZULTAT BINARNE PRETRAGE:");
@@ -99,7 +95,7 @@ public class Main {
 
     }
 
-    // BINARNA PRETRAGA ZA OSOBE
+    // BINARNA PRETRAGA ZA OSOBE -> Samo algoritam
 
     public static Osoba pronadjiOsobuBinarySearch(DoublyLinkedList<Osoba> array, int target){ // Ukloniti static
         return binarySearch(array, target, 0, array.size());

@@ -75,7 +75,7 @@ public class IzvjestajVoznji extends JFrame {
                 String odabraniDatum = dan + "/" + mjesec + "/" + godine;
 
 
-                // TODO: Logika za izvještaje:
+                // Logika za izvještaje:
 
                 if (dan.equals("Nije odabrano") && mjesec.equals("Nije odabrano")){
 

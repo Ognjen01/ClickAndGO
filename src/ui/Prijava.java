@@ -28,8 +28,6 @@ public class Prijava extends JFrame {
         setLocationRelativeTo(null);
         sluzba = taxiSluzba;
 
-
-
         prijaviSeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,11 +59,8 @@ public class Prijava extends JFrame {
                             "Ne postoji traženi korisnik.",
                             "Greška",
                             JOptionPane.WARNING_MESSAGE);
-
                 }
-
             }
-
         });
 
         registracijaBtn.addActionListener(new ActionListener() {

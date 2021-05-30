@@ -54,11 +54,6 @@ public class PretragaVozaca extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                // TODO: 1. Preuzimanje vrijednosti iz polje
-                //       2. Slektovanje vrijednosti iz lista koje imaju autribute iz polja
-                //       3. Prosleđivanje takve liste vozača u tabelu
-                //       4. Ako ne postoji ni jedan vozač prikazati dijalog upozorenja
-
                 boolean plataDobarUnos = true;
 
                 try{

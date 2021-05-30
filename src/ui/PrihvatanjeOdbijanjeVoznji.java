@@ -117,9 +117,6 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
 
     public void osvjeziTabelu(TaxiSluzba taxiSluzba, Vozac prijavljeniVozac){
 
-
-
-
         List<Voznja> listaKreiranihVoznji = new ArrayList<Voznja>();
 
         for (Voznja voznja: taxiSluzba.getListaVoznji()

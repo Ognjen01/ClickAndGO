@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Vozac extends Osoba {
 
-    public List<Voznja> voznjeVozaca; // da li je ovo moguće jer je ovo apstraktna klasa, a u listi moraju biti i one narucene telefonom i aplikacijom
+    public List<Voznja> voznjeVozaca;
     private int plata;
     private int brClanskeKarte;
     private Automobil automobil;
@@ -29,7 +29,7 @@ public class Vozac extends Osoba {
                  int plata,
                  int brClanskeKarte,
                  Automobil automobil,
-                 List<Voznja> voznjeVozaca, // Lista nije navedena u fajlu ona se navodi na osnovu id vozaca u listi voznji
+                 List<Voznja> voznjeVozaca,
                  double prosjecnaOcjena
     ) {
         super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga, aktivan);
@@ -144,7 +144,7 @@ public class Vozac extends Osoba {
                 brojTelefona,
                 String.valueOf(prosjecnaOcjena),
                 String.valueOf(plata),
-                modelIIdAutomobila// automobil.getProizvodjac()  Ovaj dio izmjeniti da daje neki drugi dio objekta
+                modelIIdAutomobila
         };
 
         return nizObjekata;

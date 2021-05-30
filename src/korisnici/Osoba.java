@@ -21,8 +21,6 @@ public abstract class Osoba {
     protected boolean aktivan;
     protected List<Voznja> lisaVoznji;
 
-    // Da li nam je uopšte potreban konstruktor ako je klasa apstraktna?
-
 
     Osoba(int idKorisnika,
           String ime,
@@ -65,7 +63,6 @@ public abstract class Osoba {
         this.aktivan = true;
     }
 
-    // TODO: Preispitati potrebu Liste voznji unutar osobe jer Dispecer nema polje liste voznji
 
     public void setAktivan(boolean aktivan) {
         this.aktivan = aktivan;

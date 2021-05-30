@@ -61,7 +61,5 @@ public class ZavrsavanjeVoznje extends JFrame{
             }
         });
 
-
-
     }
 }

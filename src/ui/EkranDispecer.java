@@ -148,8 +148,6 @@ public class EkranDispecer extends JFrame {
             }
         });
 
-
-
     }
     protected void processWindowEvent(WindowEvent ev) {
         super.processWindowEvent(ev);
@@ -162,7 +160,4 @@ public class EkranDispecer extends JFrame {
             System.exit(0);
         }
     }
-
-
-
 }

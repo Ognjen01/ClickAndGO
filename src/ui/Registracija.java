@@ -51,9 +51,6 @@ public class Registracija extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                // TODO: 1. Preuzeti polja
-                //       2. Napraviti objekat Musterije
-                //       3. Dodati u taxiSluzba.getListaOsoba().add(novaMusterija)
 
                 try {
                     String ime = imePolje.getText();
@@ -89,7 +86,7 @@ public class Registracija extends JFrame {
                     boolean aktivan = true;
                     List<Voznja> listaVoznji = null;
 
-                    // TODO: Generisanje ID korisnika!
+                    //  Generisanje ID korisnika!
 
                     int idKorisnika = 0;
                     for (Osoba osoba: taxiSluzba.getListaOsoba()

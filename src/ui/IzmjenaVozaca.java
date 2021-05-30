@@ -34,12 +34,10 @@ public class IzmjenaVozaca extends JFrame {
         setTitle("Click&GO");
         add(osnovniPanel);
 
-
-
         // Sistem za prolaz kroz auta i ako vozac nema auto da prvi element u cambo box postavi na 0 kako kasnije ne bi neki auto slucajno bio dodjeljen!!
 
         boolean vozacImaAuto = false;
-        int idStarogAuta =0;
+        int idStarogAuta = 0;
         for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
             if (automobil.getIdVozaca() == idVozaca) {
                 comboBox1.addItem(new String(automobil.getModel() + " (ID " + automobil.getAutomobilID() +")"));
@@ -88,8 +86,6 @@ public class IzmjenaVozaca extends JFrame {
 
         brojTelefonaVozaca.setText(vozacZaIzmjenu.getBrojTelefona());
         plataVozacaPolje.setText(String.valueOf(vozacZaIzmjenu.getPlata()));
-
-        // TODO: Dodati automobil u drop down meni
 
         odustaniButton.addActionListener(new ActionListener() {
             @Override
@@ -145,7 +141,6 @@ public class IzmjenaVozaca extends JFrame {
                     }
 
 
-                    // TODO: Pol prebaciti u enumeraciju
                     Pol pol = Pol.MUSKI;
                     if(muskiRadioButton.isSelected()){
                         pol = Pol.MUSKI;

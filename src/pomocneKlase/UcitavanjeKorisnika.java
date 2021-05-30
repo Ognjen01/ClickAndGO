@@ -14,10 +14,7 @@ import java.util.List;
 
 public class UcitavanjeKorisnika {
 
-    // TODO: Izmjeniti ucitavanje entiteta tako da uzima u obzir da li su aktivni ili nisu!!! Logičko brisanje
-
     // UČITAVANJE KORISNIKA
-    // Isti algoritam se može koristiti i za učitavanje obrisanih korisnika
 
     //Funkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
 
@@ -54,7 +51,7 @@ public class UcitavanjeKorisnika {
 
         int idKorisnika = Integer.parseInt(niz[0]);
         Pol pol = Pol.valueOf(niz[7]);
-        int brTelefona = 1; // Greška sa preuzimanjem vrijednosti iz niza
+
 
         if (niz[9].equals("korisnik")) {
 
@@ -106,8 +103,7 @@ public class UcitavanjeKorisnika {
         } else if (niz[9].equals("dispecer")) {
 
             int plata = Integer.parseInt(niz[11]);
-            int brTelefonskeLinije = Integer.parseInt(niz[12]); // Greška sa preuzimanjem vrijdenosti iz niza za broj telefona
-            // Potencijalno rješenje da se broj telefona čuva kao string
+            int brTelefonskeLinije = Integer.parseInt(niz[12]);
 
             Dispecer noviDispecer = new Dispecer(
                     idKorisnika,
@@ -132,8 +128,6 @@ public class UcitavanjeKorisnika {
         }
     }
 
-    // Ovu funckiju premjestiti u klasu opstih funkcija
-
     public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVoznji, List<Automobil> listaAutomobila) {
 
         for (Voznja voznja : listaVoznji
@@ -151,9 +145,6 @@ public class UcitavanjeKorisnika {
 
             }
         }
-
-        // Dodati dio za dodavanje automobila vozacu!!!
-        // TODO: Provjeriti algoritam za dodavanje automobila vozacu!!!
 
         for (Automobil automobil: listaAutomobila
              ) {

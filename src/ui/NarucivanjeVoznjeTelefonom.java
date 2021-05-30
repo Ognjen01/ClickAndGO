@@ -58,12 +58,6 @@ public class NarucivanjeVoznjeTelefonom extends JFrame {
 
                     int idKorisnika = prijavljenaMusterija.getIdKorisnika();
                     int idVozaca = 0;
-                    //TODO: Kada se dodjeli vožnja idMusterije se dodaje i mijenja se stanje
-                    //      Kasnije se stanje mijenja na osnovu proteklog vremena, koliko vozacu treba da dodje, koliko traje voznja itd.
-
-                    // Generisanje dužine vožnje kao random broja između 1 i 25 npr.
-
-                    // TODO: Cijenu i trajanje unosi vozač
                     double duzinaVoznje = 0;
                     double trajanjeVoznje = 0;
                     int cijena = 0;

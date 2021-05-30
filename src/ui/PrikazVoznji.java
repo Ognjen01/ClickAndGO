@@ -85,7 +85,7 @@ public class PrikazVoznji extends JFrame {
     }
 
     public void osvjeziTabelu (TaxiSluzba taxiSluzba) {
-// TODO: Doraditi algoritam
+
         int brojVoznji = taxiSluzba.getListaVoznji().size();
         Object[][] data = new Object[brojVoznji][11];
 
@@ -113,8 +113,6 @@ public class PrikazVoznji extends JFrame {
             index++;
             System.out.println((voznja instanceof VoznjaNarucenaAplikacijom) + " / " + (voznja instanceof VoznjaNarucenaTelefonom));
         }
-
-
 
         String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         TableModel tableModel = new DefaultTableModel(data, column);

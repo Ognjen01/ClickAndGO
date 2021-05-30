@@ -30,6 +30,8 @@ NAPOMENE:
         Korisničko ime: sofija
         Lozinka: sofija123
 
+4. - Unutar Main klase se nalaze testiranja DoublyLinked liste i binarne pretrage, ne uzimati u obzir prilikom ocjenjivanja UOP
+
 TEHNOLOGIJE:
 
 1. - GUI aplikacije je urađen uz pomoć IntelliJ GUI builder-a
