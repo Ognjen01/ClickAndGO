@@ -98,7 +98,7 @@ public class UpisivanjeUFajl {
         }
     }
 
-    private void upisiSveVoznje(List<Voznja> voznje){
+    public void upisiSveVoznje(List<Voznja> voznje){
         for(Voznja voznja : voznje){
             upisiVoznju(voznja);
         }

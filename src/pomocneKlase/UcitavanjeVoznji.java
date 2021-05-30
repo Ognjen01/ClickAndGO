@@ -9,6 +9,9 @@ import korisnici.Vozac;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,13 +37,8 @@ public class UcitavanjeVoznji {
 
         Musterija musterija = new Musterija();
         Vozac vozac = new Vozac();
-        Date datum = null;
-        try {
-            datum = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").parse(elementiVoznje[9]);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
+        LocalDateTime localDateTime = LocalDateTime.parse(elementiVoznje[9], DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss z yyyy"));
+        Date datum = Date.from(localDateTime.atZone(ZoneId.of("UTC")).toInstant());
 
         int idVoznje = Integer.parseInt(elementiVoznje[0]);
         int idVozaca = Integer.parseInt(elementiVoznje[1]);
@@ -70,6 +68,10 @@ public class UcitavanjeVoznji {
 
         } else if (elementiVoznje[10].equals("aplikacija")) {
 
+            boolean petFriendly = Boolean.valueOf(elementiVoznje[11]);
+            String napomena = elementiVoznje[12];
+
+
             VoznjaNarucenaAplikacijom novaVoznjaAplikacija = new VoznjaNarucenaAplikacijom(
                     idVoznje,
                     idVozaca,
@@ -82,7 +84,9 @@ public class UcitavanjeVoznji {
                     cenaVoznje,
                     datum, // Ovdje treba date time format
                     musterija,
-                    vozac
+                    vozac,
+                    petFriendly,
+                    napomena
             ); // Popuniti konstruktore
             return novaVoznjaAplikacija;
 

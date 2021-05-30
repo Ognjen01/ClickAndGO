@@ -6,29 +6,39 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import enumeracije.StatusVoznje;
 import korisnici.Musterija;
 import korisnici.Osoba;
+import pomocneKlase.UpisivanjeUFajl;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class NarucivanjeVoznjeAplikacijom extends JFrame {
 
     private JPanel panel1;
     private JTextField txtAdresaPolaska;
     private JTextField txtAdresaDolaska;
+    private JCheckBox petFriendlyCheck;
+    private JTextArea txtNapomena;
     private JButton naruciBtn;
     private JButton odustaniBtn;
     private JLabel adresaPolaska;
     private JLabel adresaDolaska;
+
+    private UpisivanjeUFajl upisivanjeUFajl;
 
     public NarucivanjeVoznjeAplikacijom(TaxiSluzba taxiSluzba, Osoba prijavljeniKorisnik){
 
         setSize(400, 200);
         setTitle("Click&GO - Naruči vožnju putem aplikacije");
         setLocationRelativeTo(null);
+        upisivanjeUFajl = new UpisivanjeUFajl();
 
         add(panel1);
 
@@ -39,6 +49,8 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                 try {
                     String adresaPolaska = txtAdresaPolaska.getText().trim();
                     String adresaDolaska = txtAdresaDolaska.getText().trim();
+                    boolean petFriendly = Boolean.valueOf(petFriendlyCheck.getText());
+                    String napomena = txtNapomena.getText();
                     int id = 0;
                     for (Voznja v : taxiSluzba.getListaVoznji()) {
                         if (v.getIdVoznje() > id) {
@@ -53,8 +65,7 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                     double trajanje = 0;
                     int cenaVoznje = 0;
                     Date vremeNarudzbine = new Date();
-                    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                    System.out.println(format.format(vremeNarudzbine));
+
                     StatusVoznje statusVoznje = StatusVoznje.NA_CEKANJU;
 
                     if (adresaPolaska.equals("") || adresaDolaska.equals("")) {
@@ -63,16 +74,27 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                     }
 
                     System.out.println(idVoznje + " " + idVozaca + " " + idMusterije + " " + adresaDolaska);
-                    VoznjaNarucenaAplikacijom voznja = new VoznjaNarucenaAplikacijom(idVoznje, idVozaca, idMusterije, adresaPolaska, adresaDolaska, statusVoznje, duzina, trajanje, cenaVoznje, vremeNarudzbine, (Musterija) prijavljeniKorisnik, null);
+                    VoznjaNarucenaAplikacijom voznja = new VoznjaNarucenaAplikacijom(idVoznje, idVozaca, idMusterije, adresaPolaska, adresaDolaska, statusVoznje, duzina, trajanje, cenaVoznje, vremeNarudzbine, (Musterija) prijavljeniKorisnik, null, petFriendly, napomena);
                     System.out.println(voznja);
                     //voznja.setPetFrendly(true);
                     //voznja.setNapomena(String);
-                    taxiSluzba.getListaVoznji().add(voznja);
+                    List<Voznja> sveVoznje = taxiSluzba.getListaVoznji();
+                    sveVoznje.add(voznja);
 
-                    JOptionPane.showMessageDialog( new Frame(),
-                            "Uspešno kreirana vožnja, molimo sačekajte!",
-                            null,
-                            JOptionPane.INFORMATION_MESSAGE);
+                    try{
+                        //ciscenje fajla
+                        PrintWriter writer = new PrintWriter("src/fajlovi/voznje.txt");
+                        writer.close();
+                        upisivanjeUFajl.upisiSveVoznje(sveVoznje);
+                        JOptionPane.showMessageDialog(null,
+                                "Vožnja uspešno kreirana!", "Obaveštenje",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        setVisible(false);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null,
+                                "Desila se greška prilikom kreiranja vožnje", "Greška",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    }
 
                     setVisible(false);
 

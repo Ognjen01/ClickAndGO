@@ -96,6 +96,14 @@ public class DodavanjeDispecera extends JFrame {
                                 JOptionPane.ERROR_MESSAGE);
                         return;
                     }
+                    if (ime.equals("") ||
+                                    prezime.equals("") ||
+                                    jmbg.equals("") ||
+                                    adresa.equals("") ||
+                                    korisnickoIme.equals("") ||
+                                    lozinka.equals("")){
+                        throw new Exception();
+                    }
 
 
                     Dispecer dispecer = new Dispecer(id, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, Pol.valueOf(pol), brojTelefona, "dispecer", true, plata , brTelefonskeLinije, odeljenje);
