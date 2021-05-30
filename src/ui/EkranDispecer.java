@@ -43,7 +43,6 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 PodaciTaksiSluzbe podaciTaksiSluzbe = new PodaciTaksiSluzbe(); // DOdati objekat taxi sluzbe u konstruktor
                 podaciTaksiSluzbe.setVisible(true);
-                setVisible(false);
             }
         });
 
@@ -52,7 +51,8 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
             OperacijeVozaci operacijeVozaci = new OperacijeVozaci(taxiSluzba, prijavljeniDispecer);
             operacijeVozaci.setVisible(true);
-            setVisible(false);
+
+
             }
         });
 
@@ -61,7 +61,7 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 DodavanjeIzmenaAutomobila dodavanjeIzmenaAutomobila = new DodavanjeIzmenaAutomobila();
                 dodavanjeIzmenaAutomobila.setVisible(true);
-                setVisible(false);
+
             }
         });
 
@@ -70,7 +70,7 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
             PrikazVoznji prikazVoznji = new PrikazVoznji(taxiSluzba);
             prikazVoznji.setVisible(true);
-            //setVisible(false);
+
             }
         });
 
@@ -104,7 +104,7 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Automobili automobili = new Automobili();
                 automobili.setVisible(true);
-                setVisible(false);
+
             }
         });
 

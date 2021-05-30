@@ -51,7 +51,7 @@ public class PrikazMusterija extends JFrame {
         int index = 0;
         for (Osoba osoba: taxiSluzba.getListaOsoba()
         ) {
-            if (osoba instanceof Musterija) {
+            if (osoba instanceof Musterija && osoba.isAktivan()) {
                 Musterija musterija = (Musterija) osoba;
 
                 data[index] = musterija.toArrayString();
