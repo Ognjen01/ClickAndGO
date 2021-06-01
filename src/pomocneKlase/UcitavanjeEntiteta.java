@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import enumeracije.TipVozila;
 
@@ -13,9 +14,9 @@ public class UcitavanjeEntiteta {
 
     // UČITAVANJE AUTOMOBILA
 
-    public List<Automobil> ucitajListuAutomobila(List<String[]> nizAutomobila) {
+    public DoublyLinkedList<Automobil> ucitajListuAutomobila(List<String[]> nizAutomobila) { // TODO: DoublyLinkedList
 
-        List<Automobil> listaAutomobila = new ArrayList<Automobil>();
+        DoublyLinkedList<Automobil> listaAutomobila = new DoublyLinkedList<Automobil>();
 
         for (String[] automobil : nizAutomobila) {
 

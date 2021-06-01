@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
@@ -25,7 +26,7 @@ public class RezultatiIzvjestajaVoznji extends JFrame {
     private JButton nazadButton;
     private JLabel brojVozaca;
 
-    public RezultatiIzvjestajaVoznji(List<Voznja> listaVoznji){
+    public RezultatiIzvjestajaVoznji(DoublyLinkedList<Voznja> listaVoznji){
         setSize(400, 500);
         setTitle("Click&GO - Rezultati izvještaja");
         setLocationRelativeTo(null);
@@ -41,7 +42,7 @@ public class RezultatiIzvjestajaVoznji extends JFrame {
         double prosTrajanje = 0;
         double prosDuzina = 0;
 
-        List<Integer> idVozaca = new ArrayList<Integer>();
+        List<Integer> idVozaca = new ArrayList<Integer>(); // TODO: DoublyLinkedList
 
 
         for (Voznja voznja : listaVoznji

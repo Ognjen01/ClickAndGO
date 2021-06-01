@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import entiteti.*;
 import korisnici.Dispecer;
 import korisnici.Musterija;
@@ -24,17 +25,17 @@ public class UpisivanjeUFajl {
     public void upisiTaxiSluzbu(TaxiSluzba taxiSluzba){
 
         ocistiFajl(PUTANJA_DO_FAJLOVA + KORISNICI_FAJL);
-        List<Osoba> osobe = taxiSluzba.getListaOsoba();
+        DoublyLinkedList<Osoba> osobe = taxiSluzba.getListaOsoba();
         upisiSveOsobe(osobe);
 
 
         ocistiFajl(PUTANJA_DO_FAJLOVA + AUTOMOBILI_FAJL);
-        List<Automobil> automobili = taxiSluzba.getListaAutomovila();
+        DoublyLinkedList<Automobil> automobili = taxiSluzba.getListaAutomovila();
         upisiSveAutomobile(automobili);
 
 
         ocistiFajl(PUTANJA_DO_FAJLOVA + VOZNJE_FAJL);
-        List<Voznja> voznje = taxiSluzba.getListaVoznji();
+        DoublyLinkedList<Voznja> voznje = taxiSluzba.getListaVoznji();
         upisiSveVoznje(voznje);
 
     }
@@ -63,7 +64,7 @@ public class UpisivanjeUFajl {
         }
     }
 
-    private void upisiSveOsobe(List<Osoba> osobe){
+    private void upisiSveOsobe(DoublyLinkedList<Osoba> osobe){
         for(Osoba osoba : osobe){
             if(osoba.getUloga().equals("korisnik")){
                 upisiMusteriju((Musterija) osoba);
@@ -81,13 +82,13 @@ public class UpisivanjeUFajl {
         }
     }
 
-    public void upisiSveAutomobile(List<Automobil> automobili){
+    public void upisiSveAutomobile(DoublyLinkedList<Automobil> automobili){
         for(Automobil automobil : automobili){
             upisiAutomobil(automobil);
         }
     }
 
-    public void upisiSveVoznje(List<Voznja> voznje){
+    public void upisiSveVoznje(DoublyLinkedList<Voznja> voznje){
         for(Voznja voznja : voznje){
             upisiVoznju(voznja);
         }

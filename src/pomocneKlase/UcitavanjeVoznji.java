@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
@@ -17,8 +18,8 @@ import java.util.Date;
 import java.util.List;
 
 public class UcitavanjeVoznji {
-    public List<Voznja> iteracijaKrozListuStringova(List<String[]> listaEntiteta) {
-        List<Voznja> listaUcitanihVoznji = new ArrayList<Voznja>();
+    public DoublyLinkedList<Voznja> iteracijaKrozListuStringova(List<String[]> listaEntiteta) { // TODO: DoublyLinkedList
+        DoublyLinkedList<Voznja> listaUcitanihVoznji = new DoublyLinkedList<Voznja>();
 
 
         for (String[] nizEntitetaVoznje : listaEntiteta

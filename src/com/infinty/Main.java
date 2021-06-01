@@ -24,23 +24,23 @@ public class Main {
         List<String[]> listaAutomobila = citajFajl.procitajFajl("automobili.txt");
 
 
-        List<Osoba> listaOsoba = new ArrayList<Osoba>();
+        DoublyLinkedList<Osoba> listaOsoba = new DoublyLinkedList<Osoba>(); // TODO: DoublyLinkedList
         UcitavanjeKorisnika vratiListuOsoba = new UcitavanjeKorisnika();
 
-        List<Voznja> listaVoznjiObj = new ArrayList<Voznja>();
+        DoublyLinkedList<Voznja> listaVoznjiObj = new DoublyLinkedList<Voznja>();// TODO: DoublyLinkedList
         UcitavanjeVoznji vratiListuvoznji = new UcitavanjeVoznji();
 
-        List<Automobil> automobilList = new ArrayList<Automobil>();
+        DoublyLinkedList<Automobil> automobilList = new DoublyLinkedList<Automobil>();// TODO: DoublyLinkedList
         UcitavanjeEntiteta ucitavanjeEntiteta = new UcitavanjeEntiteta();
 
-        listaVoznjiObj = vratiListuvoznji.iteracijaKrozListuStringova(listaVoznji);
-        listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
-        automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);
+        listaVoznjiObj = vratiListuvoznji.iteracijaKrozListuStringova(listaVoznji);// TODO: DoublyLinkedList
+        listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);// TODO: DoublyLinkedList
+        automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);// TODO: DoublyLinkedList
 
         vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj, automobilList);
 
 
-        TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);
+        TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);// TODO: DoublyLinkedList
 
         Prijava prijava = new Prijava(taxiSluzba);
         prijava.setVisible(true);
@@ -87,33 +87,9 @@ public class Main {
             System.out.println(osoba.getIdKorisnika());
         }
 
-        // Binarna pretraga
-
-        Osoba trazenaOsoba =  pronadjiOsobuBinarySearch(listaUcitanohOsoba, 100005);
-        System.out.println("TRAŽENI ID: 100005 / REZULTAT BINARNE PRETRAGE:");
-        System.out.println(trazenaOsoba);
 
     }
 
-    // BINARNA PRETRAGA ZA OSOBE -> Samo algoritam
 
-    public static Osoba pronadjiOsobuBinarySearch(DoublyLinkedList<Osoba> array, int target){ // Ukloniti static
-        return binarySearch(array, target, 0, array.size());
-    }
 
-    public static Osoba binarySearch(DoublyLinkedList<Osoba> array, int target, int low, int high){ // Ukloniti static
-
-        if(low > high){
-            return null;
-        }
-        int mid = (low + high) / 2;
-
-        if (array.getElement(mid).getIdKorisnika() == target){
-            return array.getElement(mid);
-        } else if (array.getElement(mid).getIdKorisnika() > target){
-            return  binarySearch(array, target, low, mid-1);
-        } else {
-            return binarySearch(array, target, mid + 1, high);
-        }
-    }
 }

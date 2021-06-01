@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import enumeracije.Pol;
@@ -84,7 +85,7 @@ public class Registracija extends JFrame {
 
                     String uloga = "korisnik";
                     boolean aktivan = true;
-                    List<Voznja> listaVoznji = null;
+                    DoublyLinkedList<Voznja> listaVoznji = null;
 
                     //  Generisanje ID korisnika!
 

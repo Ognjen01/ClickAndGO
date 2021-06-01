@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.TaxiSluzba;
 import enumeracije.Pol;
 import korisnici.Dispecer;
@@ -103,9 +104,9 @@ public class IzmenaDispecera extends JFrame {
                         osoba.setBrTelefonskeLinije(brTelefonskeLinije);
                         osoba.setOdjeljenje(odeljenje);
 
-                        List<Osoba> sveOsobe = taxiSluzba.getListaOsoba();
+                        DoublyLinkedList<Osoba> sveOsobe = taxiSluzba.getListaOsoba();
                         for (int i = 0; i < sveOsobe.size(); i++) {
-                            if (sveOsobe.get(i).getIdKorisnika() == idDispecera)
+                            if (sveOsobe.getElement(i).getIdKorisnika() == idDispecera)
                                 sveOsobe.set(i, osoba);
                         }
 

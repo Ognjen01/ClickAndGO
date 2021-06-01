@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 
@@ -81,7 +82,7 @@ public class IzvjestajVoznji extends JFrame {
 
                     // Logika izvjestaja godisnjeg
 
-                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
+                    DoublyLinkedList<Voznja> listaOdgovarajucihVoznji = new DoublyLinkedList<Voznja>();
 
                     for (Voznja voznja: taxiSluzba.getListaVoznji()
                         ) {
@@ -100,7 +101,7 @@ public class IzvjestajVoznji extends JFrame {
 
                     // Logika za mjesecni izvjestaj
 
-                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
+                    DoublyLinkedList<Voznja> listaOdgovarajucihVoznji = new DoublyLinkedList<Voznja>();
                     int zahtjevaniMjesec = Integer.parseInt(mjesec);
 
                     for (Voznja voznja: taxiSluzba.getListaVoznji()
@@ -120,7 +121,7 @@ public class IzvjestajVoznji extends JFrame {
 
                     // Logika za dnevni izvjestaj
 
-                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
+                    DoublyLinkedList<Voznja> listaOdgovarajucihVoznji = new DoublyLinkedList<Voznja>();
 
                     for (Voznja voznja: taxiSluzba.getListaVoznji()
                     ) {
@@ -142,7 +143,7 @@ public class IzvjestajVoznji extends JFrame {
 
                     // Logika za sedmicni izvjestaj
 
-                    List<Voznja> listaOdgovarajucihVoznji = new ArrayList<Voznja>();
+                    DoublyLinkedList<Voznja> listaOdgovarajucihVoznji = new DoublyLinkedList<Voznja>();
 
                     Date date1= null;
                     try {

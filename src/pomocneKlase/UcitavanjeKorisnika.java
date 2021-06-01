@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.Voznja;
 import enumeracije.Pol;
@@ -18,8 +19,8 @@ public class UcitavanjeKorisnika {
 
     //Funkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
 
-    public List<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta) {
-        List<Osoba> listaUcitanohOsoba = new ArrayList<Osoba>();
+    public DoublyLinkedList<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta) { // TODO: DoublyLinkedList
+        DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<Osoba>();
 
 
         for (String[] nizEntitetaOsobe : listaEntiteta
@@ -55,7 +56,7 @@ public class UcitavanjeKorisnika {
 
         if (niz[9].equals("korisnik")) {
 
-            List<Voznja> listaVoznjiMusterije = new ArrayList<Voznja>();
+            DoublyLinkedList<Voznja> listaVoznjiMusterije = new DoublyLinkedList<Voznja>();
 
             Musterija novaMusterija = new Musterija(
                     idKorisnika,
@@ -79,7 +80,7 @@ public class UcitavanjeKorisnika {
             int brojClanskeKarte = Integer.parseInt(niz[12]);
             double prosjecnaOcjena = Double.parseDouble(niz[13]);
             Automobil automobilVozaca = new Automobil();
-            List<Voznja> listaVoznjiVozaca = new ArrayList<Voznja>();
+            DoublyLinkedList<Voznja> listaVoznjiVozaca = new DoublyLinkedList<Voznja>();
 
             Vozac noviVozac = new Vozac(
                     idKorisnika,
@@ -128,7 +129,7 @@ public class UcitavanjeKorisnika {
         }
     }
 
-    public void apdejtujListe(List<Osoba> listaOsoba, List<Voznja> listaVoznji, List<Automobil> listaAutomobila) {
+    public void apdejtujListe(DoublyLinkedList<Osoba> listaOsoba, DoublyLinkedList<Voznja> listaVoznji, DoublyLinkedList<Automobil> listaAutomobila) { // TODO: DoublyLinkedList
 
         for (Voznja voznja : listaVoznji
         ) {

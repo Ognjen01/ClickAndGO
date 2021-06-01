@@ -1,5 +1,6 @@
 package entiteti;
 
+import collections.list.DoublyLinkedList;
 import korisnici.Osoba;
 import pomocneKlase.CitanjeFajla;
 
@@ -12,15 +13,15 @@ public class TaxiSluzba {
     private String adresa;
     private int cijenaStarta;
     private int cijenaPoKilometru;
-    private List<Osoba> listaOsoba ;
-    private List<Automobil> listaAutomobila;
-    private List<Voznja> listaVoznji;
+    private DoublyLinkedList<Osoba> listaOsoba ;
+    private DoublyLinkedList<Automobil> listaAutomobila;
+    private DoublyLinkedList<Voznja> listaVoznji;
 
 
     public TaxiSluzba(
-            List<Osoba> listaOsoba,
-            List<Automobil> listaAutomobila,
-            List<Voznja> listaVoznji
+            DoublyLinkedList<Osoba> listaOsoba, // TODO: DoublyLinkedList
+            DoublyLinkedList<Automobil> listaAutomobila,// TODO: DoublyLinkedList
+            DoublyLinkedList<Voznja> listaVoznji// TODO: DoublyLinkedList
     ){
         this.listaAutomobila = listaAutomobila;
         this.listaOsoba = listaOsoba;
@@ -90,27 +91,27 @@ public class TaxiSluzba {
         this.pib = pib;
     }
 
-    public List<Automobil> getListaAutomovila() {
+    public DoublyLinkedList<Automobil> getListaAutomovila() {
         return listaAutomobila;
-    }
+    } // TODO: DoublyLinkedList
 
-    public List<Osoba> getListaOsoba() {
+    public DoublyLinkedList<Osoba> getListaOsoba() {
         return listaOsoba;
-    }
+    }// TODO: DoublyLinkedList
 
-    public List<Voznja> getListaVoznji() {
+    public DoublyLinkedList<Voznja> getListaVoznji() {
         return listaVoznji;
-    }
+    }// TODO: DoublyLinkedList
 
-    public void setListaAutomovila(List<Automobil> listaAutomovila) {
+    public void setListaAutomovila(DoublyLinkedList<Automobil> listaAutomovila) {
         this.listaAutomobila = listaAutomovila;
     }
 
-    public void setListaOsoba(List<Osoba> listaOsoba) {
+    public void setListaOsoba(DoublyLinkedList<Osoba> listaOsoba) {
         this.listaOsoba = listaOsoba;
     }
 
-    public void setListaVoznji(List<Voznja> listaVoznji) {
+    public void setListaVoznji(DoublyLinkedList<Voznja> listaVoznji) {
         this.listaVoznji = listaVoznji;
     }
 }

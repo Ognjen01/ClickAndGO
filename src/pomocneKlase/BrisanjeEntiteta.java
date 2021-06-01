@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import korisnici.Osoba;
 
@@ -19,7 +20,7 @@ public class BrisanjeEntiteta {
         this.upisivanjeUFajl = new UpisivanjeUFajl();
     }
 
-    public void obrisiKorisnika(List<Osoba> listaOsoba, int id) {
+    public void obrisiKorisnika(DoublyLinkedList<Osoba> listaOsoba, int id) { // TODO: DoublyLinkedList
         for (Osoba osoba : listaOsoba) {
             if (osoba.getIdKorisnika() == id) {
                 osoba.setAktivan(false);
@@ -27,8 +28,8 @@ public class BrisanjeEntiteta {
         }
     }
 
-    public void obrisiAutomobil(List<Automobil> sviAutomobili, int idAutomobila) {
-        List<Automobil> automobiliToSave = sviAutomobili;
+    public void obrisiAutomobil(DoublyLinkedList<Automobil> sviAutomobili, int idAutomobila) { // TODO: DoublyLinkedList
+        DoublyLinkedList<Automobil> automobiliToSave = sviAutomobili;
         Automobil autoZaBrisanje = null;
         for (Automobil automobil : sviAutomobili) {
             if (automobil.getAutomobilID() == idAutomobila) {

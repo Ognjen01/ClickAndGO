@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import enumeracije.TipVozila;
@@ -36,8 +37,8 @@ public class DodavanjeAutomobila extends JFrame {
     private CitanjeFajla citanjeFajla;
     private UcitavanjeKorisnika ucitavanjeKorisnika;
 
-    List<Osoba> sviKorisnici;
-    List<Automobil> sviAutomobili;
+    DoublyLinkedList<Osoba> sviKorisnici;
+    DoublyLinkedList<Automobil> sviAutomobili;
 
     public DodavanjeAutomobila(TaxiSluzba taxiSluzba){
         super("Click&GO - Unos novog automobila");
@@ -61,7 +62,7 @@ public class DodavanjeAutomobila extends JFrame {
 
     private void initForma(TaxiSluzba taxiSluzba) {
         //inicijalizovanje drop vrednosti
-        List<String> vozaci = new ArrayList<>();
+        DoublyLinkedList<String> vozaci = new DoublyLinkedList<>();
         for(Osoba osoba : sviKorisnici) {
             if(osoba.getUloga().equals("vozac")) {
                 vozaci.add(String.valueOf(osoba.getIdKorisnika()) + " - " + osoba.getKorisnickoIme());

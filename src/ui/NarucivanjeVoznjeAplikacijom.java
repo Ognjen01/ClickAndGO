@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
@@ -78,7 +79,7 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                     System.out.println(voznja);
                     //voznja.setPetFrendly(true);
                     //voznja.setNapomena(String);
-                    List<Voznja> sveVoznje = taxiSluzba.getListaVoznji();
+                    DoublyLinkedList<Voznja> sveVoznje = taxiSluzba.getListaVoznji();
                     sveVoznje.add(voznja);
 
                     try{

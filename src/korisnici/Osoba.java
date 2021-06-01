@@ -1,5 +1,6 @@
 package korisnici;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Voznja;
 import enumeracije.Pol;
 
@@ -19,7 +20,7 @@ public abstract class Osoba {
     protected String brojTelefona;
     protected String uloga;
     protected boolean aktivan;
-    protected List<Voznja> lisaVoznji;
+    protected DoublyLinkedList<Voznja> lisaVoznji; // TODO: DoublyLinkedList
 
 
     Osoba(int idKorisnika,
@@ -45,7 +46,7 @@ public abstract class Osoba {
         this.brojTelefona = brojTelefona;
         this.uloga = uloga;
         this.aktivan = aktivan;
-        this.lisaVoznji = new ArrayList<>();
+        this.lisaVoznji = new DoublyLinkedList<>();
 
     }
 
@@ -72,9 +73,9 @@ public abstract class Osoba {
         return aktivan;
     }
 
-    public List<Voznja> getLisaVoznji() {
+    public DoublyLinkedList<Voznja> getLisaVoznji() {
         return lisaVoznji;
-    }
+    } // TODO: DoublyLinkedList
 
     public void dodajVoznjuUListu(Voznja voznja) {
         this.lisaVoznji.add(voznja);

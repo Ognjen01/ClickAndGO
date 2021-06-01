@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
@@ -124,7 +125,7 @@ public class OperacijeVozaci extends JFrame {
 
     public void postaviInformacijeTabele(TaxiSluzba taxiSluzba){
 
-        List<Vozac> listaVozaca = new ArrayList<Vozac>();;
+        DoublyLinkedList<Vozac> listaVozaca = new DoublyLinkedList<Vozac>();;
         for (Osoba osoba: taxiSluzba.getListaOsoba()){
             if(osoba instanceof Vozac){
                 listaVozaca.add((Vozac) osoba);

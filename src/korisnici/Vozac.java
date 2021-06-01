@@ -1,5 +1,6 @@
 package korisnici;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.Voznja;
 import enumeracije.Pol;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class Vozac extends Osoba {
 
-    public List<Voznja> voznjeVozaca;
+    public DoublyLinkedList<Voznja> voznjeVozaca; // TODO: DoublyLinkedList
     private int plata;
     private int brClanskeKarte;
     private Automobil automobil;
@@ -29,7 +30,7 @@ public class Vozac extends Osoba {
                  int plata,
                  int brClanskeKarte,
                  Automobil automobil,
-                 List<Voznja> voznjeVozaca,
+                 DoublyLinkedList<Voznja> voznjeVozaca,
                  double prosjecnaOcjena
     ) {
         super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga, aktivan);
@@ -97,13 +98,13 @@ public class Vozac extends Osoba {
         this.prosjecnaOcjena = prosjecnaOcjena;
     }
 
-    public void setVoznjeVozaca(List<Voznja> voznjeVozaca) {
+    public void setVoznjeVozaca(DoublyLinkedList<Voznja> voznjeVozaca) {
         this.voznjeVozaca = voznjeVozaca;
     }
 
-    public List<Voznja> getVoznjeVozaca() {
+    public DoublyLinkedList<Voznja> getVoznjeVozaca() {
         return voznjeVozaca;
-    }
+    } // TODO: DoublyLinkedList
 
     public String toString() {
         return idKorisnika + "|" +

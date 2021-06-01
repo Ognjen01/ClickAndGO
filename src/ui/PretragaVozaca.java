@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
@@ -64,7 +65,7 @@ public class PretragaVozaca extends JFrame {
 
                     // Porediti kao ime.equals("")
 
-                    List<Vozac> litsaNajdenihVozaca = new ArrayList<Vozac>();
+                    DoublyLinkedList<Vozac> litsaNajdenihVozaca = new DoublyLinkedList<Vozac>();// TODO: DoublyLinkedList
 
                     for (Osoba nadjeniVozac: taxiSluzba.getListaOsoba()
                          ) {

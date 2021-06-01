@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
@@ -117,7 +118,7 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
 
     public void osvjeziTabelu(TaxiSluzba taxiSluzba, Vozac prijavljeniVozac){
 
-        List<Voznja> listaKreiranihVoznji = new ArrayList<Voznja>();
+        DoublyLinkedList<Voznja> listaKreiranihVoznji = new DoublyLinkedList<Voznja>(); // TODO: DoublyLinkedList
 
         for (Voznja voznja: taxiSluzba.getListaVoznji()
         ) {

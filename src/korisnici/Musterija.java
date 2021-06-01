@@ -1,12 +1,13 @@
 package korisnici;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Voznja;
 import enumeracije.Pol;
 
 import java.util.List;
 
 public class Musterija extends Osoba {
-    private List<Voznja> voznjeMusterije;
+    private DoublyLinkedList<Voznja> voznjeMusterije;
 
 
     public Musterija(int idKorisnika,
@@ -20,7 +21,8 @@ public class Musterija extends Osoba {
                      String brojTelefona,
                      String uloga,
                      boolean aktivan,
-                     List<Voznja> voznjeMusterije) {
+                     DoublyLinkedList<Voznja> voznjeMusterije // TODO: DoublyLinkedList
+                      ) {
         super(idKorisnika, ime, prezime, korisnickoIme, lozinka, jmbg, adresa, pol, brojTelefona, uloga, aktivan);
         this.voznjeMusterije = voznjeMusterije;
     }
@@ -39,14 +41,6 @@ public class Musterija extends Osoba {
         setBrojTelefona(null);
         setUloga(null);
         setAktivan(false);
-    }
-
-    public void naruciVoznjuTelefonom() {
-
-    }
-
-    public void naruciVoznjuAplikacijom() {
-
     }
 
     @Override

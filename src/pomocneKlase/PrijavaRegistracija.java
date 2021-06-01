@@ -1,5 +1,6 @@
 package pomocneKlase;
 
+import collections.list.DoublyLinkedList;
 import korisnici.Osoba;
 
 import java.util.List;
@@ -8,7 +9,7 @@ public class PrijavaRegistracija {
 
     // Pronalaženje traženog korisnika u fajlu:
 
-    public Osoba prijavaNaSistem(String korisnikckoIme, String lozinka, List<Osoba> listaKorisnika) {
+    public Osoba prijavaNaSistem(String korisnikckoIme, String lozinka, DoublyLinkedList<Osoba> listaKorisnika) { // TODO: DoublyLinkedList
         Osoba prijavljeniKorisnik = null;
         for (Osoba korisnik : listaKorisnika) {
             System.out.println("Trazeni: " + korisnikckoIme + " " + lozinka + " ; Nađeni: " + korisnik.getIme() + " " + korisnik.getLozinka());

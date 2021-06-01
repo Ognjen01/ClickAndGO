@@ -1,5 +1,6 @@
 package ui;
 
+import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import enumeracije.TipVozila;
@@ -34,8 +35,8 @@ public class IzmenaAutomobila extends JFrame {
     private CitanjeFajla citanjeFajla;
     private UcitavanjeKorisnika ucitavanjeKorisnika;
 
-    List<Osoba> sviKorisnici;
-    List<Automobil> sviAutomobili;
+    DoublyLinkedList<Osoba> sviKorisnici;
+    DoublyLinkedList<Automobil> sviAutomobili;
 
     public IzmenaAutomobila(TaxiSluzba taxiSluzba, Integer idAutomobila){
         super("Click&GO - Izmena automobila");
