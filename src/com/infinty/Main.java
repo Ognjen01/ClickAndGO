@@ -58,33 +58,29 @@ public class Main {
             System.out.println("ENTITET DODAT U DOUBLEY LINKED LIST");
         }
 
-        System.out.println("================= \n POČETNO: ");
+        System.out.println("================= \n OSOBE: ");
 
-        for (Osoba osoba : listaUcitanohOsoba
+        for (Osoba osoba : listaOsoba
         ) {
             System.out.println(osoba.getIdKorisnika());
         }
 
-        // SORTIRANJE DOUBLY LINKED LISTE!!
 
-        for (int i = 0; i < listaUcitanohOsoba.size(); i++){
-            for (int j = 0; j < listaUcitanohOsoba.size(); j++){
 
-                if(listaUcitanohOsoba.getElement(i).getIdKorisnika() < listaUcitanohOsoba.getElement(j).getIdKorisnika()){
-                    Osoba prenos = listaUcitanohOsoba.getElement(i);
-                    //System.out.println("i: "+ listaUcitanohOsoba.getElement(i) + " j: " + listaUcitanohOsoba.getElement(j));
-                    listaUcitanohOsoba.set(i, listaUcitanohOsoba.getElement(j));
-                    listaUcitanohOsoba.set(j, prenos);
-                }
-            }
+
+        System.out.println("================= \n AUTOMOBILI: ");
+
+        for (Automobil automobil : automobilList
+        ) {
+            System.out.println(automobil.getAutomobilID());
         }
 
+        System.out.println("================= \n VOŽNJE: ");
 
-        System.out.println("================= \n KONAČNO: ");
 
-        for (Osoba osoba : listaUcitanohOsoba
+        for (Voznja voznja : listaVoznjiObj
         ) {
-            System.out.println(osoba.getIdKorisnika());
+            System.out.println(voznja.getIdVoznje());
         }
 
 

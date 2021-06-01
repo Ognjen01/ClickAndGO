@@ -6,6 +6,7 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import enumeracije.StatusVoznje;
 import korisnici.Musterija;
+import korisnici.Osoba;
 import korisnici.Vozac;
 
 import java.text.ParseException;
@@ -28,6 +29,18 @@ public class UcitavanjeVoznji {
             Voznja novaVoznja = odluciKojuVoznjuUcitati(nizEntitetaVoznje);
             listaUcitanihVoznji.add(novaVoznja);
         }
+
+        for (int i = 0; i < listaUcitanihVoznji.size(); i++){
+            for (int j = 0; j < listaUcitanihVoznji.size(); j++){
+
+                if(listaUcitanihVoznji.getElement(i).getIdVoznje() < listaUcitanihVoznji.getElement(j).getIdVoznje()){
+                    Voznja prenos = listaUcitanihVoznji.getElement(i);
+                    listaUcitanihVoznji.set(i, listaUcitanihVoznji.getElement(j));
+                    listaUcitanihVoznji.set(j, prenos);
+                }
+            }
+        }
+
         return listaUcitanihVoznji;
     }
 

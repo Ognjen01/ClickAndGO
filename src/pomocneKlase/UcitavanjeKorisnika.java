@@ -20,6 +20,7 @@ public class UcitavanjeKorisnika {
     //Funkcija koja prolazi kroz listu stringova, a vraća listu objekata klasa naslednica Osobe
 
     public DoublyLinkedList<Osoba> iteracijaKrozListuStringova(List<String[]> listaEntiteta) { // TODO: DoublyLinkedList
+
         DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<Osoba>();
 
 
@@ -28,6 +29,19 @@ public class UcitavanjeKorisnika {
             Osoba ucitanaOsoba = odluciKojegKorisnikaInstancirati(nizEntitetaOsobe);
             listaUcitanohOsoba.add(ucitanaOsoba);
         }
+
+        for (int i = 0; i < listaUcitanohOsoba.size(); i++){
+            for (int j = 0; j < listaUcitanohOsoba.size(); j++){
+
+                if(listaUcitanohOsoba.getElement(i).getIdKorisnika() < listaUcitanohOsoba.getElement(j).getIdKorisnika()){
+                    Osoba prenos = listaUcitanohOsoba.getElement(i);
+                    listaUcitanohOsoba.set(i, listaUcitanohOsoba.getElement(j));
+                    listaUcitanohOsoba.set(j, prenos);
+                }
+            }
+        }
+
+
         return listaUcitanohOsoba;
     }
 

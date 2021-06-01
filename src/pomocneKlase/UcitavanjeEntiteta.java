@@ -3,6 +3,7 @@ package pomocneKlase;
 import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import enumeracije.TipVozila;
+import korisnici.Osoba;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,6 +24,18 @@ public class UcitavanjeEntiteta {
             Automobil automobil1 = transformisiAutomobil(automobil);
             listaAutomobila.add(automobil1);
         }
+
+        for (int i = 0; i < listaAutomobila.size(); i++){
+            for (int j = 0; j < listaAutomobila.size(); j++){
+
+                if(listaAutomobila.getElement(i).getAutomobilID() < listaAutomobila.getElement(j).getAutomobilID()){
+                    Automobil automobil = listaAutomobila.getElement(i);
+                    listaAutomobila.set(i, listaAutomobila.getElement(j));
+                    listaAutomobila.set(j, automobil);
+                }
+            }
+        }
+
 
         return listaAutomobila;
 
