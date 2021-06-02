@@ -7,6 +7,7 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import enumeracije.StatusVoznje;
 import korisnici.Musterija;
 import korisnici.Osoba;
+import pomocneKlase.Aukcija;
 import pomocneKlase.UpisivanjeUFajl;
 
 import javax.swing.*;
@@ -81,6 +82,9 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                     //voznja.setNapomena(String);
                     DoublyLinkedList<Voznja> sveVoznje = taxiSluzba.getListaVoznji();
                     sveVoznje.add(voznja);
+
+                    Aukcija novaAukcija = new Aukcija(idVoznje, null);
+                    taxiSluzba.getListaAukcija().add(novaAukcija);
 
                     try{
                         //ciscenje fajla

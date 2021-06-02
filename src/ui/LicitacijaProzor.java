@@ -6,6 +6,7 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import enumeracije.StatusVoznje;
 import korisnici.Osoba;
+import korisnici.Vozac;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -48,7 +49,7 @@ public class LicitacijaProzor extends JFrame {
                     int idVoznjazaDodjelu =Integer.parseInt((String) tabelaAktuelnihVoznji.getValueAt(idPozicijaVoznje, 0));
 
 
-                    UnosInfoApliciranje unosInfoApliciranje = new UnosInfoApliciranje(); // Proslijediti mu informacije
+                    UnosInfoApliciranje unosInfoApliciranje = new UnosInfoApliciranje(taxiSluzba, idVoznjazaDodjelu, (Vozac) trenutnoPrijevljeniVozac); // Proslijediti mu informacije
                     unosInfoApliciranje.setVisible(true);
 
                 } catch (Exception exception){

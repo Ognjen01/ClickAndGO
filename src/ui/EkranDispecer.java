@@ -26,12 +26,14 @@ public class EkranDispecer extends JFrame {
     private JButton prikazMusterija;
     private JButton prikazAutomobilaButton;
     private JButton prikazDispeceraButton;
+    private JButton aukcijeBtn;
+    private JButton istorijaAukcijaButton;
     private TaxiSluzba sluzba;
 
     public EkranDispecer(Osoba prijavljeniDispecer, TaxiSluzba taxiSluzba) {
         sluzba = taxiSluzba;
 
-        setSize(800, 530);
+        setSize(800, 580);
         setTitle("Click&GO");
         setLocationRelativeTo(null);
         imeDispecera.setText(prijavljeniDispecer.getIme());
@@ -53,6 +55,14 @@ public class EkranDispecer extends JFrame {
             operacijeVozaci.setVisible(true);
 
 
+            }
+        });
+
+        istorijaAukcijaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IstorijaAukcija istorijaAukcija = new IstorijaAukcija(taxiSluzba);
+                istorijaAukcija.setVisible(true);
             }
         });
 
@@ -145,6 +155,14 @@ public class EkranDispecer extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 OperacijeDispeceri operacijeDispeceri = new OperacijeDispeceri(taxiSluzba);
                 operacijeDispeceri.setVisible(true);
+            }
+        });
+
+        aukcijeBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PokretanjeAukcije pokretanjeAukcije = new PokretanjeAukcije(taxiSluzba);
+                pokretanjeAukcije.setVisible(true);
             }
         });
 
