@@ -2,6 +2,7 @@ package entiteti;
 
 import collections.list.DoublyLinkedList;
 import korisnici.Osoba;
+import pomocneKlase.Aukcija;
 import pomocneKlase.CitanjeFajla;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class TaxiSluzba {
     private DoublyLinkedList<Osoba> listaOsoba ;
     private DoublyLinkedList<Automobil> listaAutomobila;
     private DoublyLinkedList<Voznja> listaVoznji;
+    private DoublyLinkedList<Aukcija> listaAukcija;
 
 
     public TaxiSluzba(
@@ -50,6 +52,14 @@ public class TaxiSluzba {
 
 
     // Geteri i seteri za entitet TaxiSluzba
+
+    public DoublyLinkedList<Aukcija> getListaAukcija() {
+        return listaAukcija;
+    }
+
+    public void setListaAukcija(DoublyLinkedList<Aukcija> listaAukcija) {
+        this.listaAukcija = listaAukcija;
+    }
 
     public int getCijenaPoKilometru() {
         return cijenaPoKilometru;

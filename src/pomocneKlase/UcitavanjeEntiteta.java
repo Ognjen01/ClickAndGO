@@ -35,8 +35,6 @@ public class UcitavanjeEntiteta {
                 }
             }
         }
-
-
         return listaAutomobila;
 
     }
@@ -68,6 +66,80 @@ public class UcitavanjeEntiteta {
         );
 
         return auto;
+    }
+
+    public DoublyLinkedList<Ponuda> ucitajListuPonuda(List<String[]> listaPonuda){
+        DoublyLinkedList<Ponuda> listPonuda = new DoublyLinkedList<Ponuda>();
+
+
+        for (String[] ponuda : listaPonuda) {
+
+            Ponuda ponuda1 = transformisiPonudu(ponuda);
+            listPonuda.add(ponuda1);
+        }
+
+        return listPonuda;
+    }
+
+    private Ponuda transformisiPonudu(String[] ponudaString){
+        Ponuda ponuda = new Ponuda(
+                Integer.parseInt(ponudaString[0]),
+                Integer.parseInt(ponudaString[1]),
+                ponudaString[2],
+                Double.parseDouble(ponudaString[3]),
+                Integer.parseInt(ponudaString[4]),
+                Integer.parseInt(ponudaString[4])
+        );
+        return ponuda;
+    }
+
+    public DoublyLinkedList<Aukcija> ucitajListuAukcija(DoublyLinkedList<Ponuda> listaPonuda){
+
+        DoublyLinkedList<Aukcija> listaAukcija = new DoublyLinkedList<Aukcija>();
+
+        for (Ponuda ponuda: listaPonuda
+             ) {
+            if (listaAukcija.isEmpty()){
+                Aukcija aukcija = new Aukcija(ponuda.getIdVoznje(), null);
+                listaAukcija.add(aukcija);
+                System.out.println("DODATA PRVA AUKCIJA");
+            } else {
+                boolean postojiAukcijaZaPonudu = false;
+
+                for (Aukcija aukcija : listaAukcija) {
+                    if (ponuda.getIdVoznje() == aukcija.getIdVoznje()){
+                        postojiAukcijaZaPonudu = true ;
+                    }
+                }
+
+                if (!postojiAukcijaZaPonudu) {
+                    Aukcija aukcija = new Aukcija(ponuda.getIdVoznje(), null);
+                    listaAukcija.add(aukcija);
+                }
+            }
+        }
+
+        for (Ponuda ponuda: listaPonuda){
+            for (Aukcija aukcija: listaAukcija){
+                if(ponuda.getIdVoznje() == aukcija.getIdVoznje()){
+                    aukcija.dodajPonuduUListu(ponuda);
+                }
+            }
+        }
+
+
+        return listaAukcija;
+     }
+
+    private void ubaciPonuduUAukciju(Aukcija aukcija, DoublyLinkedList<Ponuda> listaPonuda) {
+
+        for (Ponuda ponuda: listaPonuda
+             ) {
+            if(ponuda.getIdVoznje() == aukcija.getIdVoznje()){
+                aukcija.dodajPonuduUListu(ponuda);
+            }
+        }
+
     }
 
 }

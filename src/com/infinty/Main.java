@@ -6,6 +6,7 @@ import entiteti.TaxiSluzba;
 import entiteti.Voznja;
 import korisnici.Osoba;
 import pomocneKlase.*;
+import ui.DodavanjeIzmenaAutomobila;
 import ui.Prijava;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class Main {
         List<String[]> lista = citajFajl.procitajFajl("korisnici.txt");
         List<String[]> listaVoznji = citajFajl.procitajFajl("voznje.txt");
         List<String[]> listaAutomobila = citajFajl.procitajFajl("automobili.txt");
+        List<String[]> listaPunudaString = citajFajl.procitajFajl("ponude.txt");
 
 
         DoublyLinkedList<Osoba> listaOsoba = new DoublyLinkedList<Osoba>(); // TODO: DoublyLinkedList
@@ -33,14 +35,22 @@ public class Main {
         DoublyLinkedList<Automobil> automobilList = new DoublyLinkedList<Automobil>();// TODO: DoublyLinkedList
         UcitavanjeEntiteta ucitavanjeEntiteta = new UcitavanjeEntiteta();
 
+        DoublyLinkedList<Ponuda> listPonuda = new DoublyLinkedList<Ponuda>();
+        listPonuda = ucitavanjeEntiteta.ucitajListuPonuda(listaPunudaString);
+
+        DoublyLinkedList<Aukcija> listaAukcija = new DoublyLinkedList<Aukcija>();
+
+
         listaVoznjiObj = vratiListuvoznji.iteracijaKrozListuStringova(listaVoznji);// TODO: DoublyLinkedList
         listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);// TODO: DoublyLinkedList
         automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);// TODO: DoublyLinkedList
+        listaAukcija = ucitavanjeEntiteta.ucitajListuAukcija(listPonuda);
 
         vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj, automobilList);
 
 
         TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);// TODO: DoublyLinkedList
+        taxiSluzba.setListaAukcija(listaAukcija);
 
         Prijava prijava = new Prijava(taxiSluzba);
         prijava.setVisible(true);
@@ -65,9 +75,6 @@ public class Main {
             System.out.println(osoba.getIdKorisnika());
         }
 
-
-
-
         System.out.println("================= \n AUTOMOBILI: ");
 
         for (Automobil automobil : automobilList
@@ -81,6 +88,25 @@ public class Main {
         for (Voznja voznja : listaVoznjiObj
         ) {
             System.out.println(voznja.getIdVoznje());
+        }
+
+        System.out.println("================= \n PONUDE: ");
+
+        for (Ponuda ponuda : listPonuda
+        ) {
+            System.out.println(ponuda.getIdVoznje() + " / " + ponuda.getKorisnickoImeVozaca());
+        }
+
+        System.out.println("================= \n AUKCIJA: ");
+
+        for (Aukcija aukcija : taxiSluzba.getListaAukcija()
+        ) {
+            System.out.println("Aukcija: ");
+            System.out.println(aukcija.getIdVoznje());
+            System.out.println("Njene ponude: ");
+            for (Ponuda ponuda : aukcija.getPonudeZaVoznju()){
+                System.out.println( ponuda.getIdVoznje() + " / " +ponuda.getIdVozaca());
+            }
         }
 
 
