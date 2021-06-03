@@ -88,7 +88,7 @@ public class UcitavanjeEntiteta {
                 ponudaString[2],
                 Double.parseDouble(ponudaString[3]),
                 Integer.parseInt(ponudaString[4]),
-                Integer.parseInt(ponudaString[4])
+                Integer.parseInt(ponudaString[5])
         );
         return ponuda;
     }

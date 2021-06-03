@@ -79,7 +79,7 @@ public class LicitacijaProzor extends JFrame {
 
         for (Voznja voznja : taxiSluzba.getListaVoznji()
         ) {
-            if ((voznja instanceof VoznjaNarucenaAplikacijom) )//&& (voznja.getStatus() == StatusVoznje.KREIRANA))
+            if ((voznja instanceof VoznjaNarucenaAplikacijom) && (voznja.getStatus() == StatusVoznje.NA_CEKANJU))
                  {
                 listaKreiranihVoznji.add(voznja);
             }

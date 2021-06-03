@@ -4,6 +4,8 @@ import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import entiteti.Voznja;
+import entiteti.VoznjaNarucenaAplikacijom;
+import enumeracije.StatusVoznje;
 import korisnici.Osoba;
 import pomocneKlase.*;
 import ui.DodavanjeIzmenaAutomobila;
@@ -26,13 +28,13 @@ public class Main {
         List<String[]> listaPunudaString = citajFajl.procitajFajl("ponude.txt");
 
 
-        DoublyLinkedList<Osoba> listaOsoba = new DoublyLinkedList<Osoba>(); // TODO: DoublyLinkedList
+        DoublyLinkedList<Osoba> listaOsoba = new DoublyLinkedList<Osoba>();
         UcitavanjeKorisnika vratiListuOsoba = new UcitavanjeKorisnika();
 
-        DoublyLinkedList<Voznja> listaVoznjiObj = new DoublyLinkedList<Voznja>();// TODO: DoublyLinkedList
+        DoublyLinkedList<Voznja> listaVoznjiObj = new DoublyLinkedList<Voznja>();
         UcitavanjeVoznji vratiListuvoznji = new UcitavanjeVoznji();
 
-        DoublyLinkedList<Automobil> automobilList = new DoublyLinkedList<Automobil>();// TODO: DoublyLinkedList
+        DoublyLinkedList<Automobil> automobilList = new DoublyLinkedList<Automobil>();
         UcitavanjeEntiteta ucitavanjeEntiteta = new UcitavanjeEntiteta();
 
         DoublyLinkedList<Ponuda> listPonuda = new DoublyLinkedList<Ponuda>();
@@ -41,15 +43,36 @@ public class Main {
         DoublyLinkedList<Aukcija> listaAukcija = new DoublyLinkedList<Aukcija>();
 
 
-        listaVoznjiObj = vratiListuvoznji.iteracijaKrozListuStringova(listaVoznji);// TODO: DoublyLinkedList
-        listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);// TODO: DoublyLinkedList
-        automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);// TODO: DoublyLinkedList
+        listaVoznjiObj = vratiListuvoznji.iteracijaKrozListuStringova(listaVoznji);
+        listaOsoba = vratiListuOsoba.iteracijaKrozListuStringova(lista);
+        automobilList = ucitavanjeEntiteta.ucitajListuAutomobila(listaAutomobila);
         listaAukcija = ucitavanjeEntiteta.ucitajListuAukcija(listPonuda);
 
         vratiListuOsoba.apdejtujListe(listaOsoba, listaVoznjiObj, automobilList);
 
+        // Dio za vožnje koje su kreirane ali nemaju ni jednu ponudu u fajlu ponuda
 
-        TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);// TODO: DoublyLinkedList
+        for (Voznja voznja: listaVoznjiObj
+             ) {
+            int voznjaPostojiUAukciji = 0;
+            if (voznja instanceof VoznjaNarucenaAplikacijom && voznja.getStatus() == StatusVoznje.NA_CEKANJU){
+                voznjaPostojiUAukciji = 1;
+                for (Aukcija au :
+                        listaAukcija) {
+                    if(au.getIdVoznje() == voznja.getIdVoznje()){
+                        voznjaPostojiUAukciji = 3;
+                    }
+                }
+            }
+            if (voznjaPostojiUAukciji == 1) {
+                Aukcija aukcija = new Aukcija(voznja.getIdVoznje(), null);
+                listaAukcija.add(aukcija);
+            }
+
+        }
+
+
+        TaxiSluzba taxiSluzba = new TaxiSluzba(listaOsoba, automobilList, listaVoznjiObj);
         taxiSluzba.setListaAukcija(listaAukcija);
 
         Prijava prijava = new Prijava(taxiSluzba);

@@ -35,6 +35,21 @@ public class IstorijaAukcija extends JFrame {
             }
         });
 
+        dataljiAukcijeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                //TODO: Pribaviti ID
+
+                int idPozicija = tabelaAukcija.getSelectedRow();// Druga funkcija za uzimanje reda
+                //String idAukcije = (String) tabelaAukcija.getValueAt(idPozicija, 0);
+                System.out.println("ID ODABRANE AUKCIJE: " + tabelaAukcija.getValueAt(idPozicija, 0));
+
+                DetaljiAukcije detaljiAukcije = new DetaljiAukcije(taxiSluzba, (int) tabelaAukcija.getValueAt(idPozicija, 0));
+                detaljiAukcije.setVisible(true);
+            }
+        });
+
 
     }
 
