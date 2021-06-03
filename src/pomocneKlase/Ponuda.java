@@ -104,5 +104,14 @@ public class Ponuda {
         return (double) ( 1 / 2 ) * ( (double) 1 / brojVoznjiVozaca );
     }
 
+    @Override
+    public String toString() {
+        return idVoznje + "|" +
+                idVozaca + "|" +
+                korisnickoImeVozaca + "|" +
+                prosjecnaOcjenaVozaca + "|" +
+                brojVoznjiVozaca + "|" +
+                vrijemeDolaska + "\n";
+    }
 
 }

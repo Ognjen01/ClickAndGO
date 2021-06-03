@@ -19,6 +19,7 @@ public class UpisivanjeUFajl {
     private final String KORISNICI_FAJL = "korisnici.txt";
     private final String AUTOMOBILI_FAJL = "automobili.txt";
     private final String VOZNJE_FAJL = "voznje.txt";
+    private final String PONUDE_FAJL = "ponude.txt";
 
 
 
@@ -37,6 +38,56 @@ public class UpisivanjeUFajl {
         ocistiFajl(PUTANJA_DO_FAJLOVA + VOZNJE_FAJL);
         DoublyLinkedList<Voznja> voznje = taxiSluzba.getListaVoznji();
         upisiSveVoznje(voznje);
+
+        // Uzimanje svih ponuda
+        ocistiFajl(PUTANJA_DO_FAJLOVA + PONUDE_FAJL);
+        DoublyLinkedList<Ponuda> ponude = new DoublyLinkedList<Ponuda>();
+
+        for (Aukcija aukcija: taxiSluzba.getListaAukcija()
+             ) {
+            for (Ponuda ponuda : aukcija.getPonudeZaVoznju()
+                 ) {
+                ponude.add(ponuda);
+            }
+        }
+
+        upisiSvePonude(ponude);
+
+
+    }
+
+    private void upisiSvePonude(DoublyLinkedList<Ponuda> ponude) {
+
+        for (Ponuda ponuda: ponude
+             ) {
+            upisiPonudu(ponuda);
+        }
+
+    }
+
+    private void upisiPonudu(Ponuda ponuda) {
+        BufferedWriter bw = null;
+        try {
+            File fajl = new File(PUTANJA_DO_FAJLOVA + PONUDE_FAJL);
+            if (!fajl.exists()) {
+                fajl.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(fajl,true);
+            bw = new BufferedWriter(fw);
+            bw.write(ponuda.toString());
+            System.out.println("Ponuda:\n" + ponuda.toString() + "\n uspesno upisana u fajl");
+        } catch (IOException e) {
+            System.out.println("GRESKA!" + e);
+        }
+        finally {
+            try{
+                if(bw!=null)
+                    bw.close();
+            }catch(Exception ex){
+                System.out.println("Error in closing the BufferedWriter"+ex);
+            }
+        }
 
     }
 
@@ -81,6 +132,8 @@ public class UpisivanjeUFajl {
             }
         }
     }
+
+
 
     public void upisiSveAutomobile(DoublyLinkedList<Automobil> automobili){
         for(Automobil automobil : automobili){
