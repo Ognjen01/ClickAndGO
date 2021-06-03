@@ -5,12 +5,16 @@ import entiteti.Voznja;
 import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import enumeracije.StatusVoznje;
+import pomocneKlase.Aukcija;
+import pomocneKlase.Ponuda;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import static java.lang.Math.round;
 
 public class PokretanjeAukcije extends JFrame {
     private JPanel panel1;
@@ -31,6 +35,49 @@ public class PokretanjeAukcije extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // TODO: Pokretanje algoritma aukcije
+
+                // Ocjenjivanje ponuda
+
+                int idVozacaPobjenika =0;
+                int idPozicija = tabelaVoznji.getSelectedRow();// Druga funkcija za uzimanje reda
+                int idVoznje = (int) tabelaVoznji.getValueAt(idPozicija, 0);
+
+                Aukcija aukcija= new Aukcija(0, null);
+
+                for (Aukcija aukcija1 : taxiSluzba.getListaAukcija()){
+                    if(aukcija1.getIdVoznje() == idVoznje){
+                        aukcija = aukcija1;
+                    }
+                }
+
+                double najvecaOcjena = 0;
+                for (Ponuda ponuda : aukcija.getPonudeZaVoznju()
+                     ) {
+                    if(najvecaOcjena < ponuda.getOcjenaPonude()){
+                        najvecaOcjena = ponuda.getOcjenaPonude();
+                        idVozacaPobjenika = ponuda.getIdVozaca();
+                    }
+                }
+
+                if(najvecaOcjena != 0 && idVozacaPobjenika != 0) {
+                    double k = round(najvecaOcjena);
+                    JOptionPane.showConfirmDialog(null,
+                            "Pobjednik je vozač " + idVozacaPobjenika + " sa ocjenom " + najvecaOcjena , "Pobjednik",
+                            JOptionPane.OK_OPTION);
+                } else {
+                    JOptionPane.showConfirmDialog(null,
+                            "Vožnja još uvijek nema ponuda, molimo sačekajte!", "Molimo saččekajte",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+
+                for (Voznja voznja: taxiSluzba.getListaVoznji()
+                     ) {
+                    if(voznja.getIdVoznje() == idVoznje){
+                        voznja.setIdVozaca(idVozacaPobjenika);
+                        voznja.setStatus(StatusVoznje.PRIHVACENA);
+                    }
+                }
+
             }
         });
 

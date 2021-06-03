@@ -18,7 +18,7 @@ public class UnosInfoApliciranje extends JFrame{
 
     public UnosInfoApliciranje(TaxiSluzba taxiSluzba, int idVoznjeZaKojuSeAplicira, Vozac trenutnoPrijavljenVozac){
         setSize(500, 250);
-        setTitle("Click&GO");
+        setTitle("Click&GO - Unos ponude");
         setLocationRelativeTo(null);
 
         add(panel1);
@@ -54,6 +54,10 @@ public class UnosInfoApliciranje extends JFrame{
                             JOptionPane.YES_NO_OPTION);
 
                     setVisible(false);
+
+                    OsvjezavanjeAukcijeVozac osvjezavanjeAukcijeVozac = new OsvjezavanjeAukcijeVozac(taxiSluzba, trenutnoPrijavljenVozac.getIdKorisnika(), idVoznjeZaKojuSeAplicira);
+                    osvjezavanjeAukcijeVozac.setVisible(true);
+
                 } catch (Exception exception){
                     System.out.println("GREŠKA PRILIKOM KONKURISANJA ZA AUKCIJU");
                 }

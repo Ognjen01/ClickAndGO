@@ -9,6 +9,7 @@ public class Ponuda {
     private double prosjecnaOcjenaVozaca;
     private int brojVoznjiVozaca;
     private int vrijemeDolaska;
+    private double ocjenaPonude;
     private Vozac vozac;
 
 
@@ -20,6 +21,13 @@ public class Ponuda {
         this.vozac = vozac;
     }
 
+    public double getOcjenaPonude() {
+        return ocjenaPonude;
+    }
+
+    public void setOcjenaPonude(double ocjenaPonude) {
+        this.ocjenaPonude = ocjenaPonude;
+    }
 
     public int getIdVoznje() {
         return idVoznje;
@@ -83,7 +91,17 @@ public class Ponuda {
         this.brojVoznjiVozaca = brojVoznjiVozaca;
         this.vrijemeDolaska = vrijemeDolaska;
         this.prosjecnaOcjenaVozaca = prosjecnaOcjenaVozaca;
+        ocjenaPonude = (double) (izracunajOcjenuBrojVoznji(this.brojVoznjiVozaca) + izracunajOcjenuVrijeme(this.vrijemeDolaska) + prosjecnaOcjenaVozaca);
+        System.out.println("OCJENA PONUDE " + ocjenaPonude);
 
+    }
+
+    public double izracunajOcjenuVrijeme(int vrijeme){
+        return (double) 1/vrijeme;
+    }
+
+    public double izracunajOcjenuBrojVoznji(int brojVoznjiVozaca){
+        return (double) ( 1 / 2 ) * ( (double) 1 / brojVoznjiVozaca );
     }
 
 

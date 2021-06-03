@@ -8,3 +8,4 @@
 500007|300002|100004|Valentina Vodnika 1|Zelesnicka|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|false|Imam kofere
 500008|300000|100003|1300 kaplara 3|Petrovaradin|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|false|ŽURIM
 500009|0|100004|Njegoševa 3|Anđe Ranković 22|NA_CEKANJU|0.0|0.0|0|03/06/2021 11:53:31|aplikacija|false|3 čovjeka
+500010|0|100004|MMM|MMM|NA_CEKANJU|0.0|0.0|0|03/06/2021 12:47:36|aplikacija|false|napomena

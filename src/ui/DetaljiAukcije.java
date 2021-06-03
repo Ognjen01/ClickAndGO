@@ -63,11 +63,13 @@ public class DetaljiAukcije extends JFrame {
             data[index][3] = String.valueOf(ponuda.getProsjecnaOcjenaVozaca());
             data[index][4] = String.valueOf(ponuda.getBrojVoznjiVozaca());
             data[index][5] = String.valueOf(ponuda.getVrijemeDolaska());
+            data[index][6] = String.valueOf(ponuda.getOcjenaPonude());
+            System.out.println("OCJENA PONUDE: " + ponuda.getOcjenaPonude());
 
             index++;
         }
 
-        String column[] = {"ID Vožnje", "ID Vozača", "Korisničko ime", "Prosječna ocjena", "Broj vožnji", "Vrijeme"};
+        String column[] = {"ID Vožnje", "ID Vozača", "Korisničko ime", "Prosječna ocjena", "Broj vožnji", "Vrijeme", "Ocjena ponude"};
         tabelaPonuda.setModel(new DefaultTableModel(data, column));
         tabelaPonuda.setAutoCreateRowSorter(true);
     }
