@@ -63,6 +63,15 @@ public class UcitavanjeVoznji {
         double trajanje = Double.parseDouble(elementiVoznje[7]);
         int cenaVoznje = Integer.parseInt(elementiVoznje[8]);
         StatusVoznje statusVoznje = StatusVoznje.valueOf(elementiVoznje[5]);
+        boolean ocjenjena = false;
+
+        if (elementiVoznje[11].equals("false")){
+            ocjenjena = false;
+        } else if (elementiVoznje[11].equals("true")){
+            ocjenjena = true;
+        }
+
+
         System.out.println(cenaVoznje);
         if (elementiVoznje[10].equals("telefon")) {
 
@@ -78,14 +87,15 @@ public class UcitavanjeVoznji {
                     cenaVoznje,
                     datum,
                     musterija,
-                    vozac
+                    vozac,
+                    ocjenjena
             );
             return novaVoznjaTelefon;
 
         } else if (elementiVoznje[10].equals("aplikacija")) {
 
-            boolean petFriendly = Boolean.valueOf(elementiVoznje[11]);
-            String napomena = elementiVoznje[12];
+            boolean petFriendly = Boolean.valueOf(elementiVoznje[12]);
+            String napomena = elementiVoznje[13];
 
 
             VoznjaNarucenaAplikacijom novaVoznjaAplikacija = new VoznjaNarucenaAplikacijom(
@@ -102,7 +112,8 @@ public class UcitavanjeVoznji {
                     musterija,
                     vozac,
                     petFriendly,
-                    napomena
+                    napomena,
+                    ocjenjena
             ); // Popuniti konstruktore
             return novaVoznjaAplikacija;
 

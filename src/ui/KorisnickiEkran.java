@@ -1,6 +1,7 @@
 package ui;
 
 import entiteti.TaxiSluzba;
+import korisnici.Musterija;
 import korisnici.Osoba;
 import pomocneKlase.UpisivanjeUFajl;
 
@@ -19,6 +20,7 @@ public class KorisnickiEkran extends JFrame {
     private JButton izvjestajBtn;
     private JButton izmjeniProfil;
     private JButton obrisiProfil;
+    private JButton istorijaVoznjiButton;
     private TaxiSluzba sluzba;
 
     public KorisnickiEkran(Osoba prijavljeniKorisnik, TaxiSluzba taxiSluzba) {
@@ -60,6 +62,14 @@ public class KorisnickiEkran extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+
+        istorijaVoznjiButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VoznjeMusterije voznjeMusterije = new VoznjeMusterije((Musterija) prijavljeniKorisnik, taxiSluzba);
+                voznjeMusterije.setVisible(true);
             }
         });
 

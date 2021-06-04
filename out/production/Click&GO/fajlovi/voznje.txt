@@ -1,11 +1,11 @@
-500000|300003|100000|Jug Bogdana 12|Ćirpanova 22|ZAVRSENA|5.0|15.0|400|10/04/2021 02:00:00|telefon
-500001|300000|100001|Jug Bogdana 13|Ćirpanova 24|ZAVRSENA|5.0|15.0|400|11/04/2021 04:00:00|telefon
-500002|300001|100002|Jug Bogdana 14|Ćirpanova 25|ZAVRSENA|5.0|15.0|400|12/04/2021 08:00:00|telefon
-500003|300002|100003|Jug Bogdana 15|Ćirpanova 26|ZAVRSENA|5.0|15.0|400|11/04/2021 01:00:00|telefon
-500004|300003|100004|Jug Bogdana 16|Ćirpanova 27|ZAVRSENA|5.0|15.0|400|13/04/2021 06:00:00|telefon
-500005|300001|100000|Jug Bogdana 19|Ćirpanova 20|ZAVRSENA|5.0|15.0|400|14/04/2021 08:00:00|telefon
-500006|300001|100004|Bulevar Despota Stefana 5A|Futoska|ZAVRSENA|5.0|15.0|400|03/06/2021 11:40:41|aplikacija|false|Veće auto
-500007|300002|100004|Valentina Vodnika 1|Zelesnicka|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|false|Imam kofere
-500008|300000|100003|1300 kaplara 3|Petrovaradin|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|false|ŽURIM
-500009|0|100004|Njegoševa 3|Anđe Ranković 22|NA_CEKANJU|0.0|0.0|0|03/06/2021 11:53:31|aplikacija|false|3 čovjeka
-500010|0|100004|MMM|MMM|NA_CEKANJU|0.0|0.0|0|03/06/2021 12:47:36|aplikacija|false|napomena
+500000|300003|100000|Jug Bogdana 12|Ćirpanova 22|ZAVRSENA|5.0|15.0|400|10/04/2021 02:00:00|telefon|false
+500001|300000|100001|Jug Bogdana 13|Ćirpanova 24|ZAVRSENA|5.0|15.0|400|11/04/2021 04:00:00|telefon|false
+500002|300001|100002|Jug Bogdana 14|Ćirpanova 25|ZAVRSENA|5.0|15.0|400|12/04/2021 08:00:00|telefon|false
+500003|300002|100003|Jug Bogdana 15|Ćirpanova 26|ZAVRSENA|5.0|15.0|400|11/04/2021 01:00:00|telefon|false
+500004|300003|100004|Jug Bogdana 16|Ćirpanova 27|ZAVRSENA|5.0|15.0|400|13/04/2021 06:00:00|telefon|false
+500005|300001|100000|Jug Bogdana 19|Ćirpanova 20|ZAVRSENA|5.0|15.0|400|14/04/2021 08:00:00|telefon|false
+500006|300001|100004|Bulevar Despota Stefana 5A|Futoska|ZAVRSENA|5.0|15.0|400|03/06/2021 11:40:41|aplikacija|false|false|Veće auto
+500007|300002|100004|Valentina Vodnika 1|Zelesnicka|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|true|false|Imam kofere
+500008|300000|100003|1300 kaplara 3|Petrovaradin|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|false|false|ŽURIM
+500009|0|100004|Njegoševa 3|Anđe Ranković 22|NA_CEKANJU|0.0|0.0|0|03/06/2021 11:53:31|aplikacija|false|false|3 čovjeka
+500010|0|100004|MMM|MMM|NA_CEKANJU|0.0|0.0|0|03/06/2021 12:47:36|aplikacija|false|false|napomena

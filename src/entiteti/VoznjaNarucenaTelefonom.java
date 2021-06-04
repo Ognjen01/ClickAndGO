@@ -23,11 +23,12 @@ public class VoznjaNarucenaTelefonom extends Voznja {
                                    int cenaVoznje,
                                    Date vremeNarudzbe,
                                    Musterija musterija,
-                                   Vozac vozac
+                                   Vozac vozac,
+                                   boolean ocjenjena
     ) {
         super(idVoznje, idVozaca, idMusterije, adresaPolaska,
                 adresaDestinacije, status, duzina, trajanje,
-                cenaVoznje, vremeNarudzbe, musterija, vozac);
+                cenaVoznje, vremeNarudzbe, musterija, vozac, ocjenjena);
 
     }
 
@@ -37,6 +38,6 @@ public class VoznjaNarucenaTelefonom extends Voznja {
 
     @Override
     public String toString() {
-        return super.toString() + tipNarucivanje + "\n";
+        return super.toString() + tipNarucivanje + "|" + isOcjenjena() + "\n";
     }
 }

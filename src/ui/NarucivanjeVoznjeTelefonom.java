@@ -75,7 +75,7 @@ public class NarucivanjeVoznjeTelefonom extends JFrame {
 
 
                     System.out.println(idKorisnika + " " + idVozaca + " " + idKorisnika + " " + adresaDestinacije);
-                    VoznjaNarucenaTelefonom voznja = new VoznjaNarucenaTelefonom(idVoznje, idVozaca, idKorisnika, adresaPolaska, adresaDestinacije,statusVoznje,duzinaVoznje,trajanjeVoznje,cijena,datumKreiranja, (Musterija) prijavljenaMusterija,null);
+                    VoznjaNarucenaTelefonom voznja = new VoznjaNarucenaTelefonom(idVoznje, idVozaca, idKorisnika, adresaPolaska, adresaDestinacije,statusVoznje,duzinaVoznje,trajanjeVoznje,cijena,datumKreiranja, (Musterija) prijavljenaMusterija,null, false);
                     System.out.println(voznja.toString());
                     taxiSluzba.getListaVoznji().add(voznja);
 

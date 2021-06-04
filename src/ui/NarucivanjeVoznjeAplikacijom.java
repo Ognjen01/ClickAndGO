@@ -76,7 +76,7 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                     }
 
                     System.out.println(idVoznje + " " + idVozaca + " " + idMusterije + " " + adresaDolaska);
-                    VoznjaNarucenaAplikacijom voznja = new VoznjaNarucenaAplikacijom(idVoznje, idVozaca, idMusterije, adresaPolaska, adresaDolaska, statusVoznje, duzina, trajanje, cenaVoznje, vremeNarudzbine, (Musterija) prijavljeniKorisnik, null, petFriendly, napomena);
+                    VoznjaNarucenaAplikacijom voznja = new VoznjaNarucenaAplikacijom(idVoznje, idVozaca, idMusterije, adresaPolaska, adresaDolaska, statusVoznje, duzina, trajanje, cenaVoznje, vremeNarudzbine, (Musterija) prijavljeniKorisnik, null, petFriendly, napomena, false);
                     System.out.println(voznja);
                     //voznja.setPetFrendly(true);
                     //voznja.setNapomena(String);

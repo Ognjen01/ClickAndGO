@@ -26,6 +26,7 @@ public abstract class Voznja {
     private Musterija musterija;
     private Vozac vozac;
     private int cijena;
+    private boolean ocjenjena;
 
 
     public Voznja(
@@ -40,7 +41,8 @@ public abstract class Voznja {
             int cenaVoznje,
             Date vremeNarudzbine,
             Musterija musterija,
-            Vozac vozac) {
+            Vozac vozac,
+            boolean ocjenjena) {
 
         this.adresaPolaska = adresaPolaska;
         this.adresaDestinacije = adresaDestinacije;
@@ -56,6 +58,15 @@ public abstract class Voznja {
         this.idVoznje = idVoznje;
         this.idVozaca = idVozaca;
         this.cenaVoznje = cenaVoznje;
+        this.ocjenjena = ocjenjena;
+    }
+
+    public boolean isOcjenjena() {
+        return ocjenjena;
+    }
+
+    public void setOcjenjena(boolean ocjenjena) {
+        this.ocjenjena = ocjenjena;
     }
 
     public int getIdMusterije() {

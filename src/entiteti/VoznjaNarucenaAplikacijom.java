@@ -26,11 +26,12 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
             Musterija musterija,
             Vozac vozac,
             boolean petFriendly,
-            String napomena
+            String napomena,
+            boolean ocjenjena
     ) {
         super(idVoznje, idVozaca, idMusterije, adresaPolaska,
                 adresaDestinacije, status, duzina, trajanje,
-                cenaVoznje, vremeNarudzbe, musterija, vozac);
+                cenaVoznje, vremeNarudzbe, musterija, vozac, ocjenjena);
         this.petFriendly = petFriendly;
         this.napomena = napomena;
 
@@ -68,6 +69,6 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
 
     @Override
     public String toString() {
-        return super.toString() + tipNarucivanja + "|" + petFriendly + "|" + napomena + "\n";
+        return super.toString() + tipNarucivanja + "|" + isOcjenjena() + "|" + petFriendly + "|" + napomena + "\n";
     }
 }
