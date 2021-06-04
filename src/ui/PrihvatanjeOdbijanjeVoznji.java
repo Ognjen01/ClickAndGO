@@ -8,6 +8,7 @@ import entiteti.VoznjaNarucenaTelefonom;
 import enumeracije.StatusVoznje;
 import korisnici.Osoba;
 import korisnici.Vozac;
+import pomocneKlase.BinarnaPretraga;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -119,7 +120,7 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
     public void osvjeziTabelu(TaxiSluzba taxiSluzba, Vozac prijavljeniVozac){
 
         DoublyLinkedList<Voznja> listaKreiranihVoznji = new DoublyLinkedList<Voznja>(); // TODO: DoublyLinkedList
-
+        BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
         for (Voznja voznja: taxiSluzba.getListaVoznji()
         ) {
             if ((voznja instanceof VoznjaNarucenaTelefonom) && (voznja.getStatus() == StatusVoznje.DODJELJENA) && (voznja.getIdVozaca() == prijavljeniVozac.getIdKorisnika())){
@@ -135,11 +136,13 @@ public class PrihvatanjeOdbijanjeVoznji extends JFrame {
         ) {
             data[index]= voznja.toStringArray();
             data[index][10] = "telefon";
+            data[index][1] = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdMusterije()).getIme();
+
             index++;
             System.out.println((voznja instanceof VoznjaNarucenaAplikacijom) + " / " + (voznja instanceof VoznjaNarucenaTelefonom));
         }
 
-        String column[]={"ID","Mušterija ID","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
+        String column[]={"ID","Mušterija","Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         tabelaVoznji.setModel(new DefaultTableModel(data, column));
         tabelaVoznji.setAutoCreateRowSorter(true);
 

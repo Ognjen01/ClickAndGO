@@ -6,6 +6,7 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import korisnici.Osoba;
 import korisnici.Vozac;
+import pomocneKlase.BinarnaPretraga;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -88,14 +89,24 @@ public class PrikazVoznji extends JFrame {
 
         int brojVoznji = taxiSluzba.getListaVoznji().size();
         Object[][] data = new Object[brojVoznji][11];
+        BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
 
         int index = 0;
 
         for (Voznja voznja: taxiSluzba.getListaVoznji()
         ) {
+            // Dodjeljivanje imena preko binarne prtrage
+            String ime = " ";
+            if (voznja.getIdVozaca() != 0) {
+                 ime = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdVozaca()).getKorisnickoIme();
+            } else if (voznja.getIdVozaca() == 0){
+                ime = "Nije dodjeljeno";
+            }
+
             data[index][0] = voznja.getIdVoznje();
             data[index][1] = voznja.getIdMusterije();
-            data[index][2] = voznja.getIdVozaca();
+            data[index][2] = ime;
+            //data[index][2] = voznja.getIdVozaca();
             data[index][3] = voznja.getAdresaPolaska();
             data[index][4] = voznja.getAdresaDestinacije();
             data[index][5] = voznja.getStatus();

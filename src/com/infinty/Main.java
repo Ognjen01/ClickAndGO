@@ -81,6 +81,12 @@ public class Main {
 
         //TODO: TESTIRANJE LISTE, SORTIRANJA I BINARNE PRETRAGE:
 
+        BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
+
+        String ime = binarnaPretraga.pronadjiOsobuBinarySearch(listaOsoba, 100004).getKorisnickoIme();
+
+        System.out.println(" \n \n \n \n REZULTAT BINARNE PRETRAGE " + ime + " \n \n \n \n");
+
         DoublyLinkedList<Osoba> listaUcitanohOsoba = new DoublyLinkedList<>();
 
         for (String[] nizEntitetaOsobe : lista

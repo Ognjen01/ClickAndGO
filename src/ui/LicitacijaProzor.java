@@ -7,6 +7,7 @@ import entiteti.VoznjaNarucenaTelefonom;
 import enumeracije.StatusVoznje;
 import korisnici.Osoba;
 import korisnici.Vozac;
+import pomocneKlase.BinarnaPretraga;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -74,7 +75,7 @@ public class LicitacijaProzor extends JFrame {
     public  void osvjeziTabele(TaxiSluzba taxiSluzba) {
 
         // Postavljanje informacija vožnji
-
+        BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
         List<Voznja> listaKreiranihVoznji = new ArrayList<Voznja>();
 
         for (Voznja voznja : taxiSluzba.getListaVoznji()
@@ -93,11 +94,12 @@ public class LicitacijaProzor extends JFrame {
         ) {
             data[index] = voznja.toStringArray();
             data[index][10] = "aplikacija";
+            data[index][1] = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdMusterije()).getIme();
             index++;
             System.out.println((voznja instanceof VoznjaNarucenaAplikacijom) + " / " + (voznja instanceof VoznjaNarucenaTelefonom));
         }
 
-        String column[] = {"ID", "Mušterija ID", "Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
+        String column[] = {"ID", "Mušterija", "Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
         tabelaAktuelnihVoznji.setModel(new DefaultTableModel(data, column));
         tabelaAktuelnihVoznji.setAutoCreateRowSorter(true);
     }
