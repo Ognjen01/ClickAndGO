@@ -76,30 +76,33 @@ public class LicitacijaProzor extends JFrame {
 
         // Postavljanje informacija vožnji
         BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
-        List<Voznja> listaKreiranihVoznji = new ArrayList<Voznja>();
+        List<VoznjaNarucenaAplikacijom> listaKreiranihVoznji = new ArrayList<VoznjaNarucenaAplikacijom>();
 
         for (Voznja voznja : taxiSluzba.getListaVoznji()
         ) {
             if ((voznja instanceof VoznjaNarucenaAplikacijom) && (voznja.getStatus() == StatusVoznje.NA_CEKANJU))
                  {
-                listaKreiranihVoznji.add(voznja);
+                listaKreiranihVoznji.add((VoznjaNarucenaAplikacijom) voznja);
             }
         }
 
         int brojVoznji = listaKreiranihVoznji.size();
-        String data[][] = new String[brojVoznji][11];
+        String data[][] = new String[brojVoznji][10];
 
         int index = 0;
-        for (Voznja voznja : listaKreiranihVoznji
+        for (VoznjaNarucenaAplikacijom voznja : listaKreiranihVoznji
         ) {
-            data[index] = voznja.toStringArray();
-            data[index][10] = "aplikacija";
-            data[index][1] = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdMusterije()).getIme();
-            index++;
-            System.out.println((voznja instanceof VoznjaNarucenaAplikacijom) + " / " + (voznja instanceof VoznjaNarucenaTelefonom));
+
+                data[index] = voznja.toStringArray();
+                data[index][10] = "aplikacija";
+                data[index][1] = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdMusterije()).getIme();
+                data[index][11] = String.valueOf(voznja.isPetFriendly());
+                index++;
+                //System.out.println((voznja instanceof VoznjaNarucenaAplikacijom) + " / " + (voznja instanceof VoznjaNarucenaTelefonom));
+
         }
 
-        String column[] = {"ID", "Mušterija", "Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja"};
+        String column[] = {"ID", "Mušterija", "Vozač ID", "Adresa polaska", "Adresa destinacije", "Status", "Dužina (km)", "Trajanje (min)", "Cena (RSD)", "Datum i vreme", "Tip naručivanja", "Pet frendly"};
         tabelaAktuelnihVoznji.setModel(new DefaultTableModel(data, column));
         tabelaAktuelnihVoznji.setAutoCreateRowSorter(true);
     }

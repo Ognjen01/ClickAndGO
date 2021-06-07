@@ -9,6 +9,7 @@ import java.util.Date;
 public class VoznjaNarucenaAplikacijom extends Voznja {
 
     private final String tipNarucivanja = "aplikacija";
+
     private boolean petFriendly;
     private String napomena;
 
@@ -63,8 +64,13 @@ public class VoznjaNarucenaAplikacijom extends Voznja {
         this.petFriendly = petFriendly;
     }
 
+
     public void setNapomena(String napomena) {
         this.napomena = napomena;
+    }
+
+    public boolean isPetFriendly() {
+        return petFriendly;
     }
 
     @Override

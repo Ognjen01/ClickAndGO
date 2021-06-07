@@ -234,6 +234,7 @@ public abstract class Voznja {
         String.valueOf(trajanje),
         String.valueOf(cenaVoznje),
         datum,
+        null,
         null};
         return  nizObjekat;
     }
