@@ -5,6 +5,7 @@ import entiteti.Automobil;
 import entiteti.TaxiSluzba;
 import korisnici.Osoba;
 import korisnici.Vozac;
+import pomocneKlase.BinarnaPretraga;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -116,8 +117,6 @@ public class OperacijeVozaci extends JFrame {
         nazadBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EkranDispecer ekranDispecer = new EkranDispecer(prijvljeniDispecer, taxiSluzba);
-                ekranDispecer.setVisible(true);
                 setVisible(false);
             }
         });

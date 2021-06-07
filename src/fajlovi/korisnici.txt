@@ -10,3 +10,5 @@
 300001|Predrag|Tubić|predrag|predrag123|0503979089245|Valentina Vodnika 33|MUSKI|65789234|vozac|true|65000|400001|3.5
 300002|Đorđe|Ibrahimović|djordje|djordje123|2309990789324|Anđe Ranković 20|MUSKI|97896354|vozac|true|65000|400002|3.5375
 300003|Milorad|Stojković|milorad|milorad123|0708998983456|1300 kaplara|MUSKI|74567890|vozac|true|65000|400003|4.8
+300004|JAnko|Jankovic|janko|janko123|23423423|asd|MUSKI|234234|vozac|true|234234|234234|0.0
+300006|Mirko|Mirkovic|mirko|mirko123|123123123|sdf|MUSKI|123123|vozac|true|123123|123123|0.0

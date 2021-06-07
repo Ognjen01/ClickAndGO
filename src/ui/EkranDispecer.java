@@ -136,9 +136,10 @@ public class EkranDispecer extends JFrame {
         odjava.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                setVisible(false);
                 Prijava nazadNaPrijavu = new Prijava(taxiSluzba);
                 nazadNaPrijavu.setVisible(true);
-                setVisible(false);
+
             }
         });
 

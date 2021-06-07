@@ -51,8 +51,13 @@ public class NarucivanjeVoznjeAplikacijom extends JFrame {
                 try {
                     String adresaPolaska = txtAdresaPolaska.getText().trim();
                     String adresaDolaska = txtAdresaDolaska.getText().trim();
-                    boolean petFriendly = Boolean.valueOf(petFriendlyCheck.getText());
+                    boolean petFriendly = Boolean.valueOf(petFriendlyCheck.isSelected());
                     String napomena = txtNapomena.getText();
+
+                    if(napomena.equals("")){
+                        napomena = "NEMA NAPOMENE";
+                    }
+
                     int id = 0;
                     for (Voznja v : taxiSluzba.getListaVoznji()) {
                         if (v.getIdVoznje() > id) {

@@ -20,7 +20,7 @@ public class BrisanjeEntiteta {
         this.upisivanjeUFajl = new UpisivanjeUFajl();
     }
 
-    public void obrisiKorisnika(DoublyLinkedList<Osoba> listaOsoba, int id) { // TODO: DoublyLinkedList
+    public void obrisiKorisnika(DoublyLinkedList<Osoba> listaOsoba, int id) {
         for (Osoba osoba : listaOsoba) {
             if (osoba.getIdKorisnika() == id) {
                 osoba.setAktivan(false);
@@ -28,7 +28,7 @@ public class BrisanjeEntiteta {
         }
     }
 
-    public void obrisiAutomobil(DoublyLinkedList<Automobil> sviAutomobili, int idAutomobila) { // TODO: DoublyLinkedList
+    public void obrisiAutomobil(DoublyLinkedList<Automobil> sviAutomobili, int idAutomobila) {
         DoublyLinkedList<Automobil> automobiliToSave = sviAutomobili;
         Automobil autoZaBrisanje = null;
         for (Automobil automobil : sviAutomobili) {
