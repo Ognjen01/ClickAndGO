@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 public class UnosInfoApliciranje extends JFrame{
     private JPanel panel1;
     private JTextField vrijemePolje;
-    private JCheckBox petFredlyCheckBox;
     private JButton aplicirajButton;
     private JButton odustaniButton;
 
