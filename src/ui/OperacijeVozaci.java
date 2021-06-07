@@ -124,6 +124,8 @@ public class OperacijeVozaci extends JFrame {
 
     public void postaviInformacijeTabele(TaxiSluzba taxiSluzba){
 
+        BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
+
         DoublyLinkedList<Vozac> listaVozaca = new DoublyLinkedList<Vozac>();;
         for (Osoba osoba: taxiSluzba.getListaOsoba()){
             if(osoba instanceof Vozac){
@@ -141,6 +143,15 @@ public class OperacijeVozaci extends JFrame {
             if(vozac.isAktivan()) {
                 System.out.println(vozac.getIme());
                 data[index] = vozac.toArrayString();
+
+                // Dobijanje modela auta uz pomoć binarne pretage
+
+                try{
+                    data[index][10] = String.valueOf(binarnaPretraga.pronadjiAutomobilBinarySearch(taxiSluzba.getListaAutomovila(), vozac.getAutomobil().getAutomobilID()).getModel());
+                } catch (Exception e){
+                    data[index][10] = "Vozac nema automobil";
+
+                }
                 index++;
             }
         }

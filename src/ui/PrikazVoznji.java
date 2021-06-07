@@ -96,16 +96,17 @@ public class PrikazVoznji extends JFrame {
         for (Voznja voznja: taxiSluzba.getListaVoznji()
         ) {
             // Dodjeljivanje imena preko binarne prtrage
-            String ime = " ";
+            String imeVozaca = " ";
+
             if (voznja.getIdVozaca() != 0) {
-                 ime = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdVozaca()).getKorisnickoIme();
+                 imeVozaca = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdVozaca()).getKorisnickoIme();
             } else if (voznja.getIdVozaca() == 0){
-                ime = "Nije dodjeljeno";
+                imeVozaca = "Nije dodjeljeno";
             }
 
             data[index][0] = voznja.getIdVoznje();
-            data[index][1] = voznja.getIdMusterije();
-            data[index][2] = ime;
+            data[index][1] = binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdMusterije()).getKorisnickoIme();
+            data[index][2] = imeVozaca;
             //data[index][2] = voznja.getIdVozaca();
             data[index][3] = voznja.getAdresaPolaska();
             data[index][4] = voznja.getAdresaDestinacije();

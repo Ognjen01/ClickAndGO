@@ -6,6 +6,7 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import entiteti.VoznjaNarucenaTelefonom;
 import enumeracije.StatusVoznje;
 import pomocneKlase.Aukcija;
+import pomocneKlase.BinarnaPretraga;
 import pomocneKlase.Ponuda;
 
 import javax.swing.*;
@@ -19,6 +20,16 @@ public class DetaljiAukcije extends JFrame {
     private JPanel panel1;
     private JButton nazadButton;
     private JTable tabelaPonuda;
+    private JLabel idVoznje;
+    private JLabel musterijaPolje;
+    private JLabel vozacPolje;
+    private JLabel duzinaPolje;
+    private JLabel cijenaPolje;
+    private JLabel trajanjePolje;
+    private JLabel adresaPolaskaPolje;
+    private JLabel destinacijaPolje;
+    private JLabel datumPolje;
+    private JLabel detaljiVoznje;
 
     public DetaljiAukcije(TaxiSluzba taxiSluzba, int idVoznjeIAukcije){
 
@@ -40,6 +51,29 @@ public class DetaljiAukcije extends JFrame {
     }
 
     public  void osvjeziTabele(TaxiSluzba taxiSluzba, int idVoznjeIAukcije) {
+        BinarnaPretraga binarnaPretraga = new BinarnaPretraga();
+        for (Voznja voznja: taxiSluzba.getListaVoznji()
+             ) {
+
+            if (idVoznjeIAukcije == voznja.getIdVoznje()){
+                idVoznje.setText("  ID vožnje: " + voznja.getIdVoznje());
+                musterijaPolje.setText("  Mušterija: " + binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdMusterije()).getKorisnickoIme());
+                if(voznja.getIdVozaca() != 0 ){
+                    vozacPolje.setText("  Vozač: " + binarnaPretraga.pronadjiOsobuBinarySearch(taxiSluzba.getListaOsoba(), voznja.getIdVozaca()).getKorisnickoIme());
+                } else {
+                    vozacPolje.setText("  Vozač još nije dodjeljen");
+                }
+
+                cijenaPolje.setText("  Cijena vožnje: " + voznja.getCenaVoznje());
+                trajanjePolje.setText("Trajanje vožnje: " + voznja.getTrajanje());
+                adresaPolaskaPolje.setText("Adresa polaska: " + voznja.getAdresaPolaska());
+                destinacijaPolje.setText("Adresa destinacije: " + voznja.getAdresaDestinacije());
+                datumPolje.setText("Datum: "+ voznja.getVremeNarudzbine());
+                duzinaPolje.setText("  Dužina: " + voznja.getDuzina());
+                break;
+            }
+        }
+
 
         Aukcija aukcija = new Aukcija(0,  null);
 
