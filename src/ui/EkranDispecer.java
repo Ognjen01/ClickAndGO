@@ -113,7 +113,8 @@ public class EkranDispecer extends JFrame {
         izvjestajVozaca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                UnosVremenaZaIzvestaj unosVremenaZaIzvestaj = new UnosVremenaZaIzvestaj(taxiSluzba);
+                unosVremenaZaIzvestaj.setVisible(true);
             }
         });
 
