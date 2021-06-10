@@ -17,7 +17,6 @@ public class KorisnickiEkran extends JFrame {
     private JButton naruciAplikacijomBtn;
     private JButton naruciTelefonomBtn;
     private JButton odjavaBtn;
-    private JButton izvjestajBtn;
     private JButton izmjeniProfil;
     private JButton obrisiProfil;
     private JButton istorijaVoznjiButton;
@@ -58,12 +57,6 @@ public class KorisnickiEkran extends JFrame {
             }
         });
 
-        izvjestajBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
 
         istorijaVoznjiButton.addActionListener(new ActionListener() {
             @Override
