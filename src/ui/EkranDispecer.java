@@ -15,7 +15,6 @@ public class EkranDispecer extends JFrame {
     private JButton teksiSluzbaIzmjene;
     private JButton operacijeVozaci;
     private JPanel panelOpcija;
-    private JButton operacijeAutomobili;
     private JButton prikazVoznji;
     private JButton pretragaVozaca;
     private JButton dodjelaVoznji;
@@ -66,14 +65,7 @@ public class EkranDispecer extends JFrame {
             }
         });
 
-        operacijeAutomobili.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DodavanjeIzmenaAutomobila dodavanjeIzmenaAutomobila = new DodavanjeIzmenaAutomobila();
-                dodavanjeIzmenaAutomobila.setVisible(true);
 
-            }
-        });
 
         prikazVoznji.addActionListener(new ActionListener() {
             @Override

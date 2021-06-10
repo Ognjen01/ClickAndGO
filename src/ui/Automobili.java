@@ -8,9 +8,6 @@ public class Automobili extends JFrame {
     private JPanel AutomobiliFrame;
     private JScrollPane AutomobiliScrollPane;
     private JTable AutomobiliTable;
-    private JButton btnDodaj;
-    private JButton btnIzbrisi;
-    private JButton btnIzmeni;
     private JButton btnPretrazi;
     private JTextField txtModel;
     private JTextField txtProizvodjac;
@@ -22,6 +19,7 @@ public class Automobili extends JFrame {
     private JLabel lblGodinaProizvodnje;
     private JLabel lblRegistracija;
     private JLabel lblBrojVozila;
+    private JButton nazadButton;
 
     public Automobili() {
         add(AutomobiliFrame);
@@ -41,11 +39,10 @@ public class Automobili extends JFrame {
         add(AutomobiliScrollPane);
 */
 
-        btnDodaj.addActionListener(new ActionListener() {
+        nazadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DodavanjeIzmenaAutomobila dodavanjeIzmenaAutomobila = new DodavanjeIzmenaAutomobila();
-                dodavanjeIzmenaAutomobila.setVisible(true);
+                setVisible(false);
             }
         });
 

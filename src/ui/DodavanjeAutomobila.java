@@ -3,8 +3,10 @@ package ui;
 import collections.list.DoublyLinkedList;
 import entiteti.Automobil;
 import entiteti.TaxiSluzba;
+import entiteti.Voznja;
 import enumeracije.TipVozila;
 import korisnici.Osoba;
+import korisnici.Vozac;
 import pomocneKlase.CitanjeFajla;
 import pomocneKlase.UcitavanjeKorisnika;
 import pomocneKlase.UpisivanjeUFajl;
@@ -26,7 +28,6 @@ public class DodavanjeAutomobila extends JFrame {
     private JTextField modelField;
     private JTextField proizvodjacField;
     private JTextField datumRegistracijeField;
-    private JTextField brojVozilaField;
     private JTextField brojRegistracijeField;
     private JButton sacuvajButton;
     private JButton odustaniButton;
@@ -56,17 +57,19 @@ public class DodavanjeAutomobila extends JFrame {
         add(osnovniPanel);
 
         this.initForma(taxiSluzba);
-        this.onClickSacuvajBtn(upisivanjeUFajl);
+        this.onClickSacuvajBtn(upisivanjeUFajl, taxiSluzba);
         this.onClickOdustaniBtn();
     }
 
     private void initForma(TaxiSluzba taxiSluzba) {
         //inicijalizovanje drop vrednosti
         DoublyLinkedList<String> vozaci = new DoublyLinkedList<>();
+        vozacField.addItem(String.valueOf(0));
         for(Osoba osoba : sviKorisnici) {
             if(osoba.getUloga().equals("vozac")) {
-                vozaci.add(String.valueOf(osoba.getIdKorisnika()) + " - " + osoba.getKorisnickoIme());
-                vozacField.addItem(String.valueOf(osoba.getIdKorisnika()) + " - " + osoba.getKorisnickoIme());
+                    vozaci.add(String.valueOf(osoba.getIdKorisnika()) + " - " + osoba.getKorisnickoIme());
+                    vozacField.addItem(String.valueOf(osoba.getIdKorisnika()) + " - " + osoba.getKorisnickoIme());
+
             }
         }
 
@@ -75,7 +78,7 @@ public class DodavanjeAutomobila extends JFrame {
         }
     }
 
-    private void onClickSacuvajBtn(UpisivanjeUFajl upisivanjeUFajl) {
+    private void onClickSacuvajBtn(UpisivanjeUFajl upisivanjeUFajl, TaxiSluzba taxiSluzba) {
         this.sacuvajButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,14 +97,16 @@ public class DodavanjeAutomobila extends JFrame {
                 }
 
                 int brojVozila = 0;
-                try{
-                    brojVozila = Integer.parseInt(brojVozilaField.getText());
-                } catch (NumberFormatException numberFormatException) {
-                    JOptionPane.showMessageDialog(null,
-                            "Broj vozila mora biti ceo broj!", "Unos automobila",
-                            JOptionPane.ERROR_MESSAGE);
-                    return;
+                int idVozila = 0;
+
+                for (Automobil automobil: taxiSluzba.getListaAutomovila()
+                     ) {
+                    if(idVozila < automobil.getAutomobilID()){
+                        brojVozila = automobil.getBrojVozila() + 1;
+                        idVozila = automobil.getAutomobilID() + 1;
+                    }
                 }
+
                 String brojRegistracije = brojRegistracijeField.getText();
                 String tipVozila = tipVozilaField.getSelectedItem().toString();
                 String vozac = vozacField.getSelectedItem().toString();
@@ -109,9 +114,6 @@ public class DodavanjeAutomobila extends JFrame {
 
 
                 int idKorisnika = Integer.parseInt(vozac.split(" - ")[0]);
-
-                Random rand = new Random();
-                int idVozila = rand.nextInt(1000000);
 
                 Automobil automobilToSave = new Automobil(idVozila, brojVozila, proizvodjac, model, datRegistracije, brojRegistracije, TipVozila.valueOf(tipVozila), idKorisnika);
 

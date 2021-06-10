@@ -74,7 +74,7 @@ public class IzmenaDispecera extends JFrame {
                     int brTelefonskeLinije = Integer.parseInt(brojTelefonskeLinijeInput.getText());
                     String odeljenje = odeljenjeInput.getText();
 
-                    /*if (
+                    if (
                             ime.equals("") ||
                                     prezime.equals("") ||
                                     korisnickoIme.equals("") ||
@@ -84,30 +84,31 @@ public class IzmenaDispecera extends JFrame {
                                     brojTelefona.equals("")
                     ){
                         throw new Exception();
-                    }*/
+                    }
 
                     int confirmed = JOptionPane.showConfirmDialog(null,
                             "Da li ste sigurni da želite izmeniti dispečera", "Potvrdite izmenu",
                             JOptionPane.YES_NO_OPTION);
 
                     if (confirmed == JOptionPane.YES_OPTION) {
-                        Dispecer osoba = new Dispecer();
-                        osoba.setIme(ime);
-                        osoba.setPrezime(prezime);
-                        osoba.setKorisnickoIme(korisnickoIme);
-                        osoba.setLozinka(lozinka);
-                        osoba.setJmbg(jmbg);
-                        osoba.setAdresa(adresa);
-                        osoba.setPol(Pol.valueOf(pol));
-                        osoba.setBrojTelefona(brojTelefona);
-                        osoba.setPlata(plata);
-                        osoba.setBrTelefonskeLinije(brTelefonskeLinije);
-                        osoba.setOdjeljenje(odeljenje);
 
-                        DoublyLinkedList<Osoba> sveOsobe = taxiSluzba.getListaOsoba();
-                        for (int i = 0; i < sveOsobe.size(); i++) {
-                            if (sveOsobe.getElement(i).getIdKorisnika() == idDispecera)
-                                sveOsobe.set(i, osoba);
+
+                        for (Osoba osoba: taxiSluzba.getListaOsoba()
+
+                             ) {
+                            if (osoba instanceof Dispecer && osoba.getIdKorisnika() == idDispecera) {
+                                osoba.setIme(ime);
+                                osoba.setPrezime(prezime);
+                                osoba.setKorisnickoIme(korisnickoIme);
+                                osoba.setLozinka(lozinka);
+                                osoba.setJmbg(jmbg);
+                                osoba.setAdresa(adresa);
+                                osoba.setPol(Pol.valueOf(pol));
+                                osoba.setBrojTelefona(brojTelefona);
+                                ((Dispecer) osoba).setPlata(plata);
+                                ((Dispecer) osoba).setBrTelefonskeLinije(brTelefonskeLinije);
+                                ((Dispecer) osoba).setOdjeljenje(odeljenje);
+                            }
                         }
 
                         JOptionPane.showMessageDialog(null,

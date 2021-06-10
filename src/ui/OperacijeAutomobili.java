@@ -112,28 +112,43 @@ public class OperacijeAutomobili extends JFrame {
         obrisiAutomobilBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int confirmed = JOptionPane.showConfirmDialog(null,
-                        "Da li ste sigurni da želite da obrišete automobil?", "Brisanje automobila",
-                        JOptionPane.YES_NO_OPTION);
-                int idPozicija = table1.getSelectedRow();
+                try {
 
-                String idAutomobilaZaBrisanje = (String) table1.getValueAt(idPozicija, 0);
+                    int confirmed = JOptionPane.showConfirmDialog(null,
+                            "Da li ste sigurni da želite da obrišete automobil?", "Brisanje automobila",
+                            JOptionPane.YES_NO_OPTION);
 
-                int idAutomobilaObrisanogVozaca = 0;
-                if (confirmed == JOptionPane.YES_OPTION) {
+                    int idPozicija = table1.getSelectedRow();
 
-                    int id = Integer.parseInt(idAutomobilaZaBrisanje);
+                    String idAutomobilaZaBrisanje = (String) table1.getValueAt(idPozicija, 0);
 
-                    for (Automobil automobil: taxiSluzba.getListaAutomovila()) {
-                        if(automobil.getAutomobilID() == id) {
-                            brisanjeEntiteta.obrisiAutomobil(taxiSluzba.getListaAutomovila(), id);
-                            initTabela(taxiSluzba);
-                            JOptionPane.showMessageDialog(null,
-                                    "Automobil uspešno obrisan!", "Brisanje automobila",
-                                    JOptionPane.INFORMATION_MESSAGE);
-                            break;
+                    if (confirmed == JOptionPane.YES_OPTION) {
+
+                        int id = Integer.parseInt(idAutomobilaZaBrisanje);
+
+                        for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
+                            if (automobil.getAutomobilID() == id) {
+                                taxiSluzba.getListaAutomovila().remove(automobil);
+                                System.out.println("AUTO OBRISAN " + automobil.toString());
+                                break;
+                            }
+                        }
+
+                        initTabela(taxiSluzba);
+                        System.out.println("TABELA JE OSVJEZANA");
+
+                        JOptionPane.showMessageDialog(null,
+                                "Automobil uspešno obrisan!", "Brisanje automobila",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+                        for (Automobil automobil : taxiSluzba.getListaAutomovila()) {
+                            System.out.println(automobil.toString());
                         }
                     }
+                } catch (Exception e1){
+                    JOptionPane.showMessageDialog(null,
+                            "Niste selektovali automobil!", "Brisanje automobila",
+                            JOptionPane.WARNING_MESSAGE);
                 }
             }
         });

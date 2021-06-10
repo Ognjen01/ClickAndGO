@@ -85,12 +85,16 @@ public class DoublyLinkedList<T> implements Iterable<T>{
             }
 
             ListNode<T> current = head;
-            while(current.getNext() != null){
+            while(current != null){
+                System.out.println("PROLAZAK KROZ WHILE" + current);
 
-                if (current.getElement() == toRemove.getElement()){
+                //TODO -> OGNJENEE PROJERII
+
+                if (current.getElement() == del){
                     current.getPrevious().setNext(current.getNext());
                     current.getNext().setPrevious(current.getPrevious());
-                    current = null;
+                    //current = null;
+                    System.out.println(current + "BRISANJE DDL");
                     break;
 
                 } else {

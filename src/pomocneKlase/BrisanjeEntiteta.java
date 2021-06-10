@@ -30,13 +30,12 @@ public class BrisanjeEntiteta {
 
     public void obrisiAutomobil(DoublyLinkedList<Automobil> sviAutomobili, int idAutomobila) {
         DoublyLinkedList<Automobil> automobiliToSave = sviAutomobili;
-        Automobil autoZaBrisanje = null;
         for (Automobil automobil : sviAutomobili) {
             if (automobil.getAutomobilID() == idAutomobila) {
-                autoZaBrisanje = automobil;
+                automobiliToSave.remove(automobil);
             }
         }
-        automobiliToSave.remove(autoZaBrisanje);
+
         File fajl = new File("src/fajlovi/automobili.txt");
         try {
             FileWriter fw = new FileWriter(fajl,false);

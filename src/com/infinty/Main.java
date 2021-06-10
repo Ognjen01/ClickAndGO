@@ -8,10 +8,8 @@ import entiteti.VoznjaNarucenaAplikacijom;
 import enumeracije.StatusVoznje;
 import korisnici.Osoba;
 import pomocneKlase.*;
-import ui.DodavanjeIzmenaAutomobila;
 import ui.Prijava;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

@@ -29,7 +29,6 @@ public class OperacijeDispeceri extends JFrame {
     private JButton nazadBtn;
     private JLabel naslov;
 
-    private BrisanjeEntiteta brisanjeEntiteta;
 
     public OperacijeDispeceri(TaxiSluzba taxiSluzba){
 
@@ -37,7 +36,6 @@ public class OperacijeDispeceri extends JFrame {
         setTitle("Click&GO - Operacije sa dispečerima");
         setLocationRelativeTo(null);
 
-        this.brisanjeEntiteta = new BrisanjeEntiteta();
 
         this.initTabela(taxiSluzba);
 
@@ -86,14 +84,16 @@ public class OperacijeDispeceri extends JFrame {
                     int id = Integer.parseInt(idDispeceraZaBrisanje);
                     for (Osoba osoba: taxiSluzba.getListaOsoba()) {
                         if(osoba.getIdKorisnika() == id) {
-                            brisanjeEntiteta.obrisiKorisnika(taxiSluzba.getListaOsoba(), id);
-                            initTabela(taxiSluzba);
-                            JOptionPane.showMessageDialog(null,
-                                    "Dispečer uspešno obrisan!", "Brisanje dispečera",
-                                    JOptionPane.INFORMATION_MESSAGE);
+                            taxiSluzba.getListaOsoba().remove(osoba);
+
                             break;
                         }
                     }
+
+                    initTabela(taxiSluzba);
+                    JOptionPane.showMessageDialog(null,
+                            "Dispečer uspešno obrisan!", "Brisanje dispečera",
+                            JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         });
