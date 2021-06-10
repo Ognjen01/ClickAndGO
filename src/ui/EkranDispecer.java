@@ -104,7 +104,7 @@ public class EkranDispecer extends JFrame {
         pretragaAutomobila.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Automobili automobili = new Automobili();
+                Automobili automobili = new Automobili(taxiSluzba);
                 automobili.setVisible(true);
 
             }

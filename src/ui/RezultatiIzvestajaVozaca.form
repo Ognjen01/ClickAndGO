@@ -3,12 +3,12 @@
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="518"/>
+      <xy x="20" y="20" width="500" height="573"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="5e8b0" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="19" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="5e8b0" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="21" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -120,7 +120,7 @@
           </component>
           <component id="53f08" class="javax.swing.JButton" binding="stampajIzvještajButton" default-binding="true">
             <constraints>
-              <grid row="16" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="18" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Stampaj izvještaj"/>
@@ -128,7 +128,7 @@
           </component>
           <vspacer id="fed5e">
             <constraints>
-              <grid row="15" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+              <grid row="17" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="20"/>
                 <preferred-size width="-1" height="20"/>
                 <maximum-size width="-1" height="20"/>
@@ -152,12 +152,12 @@
           </vspacer>
           <vspacer id="68059">
             <constraints>
-              <grid row="18" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="20" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <component id="7e802" class="javax.swing.JButton" binding="nazadButton" default-binding="true">
             <constraints>
-              <grid row="17" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="19" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Nazad"/>
@@ -168,12 +168,29 @@
               <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Ukupan broj vozača koji su vozili u tom periodu:"/>
+              <text value="Ukupno pređenih kilometara"/>
             </properties>
           </component>
-          <component id="f9669" class="javax.swing.JLabel" binding="brojVozaca">
+          <component id="f9669" class="javax.swing.JLabel" binding="ukKilometriLabel">
             <constraints>
               <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="18" style="1"/>
+              <text value="Label"/>
+            </properties>
+          </component>
+          <component id="90672" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="15" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Ukupno vremena u vožnji"/>
+            </properties>
+          </component>
+          <component id="55e8" class="javax.swing.JLabel" binding="ukVremenaLabel">
+            <constraints>
+              <grid row="16" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font size="18" style="1"/>

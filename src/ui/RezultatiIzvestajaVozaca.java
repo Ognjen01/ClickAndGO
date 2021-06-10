@@ -21,9 +21,11 @@ public class RezultatiIzvestajaVozaca extends JFrame {
     private JLabel ukupnaZarada;
     private JButton stampajIzvještajButton;
     private JButton nazadButton;
-    private JLabel brojVozaca;
+    private JLabel ukKilometriLabel;
+    private JLabel ukVremenaLabel;
+
     public RezultatiIzvestajaVozaca(DoublyLinkedList<Voznja> listaVoznji){
-        setSize(400, 500);
+        setSize(400, 600);
         setTitle("Click&GO - Rezultati izvještaja");
         setLocationRelativeTo(null);
 
@@ -37,8 +39,9 @@ public class RezultatiIzvestajaVozaca extends JFrame {
         int ukZarada = 0;
         double prosTrajanje = 0;
         double prosDuzina = 0;
+        double ukupnoKilometara = 0;
+        double ukupnoVremena = 0;
 
-        List<Integer> idVozaca = new ArrayList<Integer>(); // TODO: DoublyLinkedList
 
 
             for (
@@ -56,16 +59,13 @@ public class RezultatiIzvestajaVozaca extends JFrame {
             duzina += voznja.getDuzina();
 
             ukZarada += voznja.getCenaVoznje();
+            ukupnoKilometara += voznja.getDuzina();
+            ukupnoVremena += voznja.getTrajanje();
 
 
-            if (!idVozaca.contains(voznja.getIdVozaca())){
-                idVozaca.add(voznja.getIdVozaca());
-                System.out.println(voznja.getIdVozaca());
-            }
 
         }
 
-            System.out.println("BROJ VOZAČA KOJI SU UČSTVOVALI: " + idVozaca.size());
         prosTrajanje = trajanje / listaVoznji.size();
         prosDuzina = duzina / listaVoznji.size();
 
@@ -75,7 +75,8 @@ public class RezultatiIzvestajaVozaca extends JFrame {
             prosjecnoTrajanje.setText(String.valueOf(prosTrajanje));
             prosjecnaDuzina.setText(String.valueOf(prosDuzina));
             ukupnaZarada.setText(String.valueOf(ukZarada));
-            brojVozaca.setText(String.valueOf(idVozaca.size()));
+            ukKilometriLabel.setText(String.valueOf(ukupnoKilometara));
+            ukVremenaLabel.setText(String.valueOf(ukupnoVremena));
 
 
             nazadButton.addActionListener(new ActionListener() {

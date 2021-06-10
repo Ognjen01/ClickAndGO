@@ -98,7 +98,7 @@ public class IzvestajVozaca extends JFrame {
                     Promeniti Izvestaj Voznji da bude Izvestaj Vozaca ako je potrebno?
 
                     */
-                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    RezultatiIzvestajaVozaca rezultati = new RezultatiIzvestajaVozaca(listaOdgovarajucihVoznji);
                     rezultati.setVisible(true);
 
                 } else if (dan.equals("Nije odabrano") && !mjesec.equals("Nije odabrano")){
@@ -118,7 +118,7 @@ public class IzvestajVozaca extends JFrame {
                         }
                     }
 
-                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    RezultatiIzvestajaVozaca rezultati = new RezultatiIzvestajaVozaca(listaOdgovarajucihVoznji);
                     rezultati.setVisible(true);
 
                 } else if(!dan.equals("Nije odabrano") && !mjesec.equals("Nije odabrano") && !sedmicniIzvjestaj.isSelected()){
@@ -140,7 +140,7 @@ public class IzvestajVozaca extends JFrame {
                         }
                     }
 
-                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    RezultatiIzvestajaVozaca rezultati = new RezultatiIzvestajaVozaca(listaOdgovarajucihVoznji);
                     rezultati.setVisible(true);
 
                 } else if(!dan.equals("Nije odabrano") && !mjesec.equals("Nije odabrano") && sedmicniIzvjestaj.isSelected()) {
@@ -171,7 +171,7 @@ public class IzvestajVozaca extends JFrame {
                         }
                     }
 
-                    RezultatiIzvjestajaVoznji rezultati = new RezultatiIzvjestajaVoznji(listaOdgovarajucihVoznji);
+                    RezultatiIzvestajaVozaca rezultati = new RezultatiIzvestajaVozaca(listaOdgovarajucihVoznji);
                     rezultati.setVisible(true);
                 }
             }

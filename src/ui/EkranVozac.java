@@ -39,6 +39,14 @@ public class EkranVozac extends JFrame {
             }
         });
 
+        statistikaBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IzvestajVozaca izvestajVozaca = new IzvestajVozaca(taxiSluzba, prijavljeniVozac.getIdKorisnika());
+                izvestajVozaca.setVisible(true);
+            }
+        });
+
         istorijaVoznjiBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
