@@ -91,7 +91,7 @@ public class Ponuda {
         this.brojVoznjiVozaca = brojVoznjiVozaca;
         this.vrijemeDolaska = vrijemeDolaska;
         this.prosjecnaOcjenaVozaca = prosjecnaOcjenaVozaca;
-        ocjenaPonude = (double) (izracunajOcjenuBrojVoznji(this.brojVoznjiVozaca) + izracunajOcjenuVrijeme(this.vrijemeDolaska) + prosjecnaOcjenaVozaca);
+        ocjenaPonude = (double) (izracunajOcjenuBrojVoznji(this.brojVoznjiVozaca) + (2 * izracunajOcjenuVrijeme(this.vrijemeDolaska)) + prosjecnaOcjenaVozaca);
         System.out.println("OCJENA PONUDE " + ocjenaPonude);
 
     }

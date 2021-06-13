@@ -65,6 +65,12 @@ public class UnosVremenaZaIzvestaj extends JFrame{
             godineComboBox.addItem(String.valueOf(i));
         }
 
+        odustaniBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
 
         kreirajIzvještajButton.addActionListener(new ActionListener() {
             @Override
