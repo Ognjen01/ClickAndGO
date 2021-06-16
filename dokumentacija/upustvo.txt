@@ -35,3 +35,5 @@ NAPOMENE:
 TEHNOLOGIJE:
 
 1. - GUI aplikacije je urađen uz pomoć IntelliJ GUI builder-a
+
+IZMJENA RADI ZELENILA NA github

@@ -7,7 +7,7 @@
 500006|300001|100004|Bulevar Despota Stefana 5A|Futoska|ZAVRSENA|5.0|15.0|400|03/06/2021 11:40:41|aplikacija|true|false|Veće auto
 500007|300002|100004|Valentina Vodnika 1|Zelesnicka|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|true|false|Imam kofere
 500008|300000|100003|1300 kaplara 3|Petrovaradin|ZAVRSENA|5.0|15.0|400|03/06/2021 11:41:03|aplikacija|false|false|ŽURIM
-500009|300002|100004|Njegoševa 3|Anđe Ranković 22|PRIHVACENA|0.0|0.0|0|03/06/2021 11:53:31|aplikacija|false|false|3 čovjeka
+500009|300002|100004|Njegoševa 3|Anđe Ranković 22|ZAVRSENA|0.0|0.0|0|03/06/2021 11:53:31|aplikacija|false|false|3 čovjeka
 500010|0|100004|MMM|MMM|NA_CEKANJU|0.0|0.0|0|03/06/2021 12:47:36|aplikacija|false|false|napomena
 500011|300004|100004|MMM|MMM|ZAVRSENA|3.0|10.0|282|05/06/2021 10:18:09|telefon|false
 500012|300004|100004|AAA|AAA|ODBIJENA|0.0|0.0|0|05/06/2021 10:18:15|telefon|false
